@@ -5,7 +5,7 @@
 负责人：规划者（agent）
 最后更新：2026-10-19
 上游依据：docs/00-charter.md ADR-017 / ADR-023；docs/design/12-fork-strategy.md §4、§5、§7（R-FK-2/3/4/8）；docs/workflow/06-build-and-ci.md §1.3 B-2、§6.1；docs/research/10-upstream-delta-f42e3c1-67f28b0.md §2、§3
-事实快照：reference/folkways-67f28b0/（所有 文件:行号 以此为准）
+事实快照：reference/folkways-3ce4d88/（基线已按 ADR-025 前移；本计划全部 文件:行号 已于 2026-10-19 在该快照上逐行复核，与 67f28b0 一致——上游仅在 `FolkwaysMod.java:71` 新增 `registerConfig(ModConfig.Type.CLIENT, FolkwaysClientConfig.SPEC)`，不影响任何引用行）
 ```
 
 > 这是 fork 的**第一处改上游文件**。目的只有一个：让我们的四个 jar 与上游 Folkways 在 modid 上可区分、不可共装，并履行 MIT 的署名义务。**不改任何玩法行为、不改任何包名/类名/资源命名空间。**
@@ -140,7 +140,7 @@
 
 ## 8. 执行顺序
 
-0. **前置（ADR-025）**：基线前移到 `29498b0`（WSL `git merge upstream/master` 或 `reset`，打标签 `upstream-base-29498b0-20261019`，`reference/` 换快照，本计划 §2 的 `文件:行号` 复核一遍）；在 GitHub 新建仓库并设 `origin`；三者都只改环境不改代码。
+0. ~~**前置（ADR-025）**~~ **已完成（2026-10-19 晚）**：基线前移到 `3ce4d88`（fast-forward，标签 `upstream-base-3ce4d88-20261019`，`reference/folkways-3ce4d88/` 已解出，§2 行号已复核）；`origin` = `https://github.com/TCCH1111/per-lapidem-ad-astra`，`main` + 两个基线标签已推送。新基线上的 build + gametest 复验结果见 w06 §1.3。
 1. 在 WSL `~/pla/mod` 建分支 `feat/b2-modid`（w00 §5 分支规范；非 PRD 任务，用任务编号）。
 2. 写 T1（红）。
 3. 按 §2 改 16 处 + 新建 `NOTICE.md`；每处加 `PLA:` 标记。
