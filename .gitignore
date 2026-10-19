@@ -1,0 +1,30 @@
+# 工作区仓库 = docs/ + pack/（docs/workflow/01 §3.3）。以下不入库：
+
+# fork 是独立 git 仓库，工作树在 WSL ~/pla/mod（ADR-021/022）；Windows 侧临时克隆 mod/ 已于 2026-10-19 删除，
+# 保留此忽略项以防误建；有远端后考虑改为 submodule 钉 commit
+/mod/
+
+# 基底只读参考不入库，只保留来源记录（w01 §3.3、R-ROLE-4）
+/reference/*
+!/reference/README.md
+
+# 本机缓存与工具：已核验的 Modrinth jar、构建日志、packwiz 可执行文件
+/.cache/
+/.tools/
+
+# 临时材料
+/.research-tmp/
+/.tmp-article.*
+/*.rar
+
+# packwiz 工程只放元文件，不放 jar（k00 OQ-PK-1）
+/pack/**/*.jar
+
+# 测试产物（w01 §3.3）
+/tests/out/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+/.idea/
+/.vscode/
