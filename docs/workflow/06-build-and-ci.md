@@ -93,6 +93,8 @@ M1 的第一道坎不是玩法，而是**能不能构建**。上游 `build.gradl
 | 2026-10-19 | 同上 | 同上 | 同上 | B-4 `./gradlew build --no-daemon` | **通过** | **9 min 45 s**（含下载 Gradle 8.14.5 与 NeoForm 产物） | 30 个任务；产物 `build/libs/folkways-{core,vanilla,create,modulargolems}-neoforge-1.21.1-0.1.0.jar` + `build/deps/ldlib2-neoforge-1.21.1-2.2.37-all.jar`；sha256 与上游 nightly 不同（大小几乎一致；Gradle jar 默认不可复现归档，预期现象） |
 | 2026-10-19 | 同上 | 同上 | 同上 | B-5 `check`（含 `lintScaffold`，随 `build` 执行） | **通过** | 含于 B-4 | 日志有 `> Task :check`，无 Tab/行尾空白告警。⚠️ 未单独运行 `./gradlew check` |
 | 2026-10-19 | 同上 | 同上 | 同上 | B-6 `./gradlew runGameTestServer` | **通过** | **3 min 16 s** | `647 GAME TESTS COMPLETE IN 21.77 s` / `All 647 required tests passed`（根工程聚合 core+vanilla+create；日志 `.cache/logs/wsl-gametest-inner.log`、WSL `~/pla/mod/run/gametest/logs/latest.log`） |
+| 2026-10-19 晚 | 同上，基线 **3ce4d88**（ADR-025 前移后，未改动） | 同上 | 同上 | B-3..B-5（`npm ci` → `setup` → `build`） | **通过** | 32 s（依赖已缓存） | 四个 jar 重新产出（core 3509781 B、create 308960 B…） |
+| 2026-10-19 晚 | 同上 | 同上 | 同上 | B-6 `runGameTestServer` 第 1 次 | **651 个测试，1 失败** | 52 s | 失败：`folkways:onefoodcannotfeedhalfofapair`（`mods/vanilla/src/gametest/.../pasture/PastureBreedingGameTests.java:137`，`java.util.NoSuchElementException`）。该测试在 67f28b0 也存在且当时通过 → 疑似**非确定性**（取食/配对竞争），第 2 次运行结果见下一行；若复现则属上游 bug，按 d12 §6 评估是否反哺。**T3 的基线判据以本表为准**（PLAN-001 R1-06） |
 
 > **R-BLD-3 结论（2026-10-19）**：B-1..B-6 在上游原状 67f28b0 上全部通过（WSL 侧）。B-2（改坐标）按 [ADR-023](../00-charter.md) 单独计划：[PLAN-001](../plans/PLAN-001-b2-modid-rename.md)。
 
@@ -502,7 +504,7 @@ jobs:
 | S3 | 打合并基线 | 在**分支**上操作（不直接动主分支） | 新分支存在 |
 | S4 | 合并 | `git merge upstream/master`（或 `git rebase`，二选一，禁止混用） | 冲突清单可见 |
 | S5 | 解冲突 | 按 [d12 §5 改动登记表](../design/12-fork-strategy.md) 逐项手工合并；**L3 项要重新评审** | 冲突全部标记解决 |
-| S6 | 定位我们的钩子 | `git grep "// PLA:"` | 每处 L2/L3 标记都在，且编号与 PRD 对应 |
+| S6 | 定位我们的钩子 | `git grep "PLA: ADR-"`（标记有三种形式：Java/TS/Gradle `// PLA:`、TOML `# PLA:`、Markdown `<!-- PLA: -->`，统一按 `PLA: ADR-` 前缀搜索——PLAN-001 R1-14） | 每处 L2/L3 标记都在，且编号与 PRD/ADR 对应 |
 | S7 | 跑层 0 | `./gradlew check` + `test:unit` + `test:i18n` | 全绿 |
 | S8 | 跑层 1 | `./gradlew runGameTestServer` | 全绿（或与基线一致的已知失败） |
 | S9 | 更新登记表 | 增删 L2/L3 条目、更新"最后同步日期" | 文档与代码一致 |
