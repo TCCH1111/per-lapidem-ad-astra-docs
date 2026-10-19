@@ -72,17 +72,22 @@ metafile = true
 
 [[files]]
 file = "mods/folkways-core.pw.toml"
-hash = "39758833d543076eb7be88d9875f43160ba7a2272e2e93e061749ec165146414"
+hash = "bde790afe1b25bc90b925dc7d23180e9630cb20e9d1c46a7a1db63cc4a13bcbb"
 metafile = true
 
 [[files]]
 file = "mods/folkways-create.pw.toml"
-hash = "45cd11ae7453a62aefbdc0d2815ec7999c4ec5aca7b88e5502c49d5266de6ebc"
+hash = "de3c0be768e5477ffbb66b0dedf8020fc58428f8d67902a4c5caf83bd66d4989"
+metafile = true
+
+[[files]]
+file = "mods/folkways-modulargolems.pw.toml"
+hash = "d63f25b5a9d1d8515f4b9173ad80f543ff909e91e18bc15555697b54538866d7"
 metafile = true
 
 [[files]]
 file = "mods/folkways-vanilla.pw.toml"
-hash = "0c999c8b2aaf70cb72775336f7a8f146609647c882e31b322af800e59d209839"
+hash = "d7dcbd64a8a6d8f6cb1ff4123cb2e2d83bcdc2af9e9a5dd590eee5ccaa9313fe"
 metafile = true
 
 [[files]]
@@ -113,6 +118,11 @@ metafile = true
 [[files]]
 file = "mods/kubejs.pw.toml"
 hash = "7e0eca275f27b6543f06c36dec433851a956960cbedd2be57d19e159d636bfc1"
+metafile = true
+
+[[files]]
+file = "mods/l2library.pw.toml"
+hash = "084c968377b79038daf8ce77bee9d86c3be4b2895ccab6f4a50915743d1533e9"
 metafile = true
 
 [[files]]
@@ -148,6 +158,11 @@ metafile = true
 [[files]]
 file = "mods/modernfix.pw.toml"
 hash = "d10fbef1555f5277563b9cbf7683811ac0f38c1af41646e6ce5c3aaa2149425d"
+metafile = true
+
+[[files]]
+file = "mods/modular-golems.pw.toml"
+hash = "9611cd39c528e8c75cef727afb8d96d896b0c1521985835f70b75db7883882da"
 metafile = true
 
 [[files]]

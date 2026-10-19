@@ -1,0 +1,8 @@
+name = "folkways-modulargolems"
+filename = "folkways-modulargolems-neoforge-1.21.1-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/IzakyL/folkways/releases/download/nightly/folkways-modulargolems-neoforge-1.21.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "252e2466f0c402091bd27917cfe23c12ec805421f618beb0517c6ccd7510a1ec"

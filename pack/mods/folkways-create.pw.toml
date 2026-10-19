@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://github.com/IzakyL/folkways/releases/download/nightly/folkways-create-neoforge-1.21.1-0.1.0.jar"
 hash-format = "sha256"
-hash = "ca4f8b968f0e4cb98d3a92a355b2cba0ce2aeede93309f8ea491aa70bff9f6b1"
+hash = "10fd287a4b6d91dbb1a9377aa5776af27eef43a37ef7e5d4c9b62714cfd0921d"

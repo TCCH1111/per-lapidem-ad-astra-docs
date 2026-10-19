@@ -61,6 +61,8 @@
 | GeckoLib | `geckolib` | 1.21.1 ✔ | NF/F/Forge/Q | 4.9.3 | 2026-09-16 | — | C必/S可 | MIT | 无 | 采用 | https://modrinth.com/mod/geckolib |
 | Architectury API | `architectury-api` | 1.21.1 ✔ | 全加载器 | 13.0.11+neoforge | 2026-07-23 | — | C/S | LGPL-3.0-only | 无 | 采用 | https://modrinth.com/mod/architectury-api |
 | Kotlin for Forge | `kotlin-for-forge` | 1.21.1 ✔ | NF/Forge | 5.12.0 | 2026-06-28 | — | C可/S可 | LGPL-2.1-only | 无 | 待验证（当前无 mod 依赖它） | https://modrinth.com/mod/kotlin-for-forge |
+| Modular Golems | `modular-golems`（项目 id `gtGDlsAD`；注意 slug 带连字符） | 1.21.1 ✔ | NF/Forge | **3.1.43**（版本 id `zNXsPDeF`，与上游 `blockwright.toml` 钉版一致） | 2026-08-21 | `l2library` | C/S | **LGPL-2.1-only** | 无——它是 `folkways_modulargolems`（要求 `[3.1.43,)`）的必需前置，使傀儡成为第二种居民 | **采用（必装，[ADR-024](../00-charter.md) §8：四个 Folkways jar 全装）**，2026-10-19 登记 | https://modrinth.com/mod/modular-golems |
+| L2 Library | `l2library`（`4Vh3BQ3F`） | 1.21.1 ✔ | NF/Forge | **3.0.8**（`640EOvKh`，与上游钉版一致；3.0.9 为 2026-10-12 新版，未跟进以免与基底编译期 jar 不一致） | 2026-02-06 | — | C/S | **LGPL-2.1-only** | 无（Modular Golems 前置；内嵌 `l2core`/`l2serial`，基底编译期也用它） | **采用（随 Modular Golems）** | https://modrinth.com/mod/l2library |
 
 ### 2.2 工程与机械
 
@@ -319,7 +321,7 @@
 
 目标：能验证 Folkways 基底 + 世界 + 基本工程，无内容冗余。
 
-> **落地状态（2026-10-19）**：本档已写入 packwiz 工程 `pack/mods/*.pw.toml`（共 44 个元文件 = 下表 35 项（`sodium` 取 Sodium；`radium` 因与 Create 硬冲突移除）+ `ldlib`（必装前置）+ packwiz 按 Modrinth 依赖自动补入的 `rhino`、`better-advanced-tooltips`、`mezzconfig`、`moonlight`、`balm` + 过渡期的 3 个 Folkways nightly jar（[ADR-022](../00-charter.md)））。全部按本表版本以 Modrinth **版本 id** 钉死，37 个 sha512 与 `GET /v2/version_files` 反查一致。`pack/mods/*.pw.toml` 是**锁文件**，本表是**选型依据**：改选型先改本表，再改锁。
+> **落地状态（2026-10-19）**：本档已写入 packwiz 工程 `pack/mods/*.pw.toml`（共 47 个元文件 = 下表 35 项（`sodium` 取 Sodium；`radium` 因与 Create 硬冲突移除）+ `ldlib`（必装前置）+ `modular-golems` 与 `l2library`（ADR-024 §8）+ packwiz 按 Modrinth 依赖自动补入的 `rhino`、`better-advanced-tooltips`、`mezzconfig`、`moonlight`、`balm` + 过渡期的 4 个 Folkways nightly jar（[ADR-022](../00-charter.md)））。全部按本表版本以 Modrinth **版本 id** 钉死，37 个 sha512 与 `GET /v2/version_files` 反查一致。`pack/mods/*.pw.toml` 是**锁文件**，本表是**选型依据**：改选型先改本表，再改锁。
 
 | 分组 | mod id |
 | --- | --- |

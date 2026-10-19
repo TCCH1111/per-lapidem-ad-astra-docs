@@ -128,7 +128,7 @@ pack/
 | 上游署名 | 包内与平台页面必须声明"基于 Folkways（MIT，作者 IzakyL）"并附 `NOTICE.md`（[fork 策略](../design/12-fork-strategy.md) §7） |
 | 可选集成 | Create / Sable / Modular Golems / GeckoLib / TLM 等按需，且**不得成为唯一通路**（R-PACK-8） |
 
-> **过渡期（2026-10-19 起，[ADR-022](../00-charter.md)）**：在 fork 能产出 jar 之前，整合包**暂装上游 nightly 的 `folkways-core` / `folkways-vanilla` / `folkways-create`**（@ `67f28b0`，哈希钉死于 `pack/mods/folkways-*.pw.toml`；不装 `folkways-modulargolems`）。nightly 的 URL 固定但内容随上游 `master` 每次推送重写——哈希校验失败即提示"需重钉"，不得静默更新。上表"不装上游 Folkways jar"自 fork 首个 jar 产出之日起生效。
+> **过渡期（2026-10-19 起，[ADR-022](../00-charter.md)）**：在 fork 能产出 jar 之前，整合包**暂装上游 nightly 的四个 jar** `folkways-core` / `folkways-vanilla` / `folkways-create` / `folkways-modulargolems`（[ADR-024](../00-charter.md) §8 全装；当前钉 nightly @ `e5b6838`，sha256 钉死于 `pack/mods/folkways-*.pw.toml`）。nightly 的 URL 固定但内容随上游 `master` 每次推送重写——哈希校验失败即提示"需重钉"，不得静默更新。上表"不装上游 Folkways jar"自 fork 首个 jar 产出之日起生效。
 
 **R-PACK-11（改写）**：我们**可以**修改 Folkways 的内部实现，但必须走 [fork 策略](../design/12-fork-strategy.md) 的**分层登记**（L1 新文件 > L2 小改 > L3 逻辑改动；**L4 结构性重构禁止**），并在代码中加 `// PLA:` 标记，登记到改动表。目的是保住**上游同步能力**。
 
@@ -189,7 +189,8 @@ pack/
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-19 v2 | 21.1.233 | 42 | **FML 拒绝启动** | `Mod create is incompatible with radium any` → Radium 移出清单（k01） | `.cache/logs/smoke-server-20261019-151654.log` |
 | 2026-10-19 v3 | 21.1.233 | 41 | **FML 拒绝启动** | `jei` 要求 ≥ 21.1.238、`supplementaries` 要求 ≥ 21.1.247 → 加载器升级 | `…-151913.log` |
-| 2026-10-19 v4 | **21.1.264** | 41 | **通过**：`Done (8.753s)`，优雅 stop，`All dimensions are saved`，0 FATAL / 0 崩溃报告 | Folkways core/vanilla/create 与 LDLib2 正常初始化（`folkways/library` 数据包、9 个图案、4 线程规划器）；1 条 ERROR（`RuntimeDistCleaner`，紧随 `[Rhino] Failed to get declared methods for com.lowdragmc.lowdraglib2.editor.resource.IRendererResource`：KubeJS/Rhino 扫描 LDLib2 自带的 KubeJS 插件时触到客户端类，**良性噪音，与 Folkways 无关**）、13 WARN（ModernFix mixin 可见性提示 ×2、离线模式 ×4、Supplementaries 染色提示、KubeJS 跳过客户端插件、vanilla assets URL ×2、加载耗时 ×2、OSHI 注册表） | `…-152346.log` |
+| 2026-10-19 v4 | **21.1.264** | 41 | **通过**：`Done (8.753s)`，优雅 stop，`All dimensions are saved`，0 FATAL / 0 崩溃报告 | Folkways core/vanilla/create 与 LDLib2 正常初始化（`folkways/library` 数据包、9 个图案、4 线程规划器）；1 条 ERROR（`RuntimeDistCleaner`，紧随 `[Rhino] Failed to get declared methods for com.lowdragmc.lowdraglib2.editor.resource.IRendererResource`：KubeJS/Rhino 扫描 LDLib2 自带的 KubeJS 插件时触到客户端类，**良性噪音，与 Folkways 无关**）、13 WARN（ModernFix mixin 可见性提示 ×2、离线模式 ×4、Supplementaries 染色提示、KubeJS 跳过客户端插件、vanilla assets URL ×2、加载耗时 ×2、OSHI 注册表） |
+| 2026-10-19 v5 | 21.1.264 | 44 | **通过**：`Done (2.468s)`，0 FATAL / 0 崩溃 | 新增 Modular Golems 3.1.43 + L2 Library 3.0.8 + `folkways-modulargolems`（ADR-024 §8 四 jar 全装）；nightly 四 jar 重钉到上游 `e5b6838`。3 条 ERROR 均良性：LDLib2/Rhino 噪音（同 v4）、`modulargolems:golem_guide` 战利品表引用 `patchouli:book` 组件而包内无 Patchouli（仅傀儡指南书掉落失效；是否加 Patchouli 待 k01 选型）、离线模式取 Yggdrasil 公钥失败 | `…-220857.log` | `…-152346.log` |
 
 ---
 
