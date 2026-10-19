@@ -12,10 +12,11 @@
 #   wsl.exe -d Ubuntu-24.04 -- bash /mnt/d/wsl/pla/tools/wsl-run.sh verify
 #   wsl.exe -d Ubuntu-24.04 -- bash /mnt/d/wsl/pla/tools/wsl-run.sh clone
 #   wsl.exe -d Ubuntu-24.04 -- bash /mnt/d/wsl/pla/tools/wsl-run.sh build
+#   wsl.exe -d Ubuntu-24.04 -- bash /mnt/d/wsl/pla/tools/wsl-run.sh unit      # typecheck + test:unit + test:i18n
 # 日志：<工作区>/.cache/logs/wsl-<phase>-inner.log
 set -u
 ROOT=/mnt/d/wsl/pla
-phase="${1:?用法: wsl-run.sh <system|verify|clone|build> [参数]}"
+phase="${1:?用法: wsl-run.sh <system|verify|clone|build|unit|gitcheck|gametest> [参数]}"
 shift
 LOG="$ROOT/.cache/logs/wsl-$phase-inner.log"
 mkdir -p "$ROOT/.cache/logs"
@@ -56,6 +57,12 @@ mkdir -p "$ROOT/.cache/logs"
             cd "$HOME/pla/mod" && git fsck --no-dangling && echo "fsck OK" \
             && git status --short --branch | head -20 && git remote -v && git tag -n1 | head -5 \
             && git log --oneline -1 && git cat-file -t upstream-base-67f28b0-20261019 ;;
+        unit)
+            # 层 0 的三条 Node 检查（PLAN-001 T1/T6；w06 §2.2）：typecheck + 单测 + i18n
+            cd "$HOME/pla/mod" \
+            && echo "--- npm run typecheck ---" && npm run typecheck \
+            && echo "--- npm run test:unit ---" && npm run test:unit \
+            && echo "--- npm run test:i18n ---" && npm run test:i18n ;;
         gametest)
             # w06 B-6 / 层 1：根工程聚合 core+vanilla+create 的 @GameTest（modulargolems 被上游排除）
             cd "$HOME/pla/mod" \
