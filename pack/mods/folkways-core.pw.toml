@@ -1,0 +1,8 @@
+name = "folkways-core"
+filename = "folkways-core-neoforge-1.21.1-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/IzakyL/folkways/releases/download/nightly/folkways-core-neoforge-1.21.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "296656a784ec2ed4ae1a4af48e9fef0b0596795033ad929ba31c54f9ca5483db"
