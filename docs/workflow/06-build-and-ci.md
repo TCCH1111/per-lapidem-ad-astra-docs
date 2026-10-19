@@ -95,6 +95,7 @@ M1 的第一道坎不是玩法，而是**能不能构建**。上游 `build.gradl
 | 2026-10-19 | 同上 | 同上 | 同上 | B-6 `./gradlew runGameTestServer` | **通过** | **3 min 16 s** | `647 GAME TESTS COMPLETE IN 21.77 s` / `All 647 required tests passed`（根工程聚合 core+vanilla+create；日志 `.cache/logs/wsl-gametest-inner.log`、WSL `~/pla/mod/run/gametest/logs/latest.log`） |
 | 2026-10-19 晚 | 同上，基线 **3ce4d88**（ADR-025 前移后，未改动） | 同上 | 同上 | B-3..B-5（`npm ci` → `setup` → `build`） | **通过** | 32 s（依赖已缓存） | 四个 jar 重新产出（core 3509781 B、create 308960 B…） |
 | 2026-10-19 晚 | 同上 | 同上 | 同上 | B-6 `runGameTestServer` 第 1 次 | **651 个测试，1 失败** | 52 s | 失败：`folkways:onefoodcannotfeedhalfofapair`（`mods/vanilla/src/gametest/.../pasture/PastureBreedingGameTests.java:137`，`java.util.NoSuchElementException`）。该测试在 67f28b0 也存在且当时通过 → 疑似**非确定性**（取食/配对竞争），第 2 次运行结果见下一行；若复现则属上游 bug，按 d12 §6 评估是否反哺。**T3 的基线判据以本表为准**（PLAN-001 R1-06） |
+| 2026-10-19 晚 | 同上 | 同上 | 同上 | B-6 `runGameTestServer` 第 2 次（同一代码，无改动） | **通过：651/651** | 55 s | 确认 `onefoodcannotfeedhalfofapair` 为**非确定性失败**（1/2 次）。**基线判据**：651 个测试，允许该测试偶发失败、重跑即过；其他任何失败视为回归。CI（P1）需对它配重试或标记 `@GameTest(required = false)` 的等价物——列入 R-BLD-11 的实现注意项，并考虑向上游报告 |
 
 > **R-BLD-3 结论（2026-10-19）**：B-1..B-6 在上游原状 67f28b0 上全部通过（WSL 侧）。B-2（改坐标）按 [ADR-023](../00-charter.md) 单独计划：[PLAN-001](../plans/PLAN-001-b2-modid-rename.md)。
 
