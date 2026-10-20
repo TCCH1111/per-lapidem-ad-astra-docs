@@ -154,6 +154,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-005 | [包内容第一批（我们的配置 + FTB 三件套）与端到端复验](reports/VERIFY-005-pack-content-1.md) | 通过：47 mod、配置落地、FTB Quests 加载、Done 20.745s；修正"Teams 可选"为必装 |
 | VERIFY-006 | [客户端实测（Prism CLI + 我们自己的实例）](reports/VERIFY-006-client-test.md) | 通过：四个 plaa_* 加载、加入服务端成功；记录 4 个坑与 1 个 41 条缺模型缺陷 |
 | VERIFY-007 | [41 条缺模型告警的根因定位与处置](reports/VERIFY-007-missing-models.md) | 根因=Born in Chaos 的 31 个自引用裸 parent；资源包覆盖无效（mod 资源优先）→ **已移除该 mod**，复验 0 告警 0 FATAL |
+| VERIFY-008 | [包内 KubeJS 内容管线（附 mrpack 打包器修复）](reports/VERIFY-008-kubejs-content.md) | 通过：1/1 脚本 0 错误、Added 1 recipes、服务端 Done 11.099s；mrpack 现在会带 config/kubejs |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

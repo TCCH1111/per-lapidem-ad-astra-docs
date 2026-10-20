@@ -109,15 +109,27 @@ $cache | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $cachePath -Encoding
 $missing = $files | Where-Object { -not $_.sha1 -or -not $_.sha256 }
 if ($missing) { throw ("以下条目缺哈希：" + (($missing | ForEach-Object { $_.path }) -join ', ')) }
 
-# 我们的 jar → overrides
+# 随包文件：mods/*.jar + 所有非元数据文件（config/、kubejs/、resourcepacks/、options.txt 等）
+$overrides = New-Object System.Collections.Generic.List[object]
 foreach ($jar in Get-ChildItem (Join-Path $PackDir 'mods') -Filter '*.jar' | Sort-Object Name) {
-  $overrides.Add($jar)
+  $overrides.Add([pscustomobject]@{ Rel = "mods/$($jar.Name)"; Full = $jar.FullName })
+}
+$pwNames = @($files | ForEach-Object { $_.pw })
+foreach ($f in Get-ChildItem $PackDir -Recurse -File | Sort-Object FullName) {
+  $rel = $f.FullName.Substring($PackDir.Length + 1).Replace('\', '/')
+  if ($rel -in @('index.toml', 'pack.toml')) { continue }
+  if ($rel.StartsWith('mods/') -and ($pwNames -contains (Split-Path $rel -Leaf))) { continue }
+  if ($rel.StartsWith('mods/') -and $f.Extension -eq '.jar') { continue }  # 已收集
+  $overrides.Add([pscustomobject]@{ Rel = $rel; Full = $f.FullName })
 }
 
 $stage = Join-Path $repo '.cache\mrpack-stage'
 if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }
-New-Item -ItemType Directory -Path (Join-Path $stage 'overrides\mods') -Force | Out-Null
-foreach ($jar in $overrides) { Copy-Item $jar.FullName (Join-Path $stage 'overrides\mods') -Force }
+foreach ($o in $overrides) {
+  $dest = Join-Path $stage ('overrides\' + ($o.Rel -replace '/', '\'))
+  New-Item -ItemType Directory -Path (Split-Path $dest -Parent) -Force | Out-Null
+  Copy-Item -LiteralPath $o.Full -Destination $dest -Force
+}
 
 $index = [ordered]@{
   formatVersion = 1
@@ -136,12 +148,12 @@ foreach ($f in $files) {
     downloads = @($f.url)
   }
 }
-foreach ($jar in $overrides) {
+foreach ($o in $overrides) {
   $fileList += [ordered]@{
-    path      = "mods/$($jar.Name)"
+    path      = $o.Rel
     hashes    = [ordered]@{
-      sha1   = (Get-FileHash -LiteralPath $jar.FullName -Algorithm SHA1).Hash.ToLower()
-      sha256 = (Get-FileHash -LiteralPath $jar.FullName -Algorithm SHA256).Hash.ToLower()
+      sha1   = (Get-FileHash -LiteralPath $o.Full -Algorithm SHA1).Hash.ToLower()
+      sha256 = (Get-FileHash -LiteralPath $o.Full -Algorithm SHA256).Hash.ToLower()
     }
     env       = [ordered]@{ client = 'required'; server = 'required' }
     downloads = @()

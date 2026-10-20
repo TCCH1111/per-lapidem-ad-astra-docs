@@ -13,6 +13,10 @@ file = "config/plaa_vanilla-server.toml"
 hash = "aa15160704687260cab8b7a0d02ea01d4b022950cd8f45e82f54517ea31ac1e7"
 
 [[files]]
+file = "kubejs/server_scripts/plaa_bridges.js"
+hash = "57c7563acca6ca6e4abff6ac2c5308f54ac9c422fe711035d541669458e465b4"
+
+[[files]]
 file = "mods/architectury-api.pw.toml"
 hash = "187eafde5974beee1263538b462b7b8fe2fc8948c5d413980d9796d55928580b"
 metafile = true
