@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/plaa_chapter_1.snbt"
+hash = "6e27837d60e11a905cb40b32265160c05aa527fe598ac3f48be739b2ee996208"
+
+[[files]]
 file = "config/plaa_core-server.toml"
 hash = "33a032877081dbd86655fc210558290aa03dfdc0d912f787b3f91296e838ece4"
 

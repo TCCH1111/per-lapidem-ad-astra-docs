@@ -1,0 +1,86 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "plaa_chapter_1"
+	group: ""
+	icon: "minecraft:oak_sapling"
+	id: "3F1A000000000001"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [ ]
+			description: [ "先站住脚：砍够木头，给自己搭个能过夜的地方。" ]
+			icon: "minecraft:oak_log"
+			id: "3F1A000000000101"
+			min_width: 140
+			tasks: [ { id: "3F1A000000000201", title: "砍够 16 个原木（任意木头都算）", type: "checkmark" } ]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [ "3F1A000000000101" ]
+			description: [ "没有工作台就没有殖民地。把它放下，别揣在背包里。" ]
+			icon: "minecraft:crafting_table"
+			id: "3F1A000000000102"
+			tasks: [ { id: "3F1A000000000202", item: "minecraft:crafting_table", type: "item", count: 1L } ]
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [ "3F1A000000000102" ]
+			description: [ "殖民地迟早要囤东西。四个箱子是起步价。" ]
+			icon: "minecraft:chest"
+			id: "3F1A000000000103"
+			tasks: [ { id: "3F1A000000000203", item: "minecraft:chest", type: "item", count: 4L } ]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ "3F1A000000000103" ]
+			description: [ "第一张床。睡过去的夜晚，是你第一次真正“住下来”。" ]
+			icon: "minecraft:red_bed"
+			id: "3F1A000000000104"
+			tasks: [ { id: "3F1A000000000204", title: "铺好第一张床（任意颜色）", type: "checkmark" } ]
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [ "3F1A000000000104" ]
+			description: [ "火把不是装饰：没有光，居民会怕，怪也会来。" ]
+			icon: "minecraft:torch"
+			id: "3F1A000000000105"
+			tasks: [ { id: "3F1A000000000205", item: "minecraft:torch", type: "item", count: 16L } ]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [ "3F1A000000000105" ]
+			description: [ "把地翻出来。种子不是收藏品，是要下地的。" ]
+			icon: "minecraft:wheat_seeds"
+			id: "3F1A000000000106"
+			tasks: [ { id: "3F1A000000000206", item: "minecraft:wheat_seeds", type: "item", count: 8L } ]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [ "3F1A000000000106" ]
+			description: [ "第一批存粮。一个没有存粮的殖民地，只是搭了个帐篷。" ]
+			icon: "minecraft:bread"
+			id: "3F1A000000000107"
+			tasks: [ { id: "3F1A000000000207", item: "minecraft:bread", type: "item", count: 4L } ]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: [ "3F1A000000000107" ]
+			description: [ "殖民书是你的指挥台：画地、派活、看他们为什么不动。", "第一章到此结束，接下来是你的殖民地了。" ]
+			icon: "folkways:colony_book"
+			id: "3F1A000000000108"
+			tasks: [ { id: "3F1A000000000208", item: "folkways:colony_book", type: "item", count: 1L } ]
+			x: 0.0d
+			y: 10.5d
+		}
+	]
+	title: "第一章 · 落脚"
+}
