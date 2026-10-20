@@ -1,6 +1,18 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/plaa_core-server.toml"
+hash = "33a032877081dbd86655fc210558290aa03dfdc0d912f787b3f91296e838ece4"
+
+[[files]]
+file = "config/plaa_create-server.toml"
+hash = "50089ceca5a8933cad76c3036bbcb819616498db831b8e8993767c4e9672dfdc"
+
+[[files]]
+file = "config/plaa_vanilla-server.toml"
+hash = "aa15160704687260cab8b7a0d02ea01d4b022950cd8f45e82f54517ea31ac1e7"
+
+[[files]]
 file = "mods/architectury-api.pw.toml"
 hash = "187eafde5974beee1263538b462b7b8fe2fc8948c5d413980d9796d55928580b"
 metafile = true
@@ -68,6 +80,21 @@ metafile = true
 [[files]]
 file = "mods/ferrite-core.pw.toml"
 hash = "73360e397134d238ee8fd21d33fd7f9275e9441f74f8f1b6ed92278877c0b9f1"
+metafile = true
+
+[[files]]
+file = "mods/ftb-library.pw.toml"
+hash = "11aea520b9ca4fc8e3ec5469cb7506343db9105406fc6c8da0025e53cfb2ddfa"
+metafile = true
+
+[[files]]
+file = "mods/ftb-quests.pw.toml"
+hash = "2c6a9a135fbc01e7faa108f6135fa66098e1da17929567afd08d7d61b563f8fe"
+metafile = true
+
+[[files]]
+file = "mods/ftb-teams.pw.toml"
+hash = "dbf07a95b6bc06ad929ce5cea6112fa214232f85c5d26065507feeab2de80881"
 metafile = true
 
 [[files]]

@@ -1,0 +1,116 @@
+[immigration]
+	#Whether settlers gather outside colonies at all. Off leaves every other system
+	#untouched; residents can still be placed by other means.
+	enabled = true
+	#One resident's daily ration. A colony admits a newcomer only while its stored food
+	#covers (population + 1) times this.
+	# Default: 8
+	# Range: 1 ~ 256
+	foodPerResident = 8
+	#Day-time ticks one settler takes to gather at a colony of nobody. A colony of N
+	#takes (N + 1) times this, so a small colony fills fast and a large one slowly.
+	# Default: 2400
+	# Range: 20 ~ 1728000
+	settlerIntervalTicks = 2400
+	#How many settlers may stand waiting at one colony. Nothing gathers past it, so a
+	#world left running does not hand back a crowd.
+	# Default: 5
+	# Range: 1 ~ 64
+	maxWaitingSettlers = 5
+
+[zones]
+	#Largest fishing zone a player may mark out, in cells. The box marks where a fisher
+	#stands, so this bounds the scan for a standable cell with water in reach of it.
+	# Default: 4096
+	# Range: 1 ~ 262144
+	maxFishCells = 4096
+	#Largest pasture a player may mark out, in cells. Every animal inside one is looked
+	#over each time a herder takes stock, so a wide pen costs more to keep watch on than a
+	#tight one holding the same flock.
+	# Default: 1024
+	# Range: 1 ~ 262144
+	maxPastureCells = 1024
+	#Largest field a player may mark out, in cells. A field is walked cell by cell when
+	#work is looked for, so raising this lets one zone stand in for several and makes each
+	#sweep over it longer.
+	# Default: 4096
+	# Range: 1 ~ 262144
+	maxFarmCells = 4096
+	#Largest box a player may mark out to clear, fill, weed, fell or haul from, in cells. It
+	#is walked cell by cell when work is looked for, so a deep box costs more to keep watch on
+	#than a shallow one.
+	# Default: 16384
+	# Range: 1 ~ 262144
+	maxGroundworkCells = 16384
+	#Most points a player may click to draw one patrol route. Patrollers stop along it
+	#no further apart than a ward reaches, and walk it end to end and back.
+	# Default: 32
+	# Range: 2 ~ 256
+	maxPatrolPoints = 32
+	#How far round a patrol stop, in blocks, monsters stop spawning once a patroller has
+	#stood watch there. It reaches as far up and down as it does across.
+	# Default: 16
+	# Range: 1 ~ 128
+	patrolWardRadius = 16
+	#How long, in ticks, a stop stays warded after a patroller last stood watch there.
+	#Patrollers come back round to a stop once half of this has gone by.
+	# Default: 2400
+	# Range: 20 ~ 72000
+	patrolWardTicks = 2400
+
+[blueprints]
+	#Most cells one blueprint or drawn pattern may set, counting the cells it digs out
+	#as well as the blocks it lays, but not the empty air around them. A long wall or road
+	#with its cut and fill comes to some tens of thousands. Raising it lets bigger work
+	#through, at the cost of a longer standing order and more ghost blocks drawn in the world.
+	# Default: 65536
+	# Range: 1 ~ 1048576
+	maxBuildCells = 65536
+	#Widest span a blueprint may claim once read, in cells. This is the outer guard on a
+	#malformed or hostile structure file, not a building size: it stops one from claiming a
+	#volume too large to walk before its blocks are counted.
+	# Default: 1048576
+	# Range: 1 ~ 16777216
+	maxBlueprintVolume = 1048576
+	#Longest one pattern may take to draw, in seconds, before it is stopped and refused.
+	#Drawings run beside the game rather than in its tick, and patterns are trusted to read
+	#and draw what they like within what they capture: this is the one limit held over them.
+	# Default: 10
+	# Range: 1 ~ 3600
+	drawSeconds = 10
+
+[crafting]
+	#Recipes, by id, residents never craft, smelt or cut by, as though they did not exist:
+	#a recipe that wastes what it takes, or that a server wants kept to players. By default the
+	#wasteful ones: bamboo planks (nine bamboo for two planks), sticks from bamboo (two bamboo
+	#for one stick), smelting tools and armour back down to nuggets, taking waxed copper back
+	#to ingots (the wax is lost), and dyeing wool, beds and carpets that already have a colour
+	#into another (dye spent on colour already had). Read when the server starts.
+	refusedRecipes = ["minecraft:bamboo_planks", "minecraft:stick_from_bamboo_item", "minecraft:iron_nugget_from_smelting", "minecraft:iron_nugget_from_blasting", "minecraft:gold_nugget_from_smelting", "minecraft:gold_nugget_from_blasting", "minecraft:copper_ingot_from_waxed_copper_block", "minecraft:dye_white_wool", "minecraft:dye_white_bed", "minecraft:dye_white_carpet", "minecraft:dye_orange_wool", "minecraft:dye_orange_bed", "minecraft:dye_orange_carpet", "minecraft:dye_magenta_wool", "minecraft:dye_magenta_bed", "minecraft:dye_magenta_carpet", "minecraft:dye_light_blue_wool", "minecraft:dye_light_blue_bed", "minecraft:dye_light_blue_carpet", "minecraft:dye_yellow_wool", "minecraft:dye_yellow_bed", "minecraft:dye_yellow_carpet", "minecraft:dye_lime_wool", "minecraft:dye_lime_bed", "minecraft:dye_lime_carpet", "minecraft:dye_pink_wool", "minecraft:dye_pink_bed", "minecraft:dye_pink_carpet", "minecraft:dye_gray_wool", "minecraft:dye_gray_bed", "minecraft:dye_gray_carpet", "minecraft:dye_light_gray_wool", "minecraft:dye_light_gray_bed", "minecraft:dye_light_gray_carpet", "minecraft:dye_cyan_wool", "minecraft:dye_cyan_bed", "minecraft:dye_cyan_carpet", "minecraft:dye_purple_wool", "minecraft:dye_purple_bed", "minecraft:dye_purple_carpet", "minecraft:dye_blue_wool", "minecraft:dye_blue_bed", "minecraft:dye_blue_carpet", "minecraft:dye_brown_wool", "minecraft:dye_brown_bed", "minecraft:dye_brown_carpet", "minecraft:dye_green_wool", "minecraft:dye_green_bed", "minecraft:dye_green_carpet", "minecraft:dye_red_wool", "minecraft:dye_red_bed", "minecraft:dye_red_carpet", "minecraft:dye_black_wool", "minecraft:dye_black_bed", "minecraft:dye_black_carpet"]
+
+[perks]
+	#What one rank of the builder's quick hands does to the time a placement takes, read
+	#as a multiplier on the base wind-up: the first entry is rank 1, the second rank 2, and so
+	#on. Below 1 is faster, above 1 slower, and a rank past the end of the list counts as no
+	#change at all. Shorten the list to cap how far the perk carries.
+	buildingHaste = [0.85, 0.7, 0.55, 0.4]
+	#The crafter's quick hands, as a multiplier on the wind-up of a craft, a furnace load
+	#or a fetch from an output slot. One entry per rank, below 1 for faster.
+	craftingHaste = [0.85, 0.7, 0.55, 0.4]
+	#The herder's quick hands, as a multiplier on the wind-up of shearing, milking,
+	#feeding and culling. One entry per rank, below 1 for faster.
+	herdingHaste = [0.85, 0.7, 0.55, 0.4]
+	#The farmer's quick hands, as a multiplier on the wind-up of tilling, sowing, reaping
+	#and felling. One entry per rank, below 1 for faster.
+	farmingHaste = [0.85, 0.7, 0.55, 0.4]
+	#The fisher's quick hands, as a multiplier on how long a cast waits for a bite. One
+	#entry per rank, below 1 for faster.
+	fishingHaste = [0.85, 0.7, 0.55, 0.4]
+
+[navigation]
+	#Multiplier on vanilla's node-expansion budget for a resident's pathfinding search.
+	#Higher routes through more convoluted structures and costs more per search. The cap on
+	#path *length* is the resident's follow range, a separate quantity.
+	# Default: 8.0
+	# Range: 1.0 ~ 32.0
+	pathSearchBudget = 8.0

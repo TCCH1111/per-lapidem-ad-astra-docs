@@ -1,0 +1,81 @@
+[planning]
+	#How the engine shares out its work.
+	#DEFAULT solves plans on worker threads and gives working out where residents can walk a
+	#time budget per tick that grows and backs off with the server's load; a way nobody has
+	#worked out yet waits until it has been.
+	#SINGLE_THREAD does everything on the server thread and works a way out the moment it is
+	#asked, so every question gets a yes or a no and a run comes out the same twice. Ticks
+	#cost what they cost: meant for tests and for measuring, not for a busy server.
+	#Allowed Values: DEFAULT, SINGLE_THREAD
+	mode = "DEFAULT"
+	#How many threads plan in DEFAULT mode. Each colony weaves its plan on one and lays its
+	#routes on another, side by side, so two keep one colony's stages apart; more serve more
+	#colonies at once. 0 picks a quarter of the machine's cores, at least two and at most
+	#four; the server thread wants the rest. SINGLE_THREAD mode ignores it.
+	# Default: 0
+	# Range: 0 ~ 32
+	solveThreads = 0
+
+[perks]
+	#The hauler's quick hands, as a multiplier on the wind-up of reaching into a chest,
+	#stooping for a dropped stack or handing goods to somebody. Hauling underpins every other
+	#trade, so this ladder is felt everywhere. One entry per rank, below 1 for faster.
+	haulingHaste = [0.85, 0.7, 0.55, 0.4]
+	#What one rank of ascetic does to how fast a resident tires, as a multiplier on the
+	#vanilla exhaustion rate. Below 1 means a smaller appetite and fewer meals; above 1 means
+	#a hungrier resident. One entry per rank, and a rank past the end of the list counts as no
+	#change at all.
+	asceticAppetite = [0.85, 0.7, 0.55, 0.4]
+
+[labor]
+	#Wind-up, in ticks, for a hauler reaching into a container, handing a stack over or
+	#giving goods to a resident who asked for them. The hauler's quick hands scale it. This is
+	#the cost of the exchange itself; walking there is counted separately.
+	# Default: 20
+	# Range: 0 ~ 1200
+	haulReachTicks = 20
+	#How far ahead, in ticks, the schedule hands out work. Work that could start no sooner
+	#than this is left unassigned until a later plan, when whoever is free by then can take it:
+	#the colony plans again every few seconds, so a route laid further out only ties a resident
+	#to work they would wait on. Work that finishes something a resident has already begun is
+	#laid whatever its start. A resident with fewer than planHorizonDepth pieces of work on their
+	#route is handed work however far off it starts.
+	# Default: 3000
+	# Range: 200 ~ 1000000
+	planHorizonTicks = 3000
+	#How many pieces of work a resident's route holds before planHorizonTicks cuts it: work
+	#is left for a later plan only when it starts past the horizon and the route it would join is
+	#this deep already. A resident short of work - one walking far out to a works - is never left
+	#idle for the horizon's sake.
+	# Default: 8
+	# Range: 0 ~ 10000
+	planHorizonDepth = 8
+
+[navigation]
+	#Microseconds per tick the whole server may spend working out where residents can
+	#walk, shared out between colonies and dimensions. The mod spends up to this and backs
+	#off whenever its own work pushes a tick past its deadline, climbing again while ticks
+	#fit — so this is the most it will ask for on a quiet server, not what it always takes.
+	#SINGLE_THREAD mode ignores it: there every question is worked out when it is asked.
+	# Default: 8000
+	# Range: 500 ~ 40000
+	travelCeilingMicros = 8000
+	#Microseconds per tick a single colony's reachability is never cut below. This is
+	#not a quality setting. Reachability is the only thing that turns "no way known yet"
+	#into an answer; a colony that never finishes working one out has jobs nobody can be
+	#given, and the unanswered questions pile up faster than the saved time pays for. The
+	#floor is what stops backing off from feeding itself.
+	# Default: 250
+	# Range: 50 ~ 2000
+	travelFloorMicros = 250
+
+[diagnostics]
+	#Write the per-colony planning and pathfinding heartbeat to the server log. One line
+	#per colony per heartbeat, plus two server-wide lines. Turn it off on a busy server that
+	#does not need the readout; the counters are drained either way, so turning it back on
+	#reports the window since then rather than everything since start.
+	logPlanHeartbeat = true
+	#Heartbeats come once every this many twenty-tick cycles of simulation.
+	# Default: 10
+	# Range: 1 ~ 600
+	heartbeatCycles = 10
