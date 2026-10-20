@@ -152,6 +152,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |
 | VERIFY-004 | [分发链端到端（全新实例 → 安装器 → 服务端 Done）](reports/VERIFY-004-pack-install-e2e.md) | 通过：44 mod 装出（含 4 个 plaa jar）、installer exit 0、服务端 Done 13.977s |
 | VERIFY-005 | [包内容第一批（我们的配置 + FTB 三件套）与端到端复验](reports/VERIFY-005-pack-content-1.md) | 通过：47 mod、配置落地、FTB Quests 加载、Done 20.745s；修正"Teams 可选"为必装 |
+| VERIFY-006 | [客户端实测（Prism CLI + 我们自己的实例）](reports/VERIFY-006-client-test.md) | 通过：四个 plaa_* 加载、加入服务端成功；记录 4 个坑与 1 个 41 条缺模型缺陷 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
