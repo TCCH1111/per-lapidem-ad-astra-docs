@@ -1,0 +1,8 @@
+name = "Per Lapidem ad Astra · Core"
+filename = "plaa-core-neoforge-1.21.1-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/TCCH1111/per-lapidem-ad-astra/releases/download/v0.1.0/plaa-core-neoforge-1.21.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "6cfc2becc1810803b5238fbddf395d7f35f5ceff663c39cd4731eca7674ee0bb"

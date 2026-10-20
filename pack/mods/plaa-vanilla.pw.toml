@@ -1,0 +1,8 @@
+name = "Per Lapidem ad Astra · Vanilla"
+filename = "plaa-vanilla-neoforge-1.21.1-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/TCCH1111/per-lapidem-ad-astra/releases/download/v0.1.0/plaa-vanilla-neoforge-1.21.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "0710206876df864e13a0bde17d8fa308028a6d782be190a51ff916d90db2eb9c"

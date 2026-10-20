@@ -1,0 +1,8 @@
+name = "Per Lapidem ad Astra · Create"
+filename = "plaa-create-neoforge-1.21.1-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/TCCH1111/per-lapidem-ad-astra/releases/download/v0.1.0/plaa-create-neoforge-1.21.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "9080767e11a90c622b67db6e033ee9ff3c59fb61a86a865853cffe6e8545af81"

@@ -158,6 +158,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-008 | [包内 KubeJS 内容管线（附 mrpack 打包器修复）](reports/VERIFY-008-kubejs-content.md) | 通过：1/1 脚本 0 错误、Added 1 recipes、服务端 Done 11.099s；mrpack 现在会带 config/kubejs |
 | VERIFY-009 | [任务书第一章（FTB Quests 手写并验证）](reports/VERIFY-009-quest-chapter-1.md) | 通过：1 章 8 任务、0 missing_item、服务端 0 解析错误；记录 tag 任务在本版不可用 |
 | VERIFY-010 | [NeoForge 21.1.264 升级尝试（A/B 证明回归，暂缓）](reports/VERIFY-010-neoforge-264-upgrade.md) | 264 编译通过但 1 个 gametest 稳定失败；退回 233 后 651/651；保留 233 构建、包声明 264 |
+| VERIFY-011 | [GitHub Release v0.1.0 与包内 jar 改为 release URL](reports/VERIFY-011-release-v0-1-0.md) | 通过：release 4 资产、pack jar 体积归零、安装器 46 mod、Done 9.473s；附 gh 安装与 token scope 记录 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

@@ -53,7 +53,7 @@
 | 客户端 | Prism 实例实测：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006） |
 | 服务端 | 安装器端到端：46 mod、`Done` 14.2s（VERIFY-004/005/008） |
 | 内容 | KubeJS 1 条桥接配方（0 错误）；**任务书第一章已上线**（1 章 8 任务，0 解析错误）；事件模板仅文档（k06 40 条） |
-| 分发 | `.mrpack` 可生成（49→53 条目）；**无 GitHub Release**；jar 随包 5.2 MB |
+| 分发 | **已发布** [v0.1.0](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.1.0)（4 资产）；`.mrpack` 54 条目 = 49 下载 + 5 随包；**jar 不再随包**（5.2 MB → 0） |
 | 版本 | 构建 **21.1.233** / 包声明 **21.1.264**（运行期已验证兼容）。**升级尝试已做 A/B**：264 编译通过但 `onefoodcannotfeedhalfofapair` 稳定失败，回退 233 后 651/651（VERIFY-010）→ 暂缓 |
 
 ---
@@ -63,7 +63,7 @@
 按"离 v1.0 的距离"排序，做完一项就在 `docs/reports/` 留证据：
 
 1. ~~任务书第一章~~ ✅（VERIFY-009）；下一项：**第二章 + 任务奖励**。
-2. **GitHub Release `v0.1.0`**——4 个 jar 上 release，`pack/` 条目改成 release URL（仓库减重 5.2 MB）。
+2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；下一项：**v0.2.0 的 release 说明与安装步骤**。
 3. **NeoForge 版本统一**——❌ 已尝试并阻塞（VERIFY-010）：264 下 1 测试稳定失败；先定位 `onefoodcannotfeedhalfofapair` 再重试。
 4. **M1 玩法骨架开工**——按 w05 从 WP-1（引擎可读面）开始，先 L2 最小暴露。
 5. **M1 演示脚本可跑**——w05 §1 的 9 步，用客户端 + 服务端手工走一遍并录像/截图存档。
@@ -98,7 +98,7 @@
 | # | 债务 | 何时还 |
 | --- | --- | --- |
 | D1 | ~~任务书为空~~ → 第一章已上线；**还差第 2 章与奖励** | M2 前 |
-| D2 | jar 随包分发（仓库 5.2 MB） | 有 Release 后 |
+| D2 | ~~jar 随包分发~~ → 已改为 release URL（VERIFY-011） | ✅ |
 | D3 | **升级 264 被 1 个 gametest 挡住**（`onefoodcannotfeedhalfofapair`，A/B 已证明）；需读测试源码定位 | M1 期间 |
 | D4 | `pack/resourcepacks/` 为空；之前证明"资源包改不了 mod 资源" | 有需要时再评估 KubeJS 虚拟包 |
 | D5 | 客户端只有一次实测记录（2026-10-20） | 每次发版前重跑 |

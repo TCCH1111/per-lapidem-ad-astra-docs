@@ -1,0 +1,8 @@
+name = "Per Lapidem ad Astra · Modular Golems"
+filename = "plaa-modulargolems-neoforge-1.21.1-0.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/TCCH1111/per-lapidem-ad-astra/releases/download/v0.1.0/plaa-modulargolems-neoforge-1.21.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "5105f08c8791552c4da026dcb22c347a79a9d0019cd82f9f8195f979d21b5a97"
