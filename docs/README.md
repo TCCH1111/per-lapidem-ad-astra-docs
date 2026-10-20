@@ -146,7 +146,9 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | r09 | [太空终局方案对比](research/09-space-endgame.md) | 调研产出（→ ADR-011） |
 | r10 | [上游变更与引用迁移：f42e3c1 → 67f28b0](research/10-upstream-delta-f42e3c1-67f28b0.md) | 调研产出（ADR-021 基线前移；431 条引用迁移表、36 条失效结论 F-01…F-36；r01–r05/w05/w06/d12 的 `文件:行号` 改写以此为准） |
 | draft | [r10 设计级影响待裁决清单](research/drafts/draft-r10-design-impact-20261019.md) | **已裁决**（ADR-024，2026-10-19）；保留作依据 |
-| PLAN-001 | [B-2：四个 modid 改为 plaa_* 含 NOTICE 与冲突声明](plans/PLAN-001-b2-modid-rename.md) | 计划中（ADR-023；L2 单行替换 ×16 + L1 NOTICE/测试；TDD T1–T6；4 项待人类定 OQ-P1-1..4） |
+| PLAN-001 | [B-2：四个 modid 改为 plaa_* 含 NOTICE 与冲突声明](plans/PLAN-001-b2-modid-rename.md) | **已验证**（VERIFY-001，2026-10-20）；待人工 Review；改动已提交 `7344f9d`（WSL） |
+| VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
+| VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
@@ -161,4 +163,4 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | w04 | [提示词模板库](workflow/04-prompts.md) | 草稿 |
 | w05 | [M1 任务拆解与验收矩阵](workflow/05-m1-task-breakdown.md) | 草稿（WP-0…WP-11；83 条 AC 映射；关键路径与风险） |
 | w06 | [构建环境、依赖与 CI 规格](workflow/06-build-and-ci.md) | 草稿（依赖获取流程、Linux gametest、P0–P3 流水线、上游同步 runbook） |
-| w07 | [模型分级与升级协议](workflow/07-model-routing-and-escalation.md) | 草稿（刀刃清单 10 条、四段式模板、升级触发信号、反模式） |
+| w07 | [模型分级与升级协议](workflow/07-model-routing-and-escalation.md) | 草稿（刀刃清单 10 条、四段式模板、升级触发信号、反模式） || w08 | [多模型协作（DSH × ZCode/GLM × claude × codex）](workflow/08-multi-agent-collaboration.md) | 草稿（文件总线 .coop + 交叉评审 + 失败模式） |

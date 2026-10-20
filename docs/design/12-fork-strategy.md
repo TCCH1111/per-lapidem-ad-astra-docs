@@ -101,13 +101,32 @@
 
 **改动清单（单源）**：`docs/design/12-fork-strategy.md` 附表维护「我们改了上游哪些文件、为什么、属于哪一层」。这张表就是将来同步上游时的清单。
 
-### 5.1 改动登记表（初始为空，随实现补充）
+### 5.1 改动登记表
 
 | 文件/类 | 层 | 原因 | PRD | 日期 |
 | --- | --- | --- | --- | --- |
-| `mods/core/src/main/java/io/github/izakyl/folkways/library/Shelves.java`（示例） | L2 | 允许注册新书架 | PRD-001/002/007 | 待实现 |
-| `mods/core/src/main/java/io/github/izakyl/folkways/front/api/Schema.java`（示例） | L3 | 扩展设置项类型 | PRD-005 | 待实现 |
-| `mods/core/src/main/java/io/github/izakyl/folkways/front/api/panel/Board.java`（示例） | L3 | 新增动作分类 | PRD-005（A-max） | 待实现 |
+| `build.gradle` | L2 | 将聚合构建映射键切换到四个 fork modid | PLAN-001 / ADR-023 | 2026-10-20 |
+| `settings.gradle` | L2 | 将根工程名改为 `plaa` | PLAN-001 / ADR-025 | 2026-10-20 |
+| `gradle.properties` | L2 | 将 Maven 坐标归属切换到 `io.github.tcch1111` | PLAN-001 / ADR-025 | 2026-10-20 |
+| `gradle/mod.gradle` | L2 | 将 NOTICE 作为署名与变更说明打进每个 jar | PLAN-001 / ADR-025 | 2026-10-20 |
+| `mods/core/build.gradle` | L2 | 将 Core 的 modid 与产物名改为 `plaa_core` / `plaa-core` | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/vanilla/build.gradle` | L2 | 将 Vanilla 的 modid 与产物名改为 `plaa_vanilla` / `plaa-vanilla` | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/create/build.gradle` | L2 | 将 Create 集成的 modid 与产物名改为 `plaa_create` / `plaa-create` | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/modulargolems/build.gradle` | L2 | 将 Modular Golems 集成的 modid 与产物名改为 `plaa_modulargolems` / `plaa-modulargolems` | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/core/src/main/java/io/github/izakyl/folkways/FolkwaysMod.java` | L2 | 让 Core 的 `@Mod` 标识使用 fork modid；资源命名空间 `folkways` 不变 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/vanilla/src/main/java/io/github/izakyl/folkways/plugins/FolkwaysVanillaMod.java` | L2 | 让 Vanilla 的 `@Mod` 标识使用 fork modid | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/create/src/main/java/io/github/izakyl/folkways/create/FolkwaysCreateMod.java` | L2 | 让 Create 集成的 `@Mod` 标识使用 fork modid | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/modulargolems/src/main/java/io/github/izakyl/folkways/modulargolems/FolkwaysModularGolemsMod.java` | L2 | 让 Modular Golems 集成的 `@Mod` 标识使用 fork modid | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/core/src/main/resources/META-INF/neoforge.mods.toml` | L2 | 更新元数据并声明与四个上游 Folkways mod 不兼容 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/vanilla/src/main/resources/META-INF/neoforge.mods.toml` | L2 | 更新元数据、内部依赖与四个上游 Folkways mod 不兼容声明 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/create/src/main/resources/META-INF/neoforge.mods.toml` | L2 | 更新元数据、内部依赖与四个上游 Folkways mod 不兼容声明 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/modulargolems/src/main/resources/META-INF/neoforge.mods.toml` | L2 | 更新元数据、内部依赖与四个上游 Folkways mod 不兼容声明 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `blockwright.toml` | L2 | 让 Blockwright 使用 fork jar 名与 modid | PLAN-001 / ADR-023 | 2026-10-20 |
+| `tests/shared/harness/mod-settings.ts` | L2 | 让测试夹具写入改名后的服务端配置文件 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `README.md` | L2 | 记录 fork 身份、四个新 modid 与配置文件名 | PLAN-001 / ADR-023 | 2026-10-20 |
+| `CONTRIBUTING.md` | L2 | 让贡献者文档使用 fork 的四个 modid | PLAN-001 / ADR-023 | 2026-10-20 |
+
+> 新增文件 `NOTICE.md` 与 `tests/i18n/mods-toml.test.ts` 是 PLAN-001 的配套交付物，不属于上游改动登记表；它们分别承担 MIT 署名/变更说明与 modid 回归门禁。
 
 ---
 

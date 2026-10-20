@@ -1,9 +1,9 @@
 # PLAN-001 · B-2：把 fork 的四个 modid 改为 `plaa_*`（含 NOTICE 与冲突声明）
 
 ```
-状态：计划中（两轮审查完成：R1-01…R1-17、R2-01…R2-09 均已修订 → **待人类确认** → 实现）
+状态：**已验证（T1–T6，证据见 [VERIFY-001](../reports/VERIFY-001-b2.md)）**；待人工 Review；改动在 WSL 工作树（未推送）
 负责人：规划者（agent）
-最后更新：2026-10-19
+最后更新：2026-10-20
 上游依据：docs/00-charter.md ADR-017 / ADR-023；docs/design/12-fork-strategy.md §4、§5、§7（R-FK-2/3/4/8）；docs/workflow/06-build-and-ci.md §1.3 B-2、§6.1；docs/research/10-upstream-delta-f42e3c1-67f28b0.md §2、§3
 事实快照：reference/folkways-3ce4d88/（基线已按 ADR-025 前移；本计划全部 文件:行号 已于 2026-10-19 在该快照上复核并经第 1 轮审查纠错（R1-02）；上游在 `FolkwaysMod.java:71` 新增 `registerConfig(ModConfig.Type.CLIENT, FolkwaysClientConfig.SPEC)`，由此多出一份客户端配置文件，见 §3）
 改动目标：**WSL `~/pla/mod`**（分支 `feat/b2-modid`；Windows 侧经 `\\wsl.localhost\Ubuntu-24.04\home\tcch1111\pla\mod\` 访问，或在 WSL 内用 `tools/wsl-run.sh`）。`reference/folkways-3ce4d88/` **只读，禁止改动**——它只是核对行号用的快照，不是工作树（R2-03）
@@ -98,7 +98,7 @@
 | 数据包 `folkways/library`、图案、蓝图 | **无** | — |
 | 服务端配置文件名 | `serverconfig/folkways_core-server.toml` 等 → `plaa_core-server.toml` / `plaa_vanilla-server.toml` / `plaa_create-server.toml` | 新世界无感；**从上游世界迁移过来的玩家会丢失配置改动（回到默认值）**→ 在 `NOTICE.md` 与整合包说明里写明；不做自动迁移（配置不是存档） |
 | 客户端配置文件名 | `config/folkways_core-client.toml` → `config/plaa_core-client.toml`（`FolkwaysMod.java:71`，客户端目录） | 同上：玩家侧客户端设置回默认；写进 NOTICE 与整合包说明。专用服务端测不到，不作 T 判据，客户端实例手动核一次（R1-03） |
-| `level.dat` 的 mod 列表 | 服务端载入上游世界：只打日志，不阻塞（T4 可测：无 FATAL、世界正常载入）；客户端世界选择界面会提示缺少 `folkways_*` mod——**客户端行为，T4 测不到**，另列手动核查项（R1-08） | 记录到验证报告 |
+| `level.dat` 的 mod 列表 | 服务端载入上游世界：只打日志，不阻塞（本次 T4 使用新测试世界，未验证旧存档载入）；客户端世界选择界面会提示缺少 `folkways_*` mod——**客户端行为，T4 测不到**，另列手动核查项（R1-08） | 记录到验证报告 |
 | 存档内数据 | **无**：`ColonyRegistry.java:25` 的 SavedData 名为字面量 `"folkways_colonies"`，`colony.kept(…)` 的键全在 `folkways:` 命名空间 | — |
 | 与上游共存 | `incompatible` 声明生效后**不能共装**（这正是 R-FK-3 想要的） | T5 负向测试 |
 
@@ -162,6 +162,7 @@
 
 | 日期 | 状态 | 说明 |
 | --- | --- | --- |
+| 2026-10-20 | 实现完成，待人工 Review | B-2 四 modid 重命名与 NOTICE 完成；T1–T6 结果见 [VERIFY-001-b2](../reports/VERIFY-001-b2.md)。专用服务端测试未覆盖 CLIENT 配置行为 |
 | 2026-10-19 | 计划中 | 首稿；§2.5 补入 modid 常量用途的 Grep 复核结论 |
 | 2026-10-19 | 计划中（第 1 轮已修订） | 第 1 轮审查（§10）：1 阻塞 / 7 应改 / 9 建议，全部采纳并修订正文：T1 改结构化断言（R1-01）；`gradle/mod.gradle` 行号纠正为 `:55-60` / `:67-74` / `:76-81`（R1-02）；补客户端配置 `plaa_core-client.toml`（R1-03）；三处基线改 `3ce4d88`（R1-04）；文件数 20 + §2.6 清单（R1-05）；T3 以 3ce4d88 基线记录为准（R1-06）；T5 两条硬判据（R1-07）；§3 `level.dat` 拆服务端/客户端（R1-08）；§2.1/§2.3 填入裁决值（R1-09）；计数措辞（R1-10）；CI 说明（R1-11）；测试文件移至 `tests/i18n/`（R1-12）；T2 去掉 `-sources`（R1-13）；Markdown 标记与统一 grep（R1-14）；禁改 NeoForge 版本（R1-15）；pack 侧后续归属（R1-16）；reason 双语（R1-17） |
 | 2026-10-19 | **待人类确认** | 第 2 轮审查（§11）：R1 17 条全部确认已修；新 9 条（3 应改 / 6 建议）全部采纳：首页写明改动目标 = WSL `~/pla/mod`、快照只读（R2-03）；`tools/wsl-run.sh` 新增 `unit` 阶段承载 T1/T6（R2-01）；T4/T5 改在另建的 `.cache/test-server-b2/`、写明 jar 来源并先做上游对照（R2-02/07）；§7 后续改四 jar 全换（R2-04）；§5 与 w06 措辞对齐（R2-05）；T1 ③ glob 明确（R2-06）；§5 改动形态措辞（R2-08）；`lintScaffold` 提醒（R2-09）。审查结论「可交人类确认」 |

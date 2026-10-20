@@ -1,8 +1,0 @@
-name = "folkways-vanilla"
-filename = "folkways-vanilla-neoforge-1.21.1-0.1.0.jar"
-side = "both"
-
-[download]
-url = "https://github.com/IzakyL/folkways/releases/download/nightly/folkways-vanilla-neoforge-1.21.1-0.1.0.jar"
-hash-format = "sha256"
-hash = "99000359fd5967edbbcbe9048a8d201f7deb057780581ec655103e69583f9984"

@@ -71,26 +71,6 @@ hash = "73360e397134d238ee8fd21d33fd7f9275e9441f74f8f1b6ed92278877c0b9f1"
 metafile = true
 
 [[files]]
-file = "mods/folkways-core.pw.toml"
-hash = "bde790afe1b25bc90b925dc7d23180e9630cb20e9d1c46a7a1db63cc4a13bcbb"
-metafile = true
-
-[[files]]
-file = "mods/folkways-create.pw.toml"
-hash = "de3c0be768e5477ffbb66b0dedf8020fc58428f8d67902a4c5caf83bd66d4989"
-metafile = true
-
-[[files]]
-file = "mods/folkways-modulargolems.pw.toml"
-hash = "d63f25b5a9d1d8515f4b9173ad80f543ff909e91e18bc15555697b54538866d7"
-metafile = true
-
-[[files]]
-file = "mods/folkways-vanilla.pw.toml"
-hash = "d7dcbd64a8a6d8f6cb1ff4123cb2e2d83bcdc2af9e9a5dd590eee5ccaa9313fe"
-metafile = true
-
-[[files]]
 file = "mods/geckolib.pw.toml"
 hash = "35779b39ddc06059ec483b33de2ecfdc3adb95c0a49e69b6701fb0024827e2f5"
 metafile = true
@@ -174,6 +154,22 @@ metafile = true
 file = "mods/mowzies-mobs.pw.toml"
 hash = "02aa4dcb8fa24cffcd2182c66683c2a476a95abf53002373f953a49737a587e3"
 metafile = true
+
+[[files]]
+file = "mods/plaa-core-neoforge-1.21.1-0.1.0.jar"
+hash = "998843bb714f94343def30f74b6b45acaab4702ed029d4de1cd4c9107613bf1e"
+
+[[files]]
+file = "mods/plaa-create-neoforge-1.21.1-0.1.0.jar"
+hash = "79dda971810bf3005237dd1e46ceab0c8b80fa93a08e49738712be1f6d3faa30"
+
+[[files]]
+file = "mods/plaa-modulargolems-neoforge-1.21.1-0.1.0.jar"
+hash = "767e319f6373d2597adab09e3739e596b2530e1f9fb610d8c291e9f2e0e81e00"
+
+[[files]]
+file = "mods/plaa-vanilla-neoforge-1.21.1-0.1.0.jar"
+hash = "fd4d668f8f3bc2ab8d2ed14949eff869beb5838b0a3c0a661b8de5a9e44165c2"
 
 [[files]]
 file = "mods/rhino.pw.toml"
