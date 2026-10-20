@@ -46,3 +46,19 @@
 
 1. **用户资源包改不了 mod 资源**：NeoForge 的 `mod/<id>` 包在资源栈中优先级高于 `resourcepacks/`（本次实测），所以"给第三方 mod 打美术补丁"不能靠随包资源包，只能改 jar（许可不允许时即无解）。
 2. **KubeJS 的三个虚拟包**（Before Mods / Internal / After Mods）确实存在，但本次未验证能否压过 mod 资源；若将来需要"运行时改资源"，这是唯一还没试的口子（值得单独立项验证）。
+
+---
+
+## 5. 处置结果（2026-10-20，用户裁决：移除）
+
+按方案 **B** 执行：从 pack/mods/ 删除 orninchaos.pw.toml（索引 53 → 52 个受管文件，.mrpack 重建为 45 下载 + 4 随包 = 49 条目），并从客户端实例删除该 jar。
+
+**复验**（Prism 实例重载，49 个 mod）：
+
+```
+Unable to load model: 0
+born_in_chaos 相关日志: 0
+FATAL / ModLoadingException: 0
+```
+
+→ 41 条告警**全部消失**，且未引入新的加载错误。威胁内容仍由 mowzies-mobs 与 PRD-004 的自研事件/势力承担。
