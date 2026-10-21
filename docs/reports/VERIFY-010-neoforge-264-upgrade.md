@@ -70,3 +70,37 @@ HEAD: 7344f9d feat(b2): rename modids to plaa_* …
 
 - 明确了一个**不确定项的真实边界**：264 不是"升一下就行"，而是有确定性差异；避免了在发布版里埋一条会挂 CI 的升级。
 - 留下了可复现的 A/B 记录，下次任何人动版本都能从这一步开始，而不是重跑一遍猜测。
+
+---
+
+## 7. 补充调查（2026-10-21）
+
+### 7.1 第三次复现，并排除了"编译期"因素
+
+复现脚本在 264 下跑：`./gradlew build --rerun-tasks` **因网络失败**（`maven.neoforged.net: Network is unreachable`，拉 `com.eed3si9n.starlark:starlark` 元数据），但随后 `runGameTestServer` 仍然运行并**第三次**在同一测试上失败：
+
+```
+[20:46:11] onefoodcannotfeedhalfofapair failed at -14782107, -60, 11459590! java.util.NoSuchElementException
+[20:46:20] 1 required tests failed :(
+```
+
+→ 这次 jar 是早先 264 编译成功时产出的（或缓存），说明**失败发生在运行期，与编译无关**；而今天的 build 失败只是网络问题（`Network is unreachable`），不是代码问题。
+
+### 7.2 静态分析：`NoSuchElementException` 的两个可能抛点
+
+`PastureBreedingGameTests.oneFoodCannotFeedHalfOfAPair` 的调用链里有两处 `getFirst()`：
+
+| 位置 | 代码 |
+| --- | --- |
+| 测试本体 `:139` | `Node node = rig.nodes().getFirst();` |
+| `Rig.nodes()` 内部 | `Herd.Tally tally = herd.reconcile(view(), front(), new ArrayList<>()).getFirst();` |
+
+两者在**空列表**时都抛同一个 `NoSuchElementException`。也就是说，问题几乎可以锁定为：**264 下牧场群（herd）的 `reconcile(...)` 没有产出任何 tally**（或 `rig.nodes()` 没有产出任何目标），而不是某条断言的期望值不对。
+
+配合 264 上另外出现的 `folkways-patterns` Starlark 装载环错误（§3），更可能是 **264 改变了某些装载/扫描顺序**，导致测试夹具里的牧场没有被识别。
+
+### 7.3 结论与决定（不变）
+
+- 这**不是我们的代码在 264 下的编译问题**，也不是随机偶发：三次运行、三个不同坐标，稳定失败同一测试。
+- 上游 `master` 仍钉 **21.1.233**，说明上游本身未声称支持 264；这条更可能是"上游尚未适配"而不是"fork 引入"。
+- **保持 233 构建**；264 升级继续挂起（D3）。整合包按 264 运行已由客户端/服务端实测证明，不受影响。

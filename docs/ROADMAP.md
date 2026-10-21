@@ -99,7 +99,7 @@
 | --- | --- | --- |
 | D1 | ~~任务书为空~~ → 第一章已上线；**还差第 2 章与奖励** | M2 前 |
 | D2 | ~~jar 随包分发~~ → 已改为 release URL（VERIFY-011） | ✅ |
-| D3 | **升级 264 被 1 个 gametest 挡住**（`onefoodcannotfeedhalfofapair`，A/B 已证明）；需读测试源码定位 | M1 期间 |
+| D3 | **升级 264 被 1 个 gametest 挡住**：`onefoodcannotfeedhalfofapair` 三次稳定失败；已定位到 `Rig.nodes()`/测试本体的 `getFirst()` 空列表（牧场 reconcile 无产出），且 264 另有 Starlark 装载环错误；上游仍钉 233 | 等上游适配或 M2 后专项 |
 | D4 | `pack/resourcepacks/` 为空；之前证明"资源包改不了 mod 资源" | 有需要时再评估 KubeJS 虚拟包 |
 | D5 | 客户端只有一次实测记录（2026-10-20） | 每次发版前重跑 |
 | D6 | 无 CI（所有验证靠手工脚本） | M1 Gate 前 |
