@@ -1,7 +1,7 @@
 # PLAN-002 · M1-WP1：引擎可读面（把诊断需要的数据提升为公开只读）
 
 ```
-状态：计划中（待派单）
+状态：T1 已完成（[盘点清单](PLAN-002-inventory.md)）；T2–T6 待派单
 负责人：规划者（agent）
 最后更新：2026-10-21
 上游依据：docs/workflow/05-m1-task-breakdown.md §3（WP-1）、§4 任务单模板；docs/prd/PRD-006-stock-rules-and-diagnosis.md；docs/prd/PRD-001-needs-mood-memory.md；docs/design/12-fork-strategy.md §5（L0–L4）与改动登记
@@ -15,7 +15,7 @@
 
 让**诊断层**（PRD-006 的"为什么"）与**需求层**（PRD-001 的状态展示）能读到它们需要的基底数据，而**不修改任何行为**：只加**只读访问器**，不加可写入口、不改结算逻辑、不改存档格式。
 
-**图层**：**L2**（在上游既有文件里加少量行 + `// PLA:` 标记）。**无 L3/L4**。
+**图层**：**L1（3 个同包 public 门面）+ L2（3 行包内读点）**；`Carry` 免改。**无 L3/L4**。（T1 盘点后修正，见附录）
 
 ---
 
