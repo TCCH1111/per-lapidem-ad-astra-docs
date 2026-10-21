@@ -148,6 +148,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | r10 | [上游变更与引用迁移：f42e3c1 → 67f28b0](research/10-upstream-delta-f42e3c1-67f28b0.md) | 调研产出（ADR-021 基线前移；431 条引用迁移表、36 条失效结论 F-01…F-36；r01–r05/w05/w06/d12 的 `文件:行号` 改写以此为准） |
 | draft | [r10 设计级影响待裁决清单](research/drafts/draft-r10-design-impact-20261019.md) | **已裁决**（ADR-024，2026-10-19）；保留作依据 |
 | PLAN-001 | [B-2：四个 modid 改为 plaa_* 含 NOTICE 与冲突声明](plans/PLAN-001-b2-modid-rename.md) | **已验证**（VERIFY-001，2026-10-20）；待人工 Review；改动已提交 `7344f9d`（WSL） |
+| PLAN-002 | [M1-WP1：引擎可读面（只读访问器）](plans/PLAN-002-wp1-engine-readable-surface.md) | 计划中（L2；5 个包私有类型；T1–T6；零行为变化验收） |
 | VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
 | VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |
