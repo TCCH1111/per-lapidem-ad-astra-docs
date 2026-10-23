@@ -47,7 +47,7 @@
 
 | 项 | 现状 |
 | --- | --- |
-| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = `7344f9d`（B-2 改名 + NOTICE + 互斥声明，已验证 T1–T6） |
+| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`892dc98`**（B-2 改名 + WP-1/T3 `BodyViews` 只读门面，653/653 通过） |
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` 通过；`runGameTestServer` **651/651** |
 | 整合包 | `pack/`（packwiz）**54 个受管文件** = 45 `.pw.toml` + 4 jar + 3 配置 + 1 KubeJS + 1 任务章节 |
 | 客户端 | Prism 实例实测：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006） |
@@ -65,7 +65,7 @@
 1. ~~任务书第一章~~ ✅（VERIFY-009）；下一项：**第二章 + 任务奖励**。
 2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；下一项：**v0.2.0 的 release 说明与安装步骤**。
 3. **NeoForge 版本统一**——❌ 已尝试并阻塞（VERIFY-010）：264 下 1 测试稳定失败；先定位 `onefoodcannotfeedhalfofapair` 再重试。
-4. **M1 玩法骨架开工**——计划已立：[PLAN-002](plans/PLAN-002-wp1-engine-readable-surface.md)（WP-1 只读面，T1–T6）；开工前先跑 T1 盘点。
+4. **M1 玩法骨架开工**——[PLAN-002](plans/PLAN-002-wp1-engine-readable-surface.md)：T1 盘点 ✅、**T3 `BodyViews` ✅（653/653）**；剩 T2（Hunger/Beds）、T5（Urges）、T6（登记）。
 5. **M1 演示脚本可跑**——w05 §1 的 9 步，用客户端 + 服务端手工走一遍并录像/截图存档。
 6. **上游同步演练 #1**——按 w06 §6 的 S1–S10，产出 `SYNC-001` 报告。
 
@@ -99,7 +99,7 @@
 | --- | --- | --- |
 | D1 | ~~任务书为空~~ → 第一章已上线；**还差第 2 章与奖励** | M2 前 |
 | D2 | ~~jar 随包分发~~ → 已改为 release URL（VERIFY-011） | ✅ |
-| D3 | **升级 264 被 1 个 gametest 挡住**：`onefoodcannotfeedhalfofapair` 三次稳定失败；已定位到 `Rig.nodes()`/测试本体的 `getFirst()` 空列表（牧场 reconcile 无产出），且 264 另有 Starlark 装载环错误；上游仍钉 233 | 等上游适配或 M2 后专项 |
+| D3 | **`onefoodcannotfeedhalfofapair` 是跨版本偶发**（233 也失败过一次、复跑通过；264 三次全挂）。264 失败率待统计；另有 264 下的 Starlark 装载环错误 | 做失败率统计后定 |
 | D4 | `pack/resourcepacks/` 为空；之前证明"资源包改不了 mod 资源" | 有需要时再评估 KubeJS 虚拟包 |
 | D5 | 客户端只有一次实测记录（2026-10-20） | 每次发版前重跑 |
 | D6 | 无 CI（所有验证靠手工脚本） | M1 Gate 前 |
