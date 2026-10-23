@@ -162,6 +162,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-010 | [NeoForge 21.1.264 升级尝试（A/B 证明回归，暂缓）](reports/VERIFY-010-neoforge-264-upgrade.md) | 264 编译通过但 1 个 gametest 稳定失败；退回 233 后 651/651；保留 233 构建、包声明 264 |
 | VERIFY-011 | [GitHub Release v0.1.0 与包内 jar 改为 release URL](reports/VERIFY-011-release-v0-1-0.md) | 通过：release 4 资产、pack jar 体积归零、安装器 46 mod、Done 9.473s；附 gh 安装与 token scope 记录 |
 | VERIFY-012 | [WP-1/T3：BodyViews 只读门面（653/653）](reports/VERIFY-012-wp1-t3-body-views.md) | 通过：0 行上游改动、不可变 record、653/653；并更正 264 结论为"跨版本偶发" |
+| VERIFY-013 | [WP-1/T2：PresenceViews（饥饿与床位只读视图，655/655）](reports/VERIFY-013-wp1-t2-presence-views.md) | 通过：2 行包内句柄 + 不可变 record + 2 测试；殖民地查找路径待 WP-6 补验 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
