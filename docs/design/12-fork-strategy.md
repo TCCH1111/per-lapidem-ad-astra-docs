@@ -133,6 +133,8 @@
 | `mods/core/src/main/java/.../engine/plan/Tours.java` | **L3** | 逐格问 `Standing`；`unfit` 返回 `ZONE_FORBIDDEN`；`progress()` 补序 | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
 | `mods/core/src/main/java/.../engine/plan/Scheduler.java` | **L3** | `standing(...)` 转发并在 `closed()` 重建后重挂 | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
 | `mods/core/src/main/java/.../engine/labor/{Pipeline,ColonyLabor}.java` | **L3** | `standing(...)` 管道透传 | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
+| `mods/core/src/main/java/.../core/api/work/Standings.java` | L1（新文件） | 可替换 provider：引擎按殖民地取 `Standing`，默认全放行 | PLAN-003-A / VERIFY-017 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/labor/Labor.java` | **L3** | 建 `ColonyLabor` 后应用 `Standings.of(colonyId)`（2 行） | PLAN-003-A（已批准）/ VERIFY-017 | 2026-10-24 |
 
 > 新增文件 `NOTICE.md` 与 `tests/i18n/mods-toml.test.ts` 是 PLAN-001 的配套交付物，不属于上游改动登记表；它们分别承担 MIT 署名/变更说明与 modid 回归门禁。
 
