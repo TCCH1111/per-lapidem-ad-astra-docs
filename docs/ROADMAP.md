@@ -65,7 +65,7 @@
 1. ~~任务书第一章~~ ✅（VERIFY-009）；下一项：**第二章 + 任务奖励**。
 2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；下一项：**v0.2.0 的 release 说明与安装步骤**。
 3. **NeoForge 版本统一**——❌ 已尝试并阻塞（VERIFY-010）：264 下 1 测试稳定失败；先定位 `onefoodcannotfeedhalfofapair` 再重试。
-4. **M1 玩法骨架开工**——[PLAN-002](plans/PLAN-002-wp1-engine-readable-surface.md) **✅ WP-1 完成**（T1–T6，657/657，VERIFY-014）；下一项：**WP-4 禁限区**（需先立 PLAN-003）。
+4. **M1 玩法骨架开工**——[PLAN-002](plans/PLAN-002-wp1-engine-readable-surface.md) ✅ WP-1（657/657）；**下一项 WP-4 禁限区**：[PLAN-003](plans/PLAN-003-wp4-steering-zones.md) 已立（T0 需补读 `Refinement`/`Board.Act`）。
 5. **M1 演示脚本可跑**——w05 §1 的 9 步，用客户端 + 服务端手工走一遍并录像/截图存档。
 6. **上游同步演练 #1**——按 w06 §6 的 S1–S10，产出 `SYNC-001` 报告。
 
