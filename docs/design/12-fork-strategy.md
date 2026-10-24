@@ -128,6 +128,11 @@
 | `mods/vanilla/src/main/java/.../plugins/person/living/LivingPresence.java` | L2（2 个方法） | 诊断层读取饥饿与床位：包内句柄 `bellyOf(UUID)` / `bedClaims()`，标 `// PLA:` | PLAN-002 T2 / VERIFY-013 | 2026-10-24 |
 | `mods/core/src/main/java/.../engine/labor/ColonyLabor.java` | L2（1 个方法） | 诊断层取用退避表：包内句柄 `urgeBook()`，标 `// PLA:` | PLAN-002 T5 / VERIFY-014 | 2026-10-24 |
 | `mods/core/src/main/java/.../engine/labor/Urges.java` | L2（1 个方法） | 诊断层只读退避剩余：`coolingLeft(urge, now)`，**不清理条目**，标 `// PLA:` | PLAN-002 T5 / VERIFY-014 | 2026-10-24 |
+| `mods/core/src/main/java/.../core/api/work/Standing.java` | L1（新文件） | 禁区否决接口，默认 `ALL` 放行 | PLAN-003-A / VERIFY-016 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/plan/Unassigned.java` | **L3** | 新原因 `ZONE_FORBIDDEN`（非 structural） | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/plan/Tours.java` | **L3** | 逐格问 `Standing`；`unfit` 返回 `ZONE_FORBIDDEN`；`progress()` 补序 | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/plan/Scheduler.java` | **L3** | `standing(...)` 转发并在 `closed()` 重建后重挂 | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/labor/{Pipeline,ColonyLabor}.java` | **L3** | `standing(...)` 管道透传 | PLAN-003-A（已批准）/ VERIFY-016 | 2026-10-24 |
 
 > 新增文件 `NOTICE.md` 与 `tests/i18n/mods-toml.test.ts` 是 PLAN-001 的配套交付物，不属于上游改动登记表；它们分别承担 MIT 署名/变更说明与 modid 回归门禁。
 

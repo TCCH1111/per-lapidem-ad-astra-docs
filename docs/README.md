@@ -167,6 +167,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-013 | [WP-1/T2：PresenceViews（饥饿与床位只读视图，655/655）](reports/VERIFY-013-wp1-t2-presence-views.md) | 通过：2 行包内句柄 + 不可变 record + 2 测试；殖民地查找路径待 WP-6 补验 |
 | VERIFY-014 | [WP-1 收口：T5 退避视图 + T6 变更登记（657/657）](reports/VERIFY-014-wp1-t5-t6-wp1-closed.md) | **WP-1 完成**：三个可读面就位、4 个方法 L2、3 处 `// PLA:` 已登记；657 测试全过 |
 | VERIFY-015 | [WP-4/T1–T2：禁限区骨架与区域判定（662/662）](reports/VERIFY-015-wp4-t1-t2-steering-skeleton.md) | 通过：新插件 4 文件 + 1 行注册 + 5 测试；`Licences` 是按类型非按人，T4 可能升 L3 |
+| VERIFY-016 | [WP-4/T4a：Standing 否决管道（L3，662/662）](reports/VERIFY-016-wp4-t4a-standing.md) | 管道完成：Standing + ZONE_FORBIDDEN + 5 文件接线；`ALL` 下零行为变化；T4b 接线待做 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
