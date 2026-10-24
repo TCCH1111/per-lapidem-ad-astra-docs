@@ -169,6 +169,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-015 | [WP-4/T1–T2：禁限区骨架与区域判定（662/662）](reports/VERIFY-015-wp4-t1-t2-steering-skeleton.md) | 通过：新插件 4 文件 + 1 行注册 + 5 测试；`Licences` 是按类型非按人，T4 可能升 L3 |
 | VERIFY-016 | [WP-4/T4a：Standing 否决管道（L3，662/662）](reports/VERIFY-016-wp4-t4a-standing.md) | 管道完成：Standing + ZONE_FORBIDDEN + 5 文件接线；`ALL` 下零行为变化；T4b 接线待做 |
 | VERIFY-017 | [WP-4/T4b：区域 → 引擎接线（665/665）](reports/VERIFY-017-wp4-t4b-wiring.md) | 通过：Standings provider + Labor 应用 + steering 适配；core 不 import plugins；3 个测试 |
+| VERIFY-018 | [WP-4/T5：SteeringRefusal 与四语文案（668/668）](reports/VERIFY-018-wp4-t5-refusals.md) | 通过：`RefusalKind.Named` 自动键、4 语言各 +3 键、3 测试；含偶发测试复跑说明 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

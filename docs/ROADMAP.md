@@ -47,7 +47,7 @@
 
 | 项 | 现状 |
 | --- | --- |
-| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`8a3ec16`**（B-2 + WP-1 + WP-4 **T1/T2 + T4a/T4b**：区域真能拦人，665/665） |
+| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`6ac1327`**（B-2 + WP-1 + WP-4 T1/T2/T4/T5：区域拦人 + 四语理由，668/668） |
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` 通过；`runGameTestServer` **651/651** |
 | 整合包 | `pack/`（packwiz）**54 个受管文件** = 45 `.pw.toml` + 4 jar + 3 配置 + 1 KubeJS + 1 任务章节 |
 | 客户端 | Prism 实例实测：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006） |
@@ -65,7 +65,7 @@
 1. ~~任务书第一章~~ ✅（VERIFY-009）；下一项：**第二章 + 任务奖励**。
 2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；下一项：**v0.2.0 的 release 说明与安装步骤**。
 3. **NeoForge 版本统一**——❌ 已尝试并阻塞（VERIFY-010）：264 下 1 测试稳定失败；先定位 `onefoodcannotfeedhalfofapair` 再重试。
-4. **M1 玩法骨架开工**——WP-1 ✅；[PLAN-003](plans/PLAN-003-wp4-steering-zones.md)：T0–T4 **全部 ✅（665/665，VERIFY-017）**；下一项 T5 `SteeringRefusal` + T6 面板。
+4. **M1 玩法骨架开工**——WP-1 ✅；[PLAN-003](plans/PLAN-003-wp4-steering-zones.md)：T0–T5 ✅（668/668，VERIFY-018）；下一项 **T6 殖民书面板**（用通用 `Do` 动作增删区域）。
 5. **M1 演示脚本可跑**——w05 §1 的 9 步，用客户端 + 服务端手工走一遍并录像/截图存档。
 6. **上游同步演练 #1**——按 w06 §6 的 S1–S10，产出 `SYNC-001` 报告。
 
