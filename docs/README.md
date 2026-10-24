@@ -151,6 +151,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | PLAN-002 | [M1-WP1：引擎可读面（只读访问器）](plans/PLAN-002-wp1-engine-readable-surface.md) | 计划中（L2；5 个包私有类型；T1–T6；零行为变化验收） |
 | PLAN-002-T1 | [WP-1 盘点：五个包私有类型的取得路径](plans/PLAN-002-inventory.md) | 完成：BodyState 可零改动（L1）；Hunger/Beds/Urges 各 1 行 L2；Carry 免改 |
 | PLAN-003 | [M1-WP4：禁限区（谁能去哪）](plans/PLAN-003-wp4-steering-zones.md) | 计划中（L1 + L3 待评审；T0–T8；T0 需补读 Refinement 与 Board.Act） |
+| PLAN-003-A | [T4 落点与 L3 变更提案（Fitness 单点否决）](plans/PLAN-003-a-t4-standing.md) | **待评审**：`Fitness.of` 是唯一按人闸门；4 文件约 20 行；默认 `Standing.ALL` 零行为变化 |
 | VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
 | VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |

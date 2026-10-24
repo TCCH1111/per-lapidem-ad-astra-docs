@@ -44,7 +44,7 @@ w05 的演示脚本第 2–6 步就是"画区 → 开作息表 → 居民按约�
 2. **`Refinement` 不是"按人"的钩子**（`Refinement.java`）：它的输入是 `Intent` 与 `Grown` 图（`expand`/`rewrite`/`options` → `Change`），**没有 `Worker`/`Resident` 参数**。
    → 它只能回答"**这份活该不该被规划出来**"，不能回答"**这个人能不能去那儿**"。本计划 §4.2 原先"把区域判定塞进 Refinement"的假设**作废**。
 
-3. **因此 T4 改为"先找按人的资格钩子"**：候选（按可能性排序）——
+3. **T4 落点已探明（2026-10-24，见 [附录 A](PLAN-003-a-t4-standing.md)）**：唯一的"按人"闸门是 `core/engine/plan/Fitness.of(hand, work)`（类注释原文："规划长活与派活都问这里，所以两者不会不一致"）。方案是加 `Standing` 接口 + `Unfit.ZONE_FORBIDDEN`，**属 L3，待评审**。原候选清单（见下）已逐一排除：
    `core/api/resident/Licences.java`（基底已用它表达"谁被允许做哪类工种"，`RefusalKind` 里也有对应拒绝）、
    `core/api/participation/Participations.java`（`Stake` 模型，`Urges.offered` 里用它过滤 `urge`）、
    `core/engine/labor/Requests.java` / `Scheduler.java`（派活的最后一道）。
@@ -90,7 +90,7 @@ Verdict verdict(SteeringState state, BlockPos cell, Resident who, long now)
 | **T1** | 新建插件骨架 `plugins/steering/{SteeringPlugin,SteeringContent,SteeringState}.java` + `install` 注册 | L1 | 编译通过；服务器启动日志出现插件声明（不加日志则用 gametest 断言 state 已 share） | `gradlew build --offline` |
 | **T2** | `ZoneRule` + `SteeringState` + 存档序列化（`keep`） | L1 | gametest：存→读回→规则一致；空状态读回为空 | 单测 + gametest |
 | **T3** | 判定纯函数 `verdict(...)` | L1 | gametest 覆盖 6 种边界（区外、区内禁入、ALLOW_ONLY 命中/不命中、LIMIT 未满/已满） | gametest |
-| **T4** | 承接 T0 的结论：在**按人资格**处拒绝（`Licences`/`Participations` 优先；只有 `Scheduler` 可用则升 **L3 评审**） | L1/L2，或 **L3** | gametest：禁入区内该居民取不到该活，且产出 `SteeringRefusal`；`Refining.LIMIT=256` 不被放大 | gametest |
+| **T4** | 在 `Fitness.of` 加 `Standing` 否决（[附录 A](PLAN-003-a-t4-standing.md)）：`Unfit.ZONE_FORBIDDEN` + `Unassigned.Reason.ZONE_FORBIDDEN`，默认 `Standing.ALL` 不改行为 | **L3（待评审）** | 662 基线全绿；区内不长活/不派活；删区恢复；诊断可读 | gametest |
 | **T5** | `SteeringRefusal` 枚举 + 接到拒绝路径 | L1 | gametest：被禁入的目标产出 `Outcome.Failed(RefusalKind)` 而非静默丢弃 | gametest |
 | **T6** | 殖民书面板：区域列表 + 每行 ≤4 个既有 `Act` | L1（若缺动词 → **L3 评审**） | 手工：能列出、能删除；行数不超预算（8 行/卡、32 行/页） | 人工 + 截图 |
 | **T7** | `steering why` 文案与 UI 一致（同源） | L1 | 手工：`/plaa why` 与面板逐字一致 | 人工 |
@@ -126,7 +126,7 @@ Verdict verdict(SteeringState state, BlockPos cell, Resident who, long now)
 
 | 编号 | 问题 | 何时定 |
 | --- | --- | --- |
-| OQ-1 | ~~`Refinement` 能否拿到目标格~~ → **不能**（无 `Worker` 参数，见 §3）。改为：**按人资格钩子在哪一层？**（`Licences` / `Participations` / `Scheduler`）决定 T4 是 L1/L2 还是 L3 | T4 开工前 |
+| OQ-1 | ~~按人资格钩子在哪~~ → **`Fitness.of(hand, work)`**（见附录 A）。待评审：是否接受该 L3 改动 | 评审后 |
 | OQ-2 | ~~5 个动词是否够用~~ → **够**：`Do(actionKey, …)` 通用（§3）。**已关闭** | ✅ |
 | OQ-3 | LIMIT 的"同时在区内人数"如何计数——按格集还是按区心半径？ | T3 开工前 |
 | OQ-4 | 禁限区是否影响**已有**在区内的居民（强制撤离）还是只挡新派活？ | T5 开工前 |
