@@ -125,8 +125,13 @@
 | `tests/shared/harness/mod-settings.ts` | L2 | 让测试夹具写入改名后的服务端配置文件 | PLAN-001 / ADR-023 | 2026-10-20 |
 | `README.md` | L2 | 记录 fork 身份、四个新 modid 与配置文件名 | PLAN-001 / ADR-023 | 2026-10-20 |
 | `CONTRIBUTING.md` | L2 | 让贡献者文档使用 fork 的四个 modid | PLAN-001 / ADR-023 | 2026-10-20 |
+| `mods/vanilla/src/main/java/.../plugins/person/living/LivingPresence.java` | L2（2 个方法） | 诊断层读取饥饿与床位：包内句柄 `bellyOf(UUID)` / `bedClaims()`，标 `// PLA:` | PLAN-002 T2 / VERIFY-013 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/labor/ColonyLabor.java` | L2（1 个方法） | 诊断层取用退避表：包内句柄 `urgeBook()`，标 `// PLA:` | PLAN-002 T5 / VERIFY-014 | 2026-10-24 |
+| `mods/core/src/main/java/.../engine/labor/Urges.java` | L2（1 个方法） | 诊断层只读退避剩余：`coolingLeft(urge, now)`，**不清理条目**，标 `// PLA:` | PLAN-002 T5 / VERIFY-014 | 2026-10-24 |
 
 > 新增文件 `NOTICE.md` 与 `tests/i18n/mods-toml.test.ts` 是 PLAN-001 的配套交付物，不属于上游改动登记表；它们分别承担 MIT 署名/变更说明与 modid 回归门禁。
+
+> PLAN-002（WP-1 引擎可读面）另新增 3 个门面文件，均属 L1、不改上游：`core/api/resident/body/BodyViews.java`、`plugins/person/living/PresenceViews.java`、`core/engine/labor/LaborViews.java`；配套 gametest 同名文件。
 
 ---
 
