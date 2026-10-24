@@ -35,9 +35,20 @@ w05 的演示脚本第 2–6 步就是"画区 → 开作息表 → 居民按约�
 | 面板 | `Board.Row`：**每行最多 4 个 `Act`**（`Board.java:50`）；`Board.Act` 是 `Board` 的嵌套类型 | 区域列表与"为什么" |
 | 规划过滤 | `Declaring.refinement(Refinement)`（`Declaring.java:33`） | 约束作为一条 refinement 参与候选裁剪 |
 
-**T0 必须补读的两处**（无法从这几行确定）：
-1. `Refinement` 的接口签名（`core/api/work/Refinement.java`）——它是否拿得到 `Worker`/目标格/`Passage`，决定"区域判定"能放在哪一层；
-2. `Board.Act` 的 5 个动词到底是什么（`Board.java` 后段）——决定"新建/删除区域"是否**必须**新增动词（若是，则 L3 评审）。
+**T0 已核实（2026-10-24，两条都已落纸）：**
+
+1. **`Board.Act` 是 sealed interface，恰好 5 个动词**（`Board.java:97-113`）：
+   `Edit(settingKey)`、`Admit(labelKey, kind)`、`Ping(BlockPos)`、`Open(pageLoc)`、**`Do(actionKey, labelKey, icon)`**。
+   → **`Do` 是通用的**：新建/删除/编辑区域都能挂在自定义 `actionKey` 上，**不需要第 6 个动词，T6 因此是 L1，不触发 L3**（OQ-2 关闭）。
+
+2. **`Refinement` 不是"按人"的钩子**（`Refinement.java`）：它的输入是 `Intent` 与 `Grown` 图（`expand`/`rewrite`/`options` → `Change`），**没有 `Worker`/`Resident` 参数**。
+   → 它只能回答"**这份活该不该被规划出来**"，不能回答"**这个人能不能去那儿**"。本计划 §4.2 原先"把区域判定塞进 Refinement"的假设**作废**。
+
+3. **因此 T4 改为"先找按人的资格钩子"**：候选（按可能性排序）——
+   `core/api/resident/Licences.java`（基底已用它表达"谁被允许做哪类工种"，`RefusalKind` 里也有对应拒绝）、
+   `core/api/participation/Participations.java`（`Stake` 模型，`Urges.offered` 里用它过滤 `urge`）、
+   `core/engine/labor/Requests.java` / `Scheduler.java`（派活的最后一道）。
+   若只有 `Scheduler` 能表达，则 WP-4 的 T4 按 w05 预期升为 **L3 并单独评审**——这正是 w05 写"L1 + L3"的原因。
 
 ---
 
@@ -75,11 +86,11 @@ Verdict verdict(SteeringState state, BlockPos cell, Resident who, long now)
 
 | # | 任务 | 层 | 验收 | 自测 |
 | --- | --- | --- | --- | --- |
-| **T0** | 补读 `Refinement` 与 `Board.Act`，写进本计划的"契约附表" | 文档 | 两处签名/动词落纸，无"待定" | — |
+| **T0** | ✅ 已做：`Board.Act` 5 动词（含通用 `Do`）、`Refinement` 无 `Worker` → 改走按人资格钩子 | 文档 | 两条结论已落纸；OQ-2 关闭 | — |
 | **T1** | 新建插件骨架 `plugins/steering/{SteeringPlugin,SteeringContent,SteeringState}.java` + `install` 注册 | L1 | 编译通过；服务器启动日志出现插件声明（不加日志则用 gametest 断言 state 已 share） | `gradlew build --offline` |
 | **T2** | `ZoneRule` + `SteeringState` + 存档序列化（`keep`） | L1 | gametest：存→读回→规则一致；空状态读回为空 | 单测 + gametest |
 | **T3** | 判定纯函数 `verdict(...)` | L1 | gametest 覆盖 6 种边界（区外、区内禁入、ALLOW_ONLY 命中/不命中、LIMIT 未满/已满） | gametest |
-| **T4** | 接 `Refinement`：把 FORBID 变成规划期的"不可选" | L1（T0 若需改 core 则 L2 并评审） | gametest：同种子下，有禁入区时该区内的 `Node` 不出现在候选；保持 `Refining.LIMIT=256` 不被放大 | gametest |
+| **T4** | 承接 T0 的结论：在**按人资格**处拒绝（`Licences`/`Participations` 优先；只有 `Scheduler` 可用则升 **L3 评审**） | L1/L2，或 **L3** | gametest：禁入区内该居民取不到该活，且产出 `SteeringRefusal`；`Refining.LIMIT=256` 不被放大 | gametest |
 | **T5** | `SteeringRefusal` 枚举 + 接到拒绝路径 | L1 | gametest：被禁入的目标产出 `Outcome.Failed(RefusalKind)` 而非静默丢弃 | gametest |
 | **T6** | 殖民书面板：区域列表 + 每行 ≤4 个既有 `Act` | L1（若缺动词 → **L3 评审**） | 手工：能列出、能删除；行数不超预算（8 行/卡、32 行/页） | 人工 + 截图 |
 | **T7** | `steering why` 文案与 UI 一致（同源） | L1 | 手工：`/plaa why` 与面板逐字一致 | 人工 |
@@ -115,7 +126,7 @@ Verdict verdict(SteeringState state, BlockPos cell, Resident who, long now)
 
 | 编号 | 问题 | 何时定 |
 | --- | --- | --- |
-| OQ-1 | `Refinement` 能否拿到"目标格"，还是只能看指令类型？决定 T4 的实现位置 | T0 |
-| OQ-2 | `Board.Act` 的 5 个动词是否够"新建/删除区域"？ | T0 |
+| OQ-1 | ~~`Refinement` 能否拿到目标格~~ → **不能**（无 `Worker` 参数，见 §3）。改为：**按人资格钩子在哪一层？**（`Licences` / `Participations` / `Scheduler`）决定 T4 是 L1/L2 还是 L3 | T4 开工前 |
+| OQ-2 | ~~5 个动词是否够用~~ → **够**：`Do(actionKey, …)` 通用（§3）。**已关闭** | ✅ |
 | OQ-3 | LIMIT 的"同时在区内人数"如何计数——按格集还是按区心半径？ | T3 开工前 |
 | OQ-4 | 禁限区是否影响**已有**在区内的居民（强制撤离）还是只挡新派活？ | T5 开工前 |
