@@ -1,7 +1,7 @@
 # PLAN-004 · M1-WP5：作息表（什么时候干活）
 
 ```
-状态：计划中（待派单）
+状态：T0/T1 完成（VERIFY-022）**——批准的 L3 未使用：插件自采样时钟，`Standing` 签名未改**
 负责人：规划者（agent）
 最后更新：2026-10-25
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-5；docs/prd/PRD-005-intent-and-micro-control.md
@@ -74,7 +74,7 @@ boolean permits(UUID resident, BlockPos cell, long dayTime);
 
 > 与 WP-4 的 `Standing` 是**同一条管道**：只把签名从 `(resident, cell)` 扩成 `(resident, cell, dayTime)`，其余不动。这也是为什么 B 比"再造一条时间闸"更可取——两条闸迟早会打架。
 
-**这是 L3，需要评审后才能实施**（与 PLAN-003-A 同规矩）。
+**已批准但最终未使用**（2026-10-25）：插件在 `scope.tick` 里自采样 `dayTime`，`Standing` 签名保持 `(resident, cell)`，core 零改动。若将来要"每人一张表"，这次批准的 L3 可直接启用。
 
 ### 3.3 UI
 - 一个 `Flag`（enabled）+ 一个 `Choice`（四个预设），挂在**已存在的页面**上（不新开图表）。
