@@ -186,6 +186,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-030 | [WP-6/W5：否决真的让人不接活（693/693）](reports/VERIFY-030-wp6-w5.md) | 通过：测试夹具注入 standing、真实求解器 + 全格否决 → `ZONE_FORBIDDEN`；记录两次假失败的教训 |
 | VERIFY-031 | [WP-6/W6：解释层覆盖率报告（14 类，证据分级）](reports/VERIFY-031-wp6-w6-coverage.md) | 文案 14/14，证据 5/14：1 类端到端、3 类上游、9 类零证据；附补证计划 |
 | VERIFY-032 | [WP-6/W7 第一轮：两次尝试，两次空白（否定结果）](reports/VERIFY-032-wp6-w7-negative.md) | 否定：静态/换人两种造法都没产出 `NO_LICENCE`/`PACK_FULL`；记三个假设与下一步；基线仍 693 |
+| VERIFY-033 | [WP-6/W7 第二轮：三次造不出来 → 没证据的就不说（696/696）](reports/VERIFY-033-wp6-w7-honesty-filter.md) | 通过：`Explanation.shown` 只放行 5 类有证据的原因；`row()` 变 Optional；9 类保持沉默 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
