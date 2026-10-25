@@ -1,7 +1,7 @@
 # PLAN-006 · M2-WP7：需求与情绪（张力的第一层）
 
 ```
-状态：N1–N3 完成（VERIFY-041/042）；N4–N7 待做
+状态：N1–N5 完成（VERIFY-041/042/044；N4 经 VERIFY-043 收窄）；N6/N7 待做
 负责人：规划者（agent）
 最后更新：2026-10-26
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-7；docs/prd/PRD-001-needs-mood-memory.md
@@ -68,7 +68,7 @@
 | **N2** | ✅ 四语 8 键（VERIFY-041） | L2 | 运行时语言表逐条验证 |
 | **N3** | ✅ `PresenceViews.mood` + `LivingPresence.needsOf`（VERIFY-042） | L1 + L2(1 方法) | 2 个测试全过 |
 | **N4** | **已定范围**（VERIFY-043）：只做 `needs-first` + 解释（现状即此）；**`rules-first` 需 L3**（改 `ColonyLabor:318` 内联谓词），记为独立候选不入选 | L1 | 解释两种情形（照常收工 / 饿了去动） |
-| **N5** | 解释：冲突时的措辞（沿用 `Explanation` 单一映射点） | L1 | gametest：两种模式的措辞不同且各自的键都存在 |
+| **N5** | ✅ `Explanation.upDuringRest(Mood)`（VERIFY-044）：有需求才解释 | L1 | 2 个测试全过 |
 | **N6** | 书里显示情绪（先查 `SettlerNeed` 卡片已有什么） | L1/L2 | 编译 + 语言键；**客户端留人工验收** |
 | **N7** | 登记 + VERIFY 报告 + ROADMAP/AC | 文档 | 断链 0 |
 
