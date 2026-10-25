@@ -182,6 +182,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-026 | [WP-5 收口：T3 降级与债务登记](reports/VERIFY-026-wp5-closed.md) | 收口轮（无代码）：d12 +5 行、T3 降级为结构性保证、新债 D9；测试仍 686 |
 | VERIFY-027 | [WP-6/W1–W2：一个地方把拒绝变成人话（689/689）](reports/VERIFY-027-wp6-w1-w2.md) | 通过：14 类原因全覆盖（计划写 10 类，测试抓出漏的 4 类）、四语 30 键、唯一映射点 |
 | VERIFY-028 | [WP-6/W3：没人接的活变成一行（692/692）](reports/VERIFY-028-wp6-w3.md) | 通过：行与页面同源、可修的带 1 个 `Open`、动作预算内 |
+| VERIFY-029 | [WP-6/W5 调查：端到端测试缺口在哪](reports/VERIFY-029-wp6-w5-investigation.md) | 调查轮（无代码）：求解器自建 `Scheduler`、standing 装不到；下一轮给夹具加注入点（仅测试代码） |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

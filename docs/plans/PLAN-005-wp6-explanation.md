@@ -70,7 +70,7 @@
 | **W2** | 四语文案（10 类 × 标题/建议/单位） | L2 | 运行时语言表逐条验证（照 VERIFY-021 的教训） |
 | **W3** | ✅ "按活问"：`Explanation.row(Unassigned)`（VERIFY-028） | L1 | 3 个 gametest 全过 |
 | **W4** | "按人问"：`BodyViews`(`doing` 空) + 最近拒绝 → 行 | L1 | gametest：无 doing 的居民给出行 |
-| **W5** | 派活类端到端：用 `PlanningFixture`/`ColonyLabor` 造"禁区挡住"与"作息挡住"两例 | L1 | gametest：两种 reason 都能被解释函数读到 |
+| **W5** | 派活类端到端：**形状已调整**（VERIFY-029）——先把 standing 注入 `PlanningFixture.Solving`（**只改测试代码**），再写"求解器看到禁区就拒绝"的用例 | 测试 L1 | `Scheduled.unassigned()` 里出现 `ZONE_FORBIDDEN` |
 | **W6** | 覆盖率报告：列出**已接**与**未接**的 reason | 文档 | `docs/reports/VERIFY-*.md` 里有一张表，不夸大 |
 
 ---
