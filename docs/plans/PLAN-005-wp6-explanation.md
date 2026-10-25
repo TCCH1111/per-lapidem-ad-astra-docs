@@ -1,7 +1,7 @@
 # PLAN-005 · M1-WP6：解释层（说得出为什么）
 
 ```
-状态：W1、W2 完成（VERIFY-027）；W3–W6 待做
+状态：W1、W2、W3 完成（VERIFY-027/028）；W4–W6 待做
 负责人：规划者（agent）
 最后更新：2026-10-25
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-6；docs/prd/PRD-006-stock-rules-and-diagnosis.md
@@ -68,7 +68,7 @@
 | **T0** | ✅ 夹具现状已核实（§2） | 文档 | 已落纸 |`n| **W1** | ✅ `Explanation` 纯函数（VERIFY-027） | L1 | 14 类全覆盖（比计划的 10 类多 4，测试抓出） |`n| **W2** | ✅ 四语 30 键（VERIFY-027） | L2 | 运行时语言表逐条验证 |
 | **W1** | `Explanation` 纯函数：`Reason → (titleKey, adviceKey, Option<page>)` | L1 | gametest：**10 类全覆盖**，未知 reason 有兜底 |
 | **W2** | 四语文案（10 类 × 标题/建议/单位） | L2 | 运行时语言表逐条验证（照 VERIFY-021 的教训） |
-| **W3** | "按活问"：把 `Unassigned` 接到书页（用现有 `Board.Row`） | L1 | gametest：给定一份 `Unassigned` 能生成行 |
+| **W3** | ✅ "按活问"：`Explanation.row(Unassigned)`（VERIFY-028） | L1 | 3 个 gametest 全过 |
 | **W4** | "按人问"：`BodyViews`(`doing` 空) + 最近拒绝 → 行 | L1 | gametest：无 doing 的居民给出行 |
 | **W5** | 派活类端到端：用 `PlanningFixture`/`ColonyLabor` 造"禁区挡住"与"作息挡住"两例 | L1 | gametest：两种 reason 都能被解释函数读到 |
 | **W6** | 覆盖率报告：列出**已接**与**未接**的 reason | 文档 | `docs/reports/VERIFY-*.md` 里有一张表，不夸大 |
