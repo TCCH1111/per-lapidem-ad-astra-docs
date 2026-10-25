@@ -71,7 +71,7 @@
 | **W3** | ✅ "按活问"：`Explanation.row(Unassigned)`（VERIFY-028） | L1 | 3 个 gametest 全过 |
 | **W4** | "按人问"：`BodyViews`(`doing` 空) + 最近拒绝 → 行 | L1 | gametest：无 doing 的居民给出行 |
 | **W5** | ✅ 端到端（VERIFY-030）：`Solving.standing(...)` 注入 + 全格否决 → `ZONE_FORBIDDEN` | 测试 L1 | 1 个 gametest 通过 |
-| **W6** | ✅ 覆盖率报告（VERIFY-031）：14 类逐条分级，A/B/C/D | 文档 | 表已出，**不夸大**：9 类零证据 |`n| **W7** | 三轮否定（VERIFY-032/033）；**改为诚实过滤**：`Explanation.shown` 只放行 5 类有证据的原因（VERIFY-033） | L1 | 9 类不再对玩家说话；w05"≥8 类"**当前不满足**，如实登记 |
+| **W6** | ✅ 覆盖率报告（VERIFY-031）：14 类逐条分级，A/B/C/D | 文档 | 表已出，**不夸大**：9 类零证据 |`n| **W7** | 三轮否定（VERIFY-032/033）+ **生产地图**（VERIFY-034）：8 类有产出点、`CLAIM_TAKEN` 零产出；造不出的真因="本轮未重排" | L1 | 下一步：双人编组 + 每轮新消息（W7 第 4 次） |
 
 ---
 
