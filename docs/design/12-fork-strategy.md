@@ -137,6 +137,11 @@
 | `mods/core/src/main/java/.../engine/labor/Labor.java` | **L3** | 建 `ColonyLabor` 后应用 `Standings.of(colonyId)`（2 行） | PLAN-003-A（已批准）/ VERIFY-017 | 2026-10-24 |
 | `mods/core/src/main/resources/assets/folkways/lang/{en_us,zh_cn,zh_hk,zh_tw}.json` | L2（各 +3 行） | 新增 `folkways.refusal.steering.*` 三条文案 | PLAN-003 T5 / VERIFY-018 | 2026-10-24 |
 | `mods/vanilla/.../plugins/steering/SteeringContent.java` | L1（改） | 新增页面、`steering_zone` 委托与 `Registering` 注册（新增文件本属 L1，此行为记录改动点） | PLAN-003 T6 / VERIFY-019 | 2026-10-24 |
+| `mods/core/src/main/java/.../api/work/Standings.java` | L1（改） | 组合多个 provider，并按 owner 绑定"拒绝 → `Unassigned.Reason`"（D8） | PLAN-004 / VERIFY-024 | 2026-10-25 |
+| `mods/core/src/main/java/.../engine/plan/Unassigned.java` | **L3** | 新原因 `HOURS_RESTING`（非 structural） | PLAN-004（已批准）/ VERIFY-024 | 2026-10-25 |
+| `mods/core/src/main/java/.../engine/plan/Tours.java` | **L3** | 用 `Standing.check` + `Standings.reasonOf`；`progress()` 补序 | PLAN-004（已批准）/ VERIFY-024 | 2026-10-25 |
+| `mods/vanilla/.../plugins/BuiltinPlugins.java` | L2（2 行） | 注册 `HoursPlugin` | PLAN-004 / VERIFY-022 | 2026-10-25 |
+| `mods/core/src/main/resources/assets/folkways/lang/{en,zh_cn,zh_hk,zh_tw}.json` | L2（各 +11 行） | 作息的理由、页面与设置文案 | PLAN-004 / VERIFY-023、025 | 2026-10-25 |
 
 > 新增文件 `NOTICE.md` 与 `tests/i18n/mods-toml.test.ts` 是 PLAN-001 的配套交付物，不属于上游改动登记表；它们分别承担 MIT 署名/变更说明与 modid 回归门禁。
 

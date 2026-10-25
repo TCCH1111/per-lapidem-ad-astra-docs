@@ -178,6 +178,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-023 | [WP-5/T5：作息的具名理由 + 一个真实缺陷（681/681）](reports/VERIFY-023-wp5-t5-refusal-defect.md) | 词表与四语落地；**发现** Boolean `Standing` 会把"非工作时段"误报成"禁限区"，记为 D8 |
 | VERIFY-024 | [WP-5/D8 修复：拒绝会说明是谁拒绝的（684/684）](reports/VERIFY-024-d8-fixed.md) | 通过：`Standing.check` 返回理由 + 注册时绑定 reason；缓存结构未动；3 测试 |
 | VERIFY-025 | [WP-5/T4：作息页面与两个开关（686/686）](reports/VERIFY-025-wp5-t4-page.md) | 通过：Flag+Choice、页面显示当前班次与切换倒计时、4 语 10 键；记录"物品当选项"的妥协 |
+| VERIFY-025-A | [WP-5 收口（T3 降级为结构性保证）](plans/PLAN-004-wp5-hours.md) | 收口说明：T0/T1/T4/T5 完成；T3 因缺殖民地夹具降级，登记为 D9 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

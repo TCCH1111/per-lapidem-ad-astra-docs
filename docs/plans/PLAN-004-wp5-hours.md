@@ -1,7 +1,7 @@
 # PLAN-004 · M1-WP5：作息表（什么时候干活）
 
 ```
-状态：T0/T1 完成（VERIFY-022）**——批准的 L3 未使用：插件自采样时钟，`Standing` 签名未改**
+状态：**T0/T1/T4/T5 完成，T3 降级，WP-5 收口**（VERIFY-022/023/024/025）；批准的 L3 最终以"D8 修复"形式使用（`Standing.check` 返回理由）
 负责人：规划者（agent）
 最后更新：2026-10-25
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-5；docs/prd/PRD-005-intent-and-micro-control.md
@@ -90,7 +90,7 @@ boolean permits(UUID resident, BlockPos cell, long dayTime);
 | **T0** | ✅ 已做：`ColonyWorks.urges` 纯追加，A 路线作废，改走 B | 文档 | 结论已落纸；路线已更新 |
 | **T1** | `plugins/hours` 骨架：`HoursState` + 预设纯函数 + 存档 | L1 | gametest：四预设边界（0、11999、12000、13800、23999）全过 |
 | **T2** | `enabled=false` 时行为与现在**逐 tick 等价** | L1 | 671→673 基线全绿 + 一条"关闭时 urge 数不变"的测试 |
-| **T3** | 开启 DAY_SHIFT：休息时段无活、工作时段恢复 | L1 | gametest：模拟 `dayTime` 两侧 |
+| **T3** | ~~需求豁免测试~~ → **降级**：需求走 urge，**不经过 `Standing`**，因此天然豁免；但要证"计数不变"需殖民地夹具，当前没有。改为**结构性保证**：`HoursContent` 不含 `scope.urges` 调用（可由评审确认），并在 WP-6 引入殖民地夹具后补测 | L1 | 代码评审 + WP-6 补测 |
 | **T4** | UI：`Flag` + `Choice` 挂到既有页面 | L1 | 编译 + 语言键四语齐全（运行时语言表验证，见 VERIFY-021 的教训） |
 | **T5** | 解释层：休息时段不派活时，理由写 `HoursRefusal.RESTING` | L1 | 行文案与枚举同源 |
 | **T6** | 登记 + VERIFY 报告 + ROADMAP/AC | 文档 | 断链 0 |
