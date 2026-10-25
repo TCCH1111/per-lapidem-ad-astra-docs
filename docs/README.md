@@ -188,6 +188,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-032 | [WP-6/W7 第一轮：两次尝试，两次空白（否定结果）](reports/VERIFY-032-wp6-w7-negative.md) | 否定：静态/换人两种造法都没产出 `NO_LICENCE`/`PACK_FULL`；记三个假设与下一步；基线仍 693 |
 | VERIFY-033 | [WP-6/W7 第二轮：三次造不出来 → 没证据的就不说（696/696）](reports/VERIFY-033-wp6-w7-honesty-filter.md) | 通过：`Explanation.shown` 只放行 5 类有证据的原因；`row()` 变 Optional；9 类保持沉默 |
 | VERIFY-034 | [WP-6/W7 第三轮：每个原因由谁产出（生产地图）](reports/VERIFY-034-wp6-w7-production-map.md) | 调查：8 类有产出点、**`CLAIM_TAKEN` 零产出**；造不出的真因是"本轮未重排"，下步双人编组+新消息 |
+| VERIFY-035 | [WP-6 收口：W7 不再追（四次尝试的账）](reports/VERIFY-035-wp6-closed.md) | **WP-6 关闭**：5/14 对玩家可见，w05"≥8 类"未达；W4/W7 明确不做并说明理由 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

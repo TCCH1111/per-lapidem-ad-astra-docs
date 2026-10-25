@@ -1,7 +1,7 @@
 # PLAN-005 · M1-WP6：解释层（说得出为什么）
 
 ```
-状态：W1、W2、W3、W5、W6 完成（VERIFY-027/028/030/031）；**W6 结论：文案 14/14、证据 5/14**；W4 与 W7（补证据）待做
+状态：**已关闭**（VERIFY-035）。W1/W2/W3/W5/W6 ✅；W4 与 W7 明确不做并说明理由；对玩家可见 5/14
 负责人：规划者（agent）
 最后更新：2026-10-25
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-6；docs/prd/PRD-006-stock-rules-and-diagnosis.md
