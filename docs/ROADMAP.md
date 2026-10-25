@@ -47,7 +47,7 @@
 
 | 项 | 现状 |
 | --- | --- |
-| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`5efe2ea`**（B-2 + WP-1 ✅ + WP-4 ✅ + **WP-5 T1**：作息与禁区共用派活闸，679/679） |
+| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`9110999`**（B-2 + WP-1 ✅ + WP-4 ✅ + WP-5 T1/T5 词表，681/681） |
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` 通过；`runGameTestServer` **651/651** |
 | 整合包 | `pack/`（packwiz）**54 个受管文件** = 45 `.pw.toml` + 4 jar + 3 配置 + 1 KubeJS + 1 任务章节 |
 | 客户端 | Prism 实例实测：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006） |
@@ -65,7 +65,7 @@
 1. ~~任务书第一章~~ ✅（VERIFY-009）；下一项：**第二章 + 任务奖励**。
 2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；下一项：**v0.2.0 的 release 说明与安装步骤**。
 3. **NeoForge 版本统一**——❌ 已尝试并阻塞（VERIFY-010）：264 下 1 测试稳定失败；先定位 `onefoodcannotfeedhalfofapair` 再重试。
-4. **M1 玩法骨架开工**——WP-1 ✅、WP-4 ✅、**WP-5 T0/T1 ✅（679/679，VERIFY-022）**；下一项 T4 面板（`Flag`+`Choice`）与 T5 具名理由。
+4. **M1 玩法骨架开工**——WP-1 ✅、WP-4 ✅、WP-5 T0/T1/T5词表 ✅（681/681，VERIFY-023）；**下一项 T4 面板**；D8 的 L3 待评审。
 5. **M1 演示脚本可跑**——w05 §1 的 9 步，用客户端 + 服务端手工走一遍并录像/截图存档。
 6. **上游同步演练 #1**——按 w06 §6 的 S1–S10，产出 `SYNC-001` 报告。
 

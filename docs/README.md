@@ -175,6 +175,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-020 | [WP-4/T6b：画出的体积变成禁入区（671/671）](reports/VERIFY-020-wp4-t6b-painted-zones.md) | 通过：采纳 + 忽略同笔画 + 换笔画重采纳；4 条限制如实登记（采纳时机、擦除、单区、区名） |
 | VERIFY-021 | [WP-4 收口：T7 同源文案（673/673）](reports/VERIFY-021-wp4-closed.md) | **WP-4 完成**：reason→refusal 单一映射、运行时语言表验证、6 条验收全过；4 条遗留转后续 |
 | VERIFY-022 | [WP-5/T0–T1：作息表（共享派活闸，679/679）](reports/VERIFY-022-wp5-hours-t1.md) | 通过：四预设纯算术、默认关闭、与禁区共用闸；**批准的 L3 未使用**（找到了更小的做法） |
+| VERIFY-023 | [WP-5/T5：作息的具名理由 + 一个真实缺陷（681/681）](reports/VERIFY-023-wp5-t5-refusal-defect.md) | 词表与四语落地；**发现** Boolean `Standing` 会把"非工作时段"误报成"禁限区"，记为 D8 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
