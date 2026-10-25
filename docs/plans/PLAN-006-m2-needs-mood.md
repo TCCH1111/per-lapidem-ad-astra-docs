@@ -67,7 +67,7 @@
 | **N1** | ✅ `Mood` 纯函数 + 4 档（VERIFY-041） | L1 | 5 个边界测试全过 |
 | **N2** | ✅ 四语 8 键（VERIFY-041） | L2 | 运行时语言表逐条验证 |
 | **N3** | ✅ `PresenceViews.mood` + `LivingPresence.needsOf`（VERIFY-042） | L1 + L2(1 方法) | 2 个测试全过 |
-| **N4** | 冲突语义：`needs-first` / `rules-first` 两种模式 | L1（若需改 `urges` → L2） | gametest：两种模式下"停工但吃饭"与"忍着不吃"可复现 |
+| **N4** | **已定范围**（VERIFY-043）：只做 `needs-first` + 解释（现状即此）；**`rules-first` 需 L3**（改 `ColonyLabor:318` 内联谓词），记为独立候选不入选 | L1 | 解释两种情形（照常收工 / 饿了去动） |
 | **N5** | 解释：冲突时的措辞（沿用 `Explanation` 单一映射点） | L1 | gametest：两种模式的措辞不同且各自的键都存在 |
 | **N6** | 书里显示情绪（先查 `SettlerNeed` 卡片已有什么） | L1/L2 | 编译 + 语言键；**客户端留人工验收** |
 | **N7** | 登记 + VERIFY 报告 + ROADMAP/AC | 文档 | 断链 0 |
@@ -103,5 +103,5 @@
 | 编号 | 问题 | 何时定 |
 | --- | --- | --- |
 | OQ-1 | `SettlerNeed` 卡片现在画了什么？缺"心情"还是缺"原因"？ | N6 前读 |
-| OQ-2 | 作息压过需求时，居民**真的**会忍吗？（`Urges` 有无强制通道） | N4 前读 `Urges.keenest` / `Scheduler` |
+| OQ-2 | ~~`Urges` 有无压制通道~~ → **没有**；`rules-first` 必须 L3（VERIFY-043）。已关闭 | ✅ |
 | OQ-3 | 情绪是否需要**长期**演化（记忆），还是只看当下快照？ | N1 前定；PRD-001 提到记忆，可能属 M2 后半 |
