@@ -1,7 +1,7 @@
 # PLAN-005 · M1-WP6：解释层（说得出为什么）
 
 ```
-状态：W1、W2、W3 完成（VERIFY-027/028）；W4–W6 待做
+状态：W1、W2、W3、W5 完成（VERIFY-027/028/030）；W4、W6 待做
 负责人：规划者（agent）
 最后更新：2026-10-25
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-6；docs/prd/PRD-006-stock-rules-and-diagnosis.md
@@ -70,7 +70,7 @@
 | **W2** | 四语文案（10 类 × 标题/建议/单位） | L2 | 运行时语言表逐条验证（照 VERIFY-021 的教训） |
 | **W3** | ✅ "按活问"：`Explanation.row(Unassigned)`（VERIFY-028） | L1 | 3 个 gametest 全过 |
 | **W4** | "按人问"：`BodyViews`(`doing` 空) + 最近拒绝 → 行 | L1 | gametest：无 doing 的居民给出行 |
-| **W5** | 派活类端到端：**形状已调整**（VERIFY-029）——先把 standing 注入 `PlanningFixture.Solving`（**只改测试代码**），再写"求解器看到禁区就拒绝"的用例 | 测试 L1 | `Scheduled.unassigned()` 里出现 `ZONE_FORBIDDEN` |
+| **W5** | ✅ 端到端（VERIFY-030）：`Solving.standing(...)` 注入 + 全格否决 → `ZONE_FORBIDDEN` | 测试 L1 | 1 个 gametest 通过 |
 | **W6** | 覆盖率报告：列出**已接**与**未接**的 reason | 文档 | `docs/reports/VERIFY-*.md` 里有一张表，不夸大 |
 
 ---
