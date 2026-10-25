@@ -71,7 +71,7 @@
 | **W3** | ✅ "按活问"：`Explanation.row(Unassigned)`（VERIFY-028） | L1 | 3 个 gametest 全过 |
 | **W4** | "按人问"：`BodyViews`(`doing` 空) + 最近拒绝 → 行 | L1 | gametest：无 doing 的居民给出行 |
 | **W5** | ✅ 端到端（VERIFY-030）：`Solving.standing(...)` 注入 + 全格否决 → `ZONE_FORBIDDEN` | 测试 L1 | 1 个 gametest 通过 |
-| **W6** | ✅ 覆盖率报告（VERIFY-031）：14 类逐条分级，A/B/C/D | 文档 | 表已出，**不夸大**：9 类零证据 |`n| **W7** | 补证据：按性价比造出 D 级原因（licence/pack/stand/hand/horizon） | 测试 L1 | 每条从 D 提到 A |
+| **W6** | ✅ 覆盖率报告（VERIFY-031）：14 类逐条分级，A/B/C/D | 文档 | 表已出，**不夸大**：9 类零证据 |`n| **W7** | 补证据：第一轮**否定**（VERIFY-032）：静态与换人两种造法都没产出 `NO_LICENCE`/`PACK_FULL`；下一步换**不同 id 的工人**，再不行查 `Survey`/`Requests` | 测试 L1 | 每条从 D 提到 A（当前 0/9） |
 
 ---
 
