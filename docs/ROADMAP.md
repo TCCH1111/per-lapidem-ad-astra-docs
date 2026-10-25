@@ -47,7 +47,7 @@
 
 | 项 | 现状 |
 | --- | --- |
-| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`6f61471`**（M1 ✅ + 版本对齐 264 + **M2 N1/N2：心情**，708/708） |
+| fork 基线 | 上游 `master` @ `3ce4d88`；fork `main` = **`7e72aa6`**（M1 ✅ + 264 对齐 + M2 N1–N3：心情可读，710/710） |
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` 通过；`runGameTestServer` **651/651** |
 | 整合包 | `pack/`（packwiz）**54 个受管文件** = 45 `.pw.toml` + 4 jar + 3 配置 + 1 KubeJS + 1 任务章节 |
 | 客户端 | Prism 实例实测：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006） |

@@ -1,7 +1,7 @@
 # PLAN-006 · M2-WP7：需求与情绪（张力的第一层）
 
 ```
-状态：N1、N2 完成（VERIFY-041）；N3–N7 待做
+状态：N1–N3 完成（VERIFY-041/042）；N4–N7 待做
 负责人：规划者（agent）
 最后更新：2026-10-26
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-7；docs/prd/PRD-001-needs-mood-memory.md
@@ -66,7 +66,7 @@
 | **T0** | ✅ 契约核实（§2） | 文档 | 已落纸 |
 | **N1** | ✅ `Mood` 纯函数 + 4 档（VERIFY-041） | L1 | 5 个边界测试全过 |
 | **N2** | ✅ 四语 8 键（VERIFY-041） | L2 | 运行时语言表逐条验证 |
-| **N3** | `PresenceViews` 扩展：把需求/心情读出来 | L1 | gametest：null 与有状态两种输入 |
+| **N3** | ✅ `PresenceViews.mood` + `LivingPresence.needsOf`（VERIFY-042） | L1 + L2(1 方法) | 2 个测试全过 |
 | **N4** | 冲突语义：`needs-first` / `rules-first` 两种模式 | L1（若需改 `urges` → L2） | gametest：两种模式下"停工但吃饭"与"忍着不吃"可复现 |
 | **N5** | 解释：冲突时的措辞（沿用 `Explanation` 单一映射点） | L1 | gametest：两种模式的措辞不同且各自的键都存在 |
 | **N6** | 书里显示情绪（先查 `SettlerNeed` 卡片已有什么） | L1/L2 | 编译 + 语言键；**客户端留人工验收** |

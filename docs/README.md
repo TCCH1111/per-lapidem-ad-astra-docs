@@ -197,6 +197,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | SYNC-001 | [上游同步演练 #1（本地模拟）](reports/SYNC-001-upstream-drill.md) | 通过：0 冲突、PLA 标记保留、合并后构建成功；暴露 `.blockwright/mods.json` 坑 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |
+| VERIFY-042 | [M2/N3：心情读得出来（710/710）](reports/VERIFY-042-m2-n3-mood-readout.md) | 通过：`PresenceViews.mood` + 1 个 L2 快照出口；未知项宁低不高；空路径安全 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
