@@ -184,6 +184,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-028 | [WP-6/W3：没人接的活变成一行（692/692）](reports/VERIFY-028-wp6-w3.md) | 通过：行与页面同源、可修的带 1 个 `Open`、动作预算内 |
 | VERIFY-029 | [WP-6/W5 调查：端到端测试缺口在哪](reports/VERIFY-029-wp6-w5-investigation.md) | 调查轮（无代码）：求解器自建 `Scheduler`、standing 装不到；下一轮给夹具加注入点（仅测试代码） |
 | VERIFY-030 | [WP-6/W5：否决真的让人不接活（693/693）](reports/VERIFY-030-wp6-w5.md) | 通过：测试夹具注入 standing、真实求解器 + 全格否决 → `ZONE_FORBIDDEN`；记录两次假失败的教训 |
+| VERIFY-031 | [WP-6/W6：解释层覆盖率报告（14 类，证据分级）](reports/VERIFY-031-wp6-w6-coverage.md) | 文案 14/14，证据 5/14：1 类端到端、3 类上游、9 类零证据；附补证计划 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

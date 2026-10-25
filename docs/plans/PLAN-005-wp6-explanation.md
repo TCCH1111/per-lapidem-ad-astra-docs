@@ -1,7 +1,7 @@
 # PLAN-005 · M1-WP6：解释层（说得出为什么）
 
 ```
-状态：W1、W2、W3、W5 完成（VERIFY-027/028/030）；W4、W6 待做
+状态：W1、W2、W3、W5、W6 完成（VERIFY-027/028/030/031）；**W6 结论：文案 14/14、证据 5/14**；W4 与 W7（补证据）待做
 负责人：规划者（agent）
 最后更新：2026-10-25
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-6；docs/prd/PRD-006-stock-rules-and-diagnosis.md
@@ -71,7 +71,7 @@
 | **W3** | ✅ "按活问"：`Explanation.row(Unassigned)`（VERIFY-028） | L1 | 3 个 gametest 全过 |
 | **W4** | "按人问"：`BodyViews`(`doing` 空) + 最近拒绝 → 行 | L1 | gametest：无 doing 的居民给出行 |
 | **W5** | ✅ 端到端（VERIFY-030）：`Solving.standing(...)` 注入 + 全格否决 → `ZONE_FORBIDDEN` | 测试 L1 | 1 个 gametest 通过 |
-| **W6** | 覆盖率报告：列出**已接**与**未接**的 reason | 文档 | `docs/reports/VERIFY-*.md` 里有一张表，不夸大 |
+| **W6** | ✅ 覆盖率报告（VERIFY-031）：14 类逐条分级，A/B/C/D | 文档 | 表已出，**不夸大**：9 类零证据 |`n| **W7** | 补证据：按性价比造出 D 级原因（licence/pack/stand/hand/horizon） | 测试 L1 | 每条从 D 提到 A |
 
 ---
 
