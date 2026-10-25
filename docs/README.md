@@ -194,6 +194,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-038 | [WP-8 第三段：数据在关卡拥有的殖民地上（703/703）](reports/VERIFY-038-wp8-level-backed.md) | 通过：mint→keep→按 id 取回；**进程重启改为人工验收**（无玩家建不了殖民地） |
 | VERIFY-039 | [队列 ⑤：M1 演示脚本就绪（19 个观察点，未跑通）](reports/VERIFY-039-demo-script.md) | 脚本：[M1-demo-script.md](demo/M1-demo-script.md)；**客户端未实测**，跑通后才算完成 |
 | SYNC-001 | [上游同步演练 #1（本地模拟）](reports/SYNC-001-upstream-drill.md) | 通过：0 冲突、PLA 标记保留、合并后构建成功；暴露 `.blockwright/mods.json` 坑 |
+| VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
