@@ -191,6 +191,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-035 | [WP-6 收口：W7 不再追（四次尝试的账）](reports/VERIFY-035-wp6-closed.md) | **WP-6 关闭**：5/14 对玩家可见，w05"≥8 类"未达；W4/W7 明确不做并说明理由 |
 | VERIFY-036 | [WP-8 第一段：每殖民地一张作息表 + 可卸载（699/699）](reports/VERIFY-036-wp8-unload-safety.md) | 修两处真缺陷：多殖民地串台、卸载不摘 provider；3 个测试 |
 | VERIFY-037 | [WP-8 第二段：数据真的走了殖民地仓库（702/702）](reports/VERIFY-037-wp8-colony-store.md) | 通过：keep→kept 往返（两个数据源 + 空仓库默认）；整局重启仍属 D11 |
+| VERIFY-038 | [WP-8 第三段：数据在关卡拥有的殖民地上（703/703）](reports/VERIFY-038-wp8-level-backed.md) | 通过：mint→keep→按 id 取回；**进程重启改为人工验收**（无玩家建不了殖民地） |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
