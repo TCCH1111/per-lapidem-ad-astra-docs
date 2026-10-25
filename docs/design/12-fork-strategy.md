@@ -149,6 +149,9 @@
 
 ---
 
+## 6.1 演练记录
+
+- **SYNC-001（2026-10-26，本地模拟）**：伪造一处"上游在 `Tours.progress()` 上的改动"，再 `git merge main` → **0 冲突**、`// PLA:` 标记保留、合并后 `build --offline` 成功。同时暴露一个坑：`.blockwright/mods.json` 是 gitignore 的生成物，**新 worktree / 干净克隆里没有它，构建会直接失败**（报错指向 `npm run setup`）。离线做法是从已有工作树 `cp -f .blockwright/mods.json <新树>/.blockwright/`。
 ## 6. 上游同步流程
 
 ```
