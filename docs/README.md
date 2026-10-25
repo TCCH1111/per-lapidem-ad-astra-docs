@@ -172,6 +172,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-018 | [WP-4/T5：SteeringRefusal 与四语文案（668/668）](reports/VERIFY-018-wp4-t5-refusals.md) | 通过：`RefusalKind.Named` 自动键、4 语言各 +3 键、3 测试；含偶发测试复跑说明 |
 | VERIFY-019 | [WP-4/T6：禁限区页面（列表 + 删除）](reports/VERIFY-019-wp4-t6-steering-page.md) | 页面可用、零新动词；画区接线与擦除留 T6b；偶发测试升为债务 D7 |
 | VERIFY-020 | [WP-4/T6b：画出的体积变成禁入区（671/671）](reports/VERIFY-020-wp4-t6b-painted-zones.md) | 通过：采纳 + 忽略同笔画 + 换笔画重采纳；4 条限制如实登记（采纳时机、擦除、单区、区名） |
+| VERIFY-021 | [WP-4 收口：T7 同源文案（673/673）](reports/VERIFY-021-wp4-closed.md) | **WP-4 完成**：reason→refusal 单一映射、运行时语言表验证、6 条验收全过；4 条遗留转后续 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
