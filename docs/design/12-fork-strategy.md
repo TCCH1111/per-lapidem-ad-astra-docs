@@ -278,3 +278,50 @@
 | OQ-4 | ~~modid 最终取值（与 [OQ-G-2](../design/03-glossary.md) 同）~~ | **已定：`plaa`**（[ADR-017](../00-charter.md)） | ✅ 已定（2026-10-18） |
 | OQ-5 | 改动登记表是否用脚本校验（确保每个 L2/L3 改动都有标记注释）？ | 同步可靠性 | M2 前 |
 | OQ-6 | 上游拆成四个 modid 后，[ADR-017](../00-charter.md) 的 `plaa` 如何展开：`plaa_core` / `plaa_vanilla` / `plaa_create`…？资源命名空间是否仍沿用上游的 `folkways`（四个上游 mod 共用该命名空间）？R-FK-3 的 `mods.toml` 冲突声明要对四个上游 modid 逐一写？ | w06 B-2 步、`blockwright.toml` 的 `[mods.folkways_*]`、整合包 jar 清单。事实（[r10 §2](../research/10-upstream-delta-f42e3c1-67f28b0.md)）：modid 在 `mods/<name>/build.gradle` 的 `ext.modId`，产物名在 `ext.modName`，`gradle.properties` 已无 `mod_id`；四个 toml 之间用 `[${version}]` 精确互钉 | ✅ **已定（2026-10-19，[ADR-023](../00-charter.md)）**：`plaa_core` / `plaa_vanilla` / `plaa_create` / `plaa_modulargolems`；资源命名空间 `folkways` 不动；R-FK-3 对四个上游 modid 逐一声明 `incompatible`。B-2 仍在上游原状通过 B-3..B-6 之后执行 |
+
+---
+
+## 13. 十模块与"改名四表面"（ADR-026）
+
+2026-11-05 裁决：**模块范围扩到上游全部 10 个**，并且 **modid 全部统一为 `plaa_*`**。
+上一版（ADR-023）只覆盖 4 个模块，本节把口径扩到 10 个，并记下一次真实事故的教训。
+
+### 13.1 模块清单
+
+| 模块 | 上游名 | 我们的 modid | 必需的外部依赖 |
+| --- | --- | --- | --- |
+| core | `folkways_core` | `plaa_core` | — |
+| vanilla | `folkways_vanilla` | `plaa_vanilla` | — |
+| create | `folkways_create` | `plaa_create` | Create |
+| modulargolems | `folkways_modulargolems` | `plaa_modulargolems` | Modular Golems |
+| cookery | `folkways_cookery` | `plaa_cookery` | Kaleidoscope Cookery（Tavern 可选） |
+| rts | `folkways_rts` | `plaa_rts` | — |
+| warfare | `folkways_warfare` | `plaa_warfare` | Superb Warfare + Kotlin for Forge |
+| tacz | `folkways_tacz` | `plaa_tacz` | TACZ |
+| firefighting | `folkways_firefighting` | `plaa_firefighting` | Create + Create Firefighting Additions |
+| chiselsandbits | `folkways_chiselsandbits` | `plaa_chiselsandbits` | Chisels & Bits（内含 scena/api/core，jarjar） |
+
+**资源命名空间仍是 `folkways`**（`assets/folkways`、`data/folkways`）。改了它，配方、标签、存档全部作废。
+
+### 13.2 改名要覆盖四个表面（事故教训）
+
+| # | 表面 | 具体位置 | 漏掉的后果 |
+| --- | --- | --- | --- |
+| 1 | 构建脚本 | `mods/*/build.gradle` 的 `ext.modId` / `ext.modName`（决定 jar 名） | jar 名与 modid 不符 |
+| 2 | 元数据 | `mods/*/src/main/resources/META-INF/neoforge.mods.toml` 的依赖 `modId`；**`type = "incompatible"` 的块要指向上游 `folkways_*`** | 依赖解析失败；或自己与自己不兼容（实测导致服务器起不来） |
+| 3 | **代码字符串字面量** | `@EventBusSubscriber(modid = "...")`、`ID` 常量、`DeferredRegister.create(..., "...")` | **静默不触发**（见下） |
+| 4 | 配置文件 | `blockwright.toml` 的 `[mods.*]`、jar 路径、**profile 的 mods 列表** | `npm run setup` 报 must set exactly one of path/url/from |
+
+**第 3 类是真正危险的一类**：实测共 **69 处**（其中 **60 处** `@EventBusSubscriber`）。
+它们不会编译失败，也不会启动失败——只是**事件不再送达**。
+
+本次事故：`SeedObservationGameTests` 在 `@EventBusSubscriber(modid = "folkways_vanilla")` 的注册方法里安装
+"钟可以当仓库读取"的容器适配器；modid 改名后该订阅器不再触发，适配器从未注册，两条测试以
+"规划预算观测不到容器"的形式失败，看上去完全像规划逻辑的问题。修掉 69 处后，**1467 条测试全绿**。
+
+### 13.3 每次同步后的复查
+
+```bash
+grep -rn '"folkways_\(core\|vanilla\|create\|modulargolems\|cookery\|rts\|warfare\|tacz\|firefighting\|chiselsandbits\)"' \
+  --include=*.java mods | grep -v '/build/'      # 期望：无输出
+```
