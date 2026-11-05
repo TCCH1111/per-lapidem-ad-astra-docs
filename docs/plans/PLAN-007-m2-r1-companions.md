@@ -1,7 +1,7 @@
 # PLAN-007 · M2-R1：同行伙伴（关系系统的第一刀）
 
 ```
-状态：计划中（待用户确认切片边界）
+状态：R1-1 ✅（VERIFY-049）；T0 已读穿；R1-2..R1-6 待做
 负责人：规划者（agent）
 最后更新：2026-11-05
 上游依据：docs/prd/PRD-008-relationships-and-social.md（§4 概念模型、§5 状态机）
@@ -76,7 +76,7 @@ final class RelationState {
 | # | 任务 | 层 | 验收 |
 | --- | --- | --- | --- |
 | **T0** | 读穿三个未知项（§5 OQ-1/2/3） | 只读 | 结论落纸 |
-| **R1-1** | `Bond` + `RelationState`（含上限淘汰、`lastTouch` 卡频）+ save/load | L1 | gametest：加/去重/淘汰/往返 |
+| **R1-1** | ✅ `RelationState`（上限 30、冷却 500 刻、淘汰、`prune`、save/load）；5 个测试（VERIFY-049） | L1 | 1472/1472 全绿 |
 | **R1-2** | 采样器：位置 + 是否在干活 → 涨 bond | L1（若需基底钩子→L2 报批） | gametest：纯函数 `shouldBond(a, b, dist, working)` |
 | **R1-3** | 士气输入：算出 `CompanionBonus` 并交给 mood | L1 | gametest：有/无加成两态 |
 | **R1-4** | 卡片一行（复用 `lookLines`）+ 四语文案 | L1 + L2(1 处注册) | gametest：键可解析；行只在生效时出现 |
@@ -89,10 +89,10 @@ final class RelationState {
 
 | 编号 | 问题 | 为什么要先读 |
 | --- | --- | --- |
-| OQ-1 | 从殖民地视角能不能读到**居民位置与"是否在干活"**？（`ColonyView` / `Bodies` / `Doing`） | 决定 R1-2 是 L1 还是 L2 |
-| OQ-2 | `scope.tick(server -> ...)` 里能否安全地拿殖民地与居民列表？会不会与 labor 线程竞争？ | 决定采样器写在哪 |
-| OQ-3 | 居民**死亡/离开**后，`colony.keep` 里的 bond 是否会变孤儿？需不需要清理钩子？ | 决定是否要 R1-1 之外的清理路径 |
-| OQ-4 | `Mood.Needs` 目前只有饥饱与"有无活"，加士气是否需要新档位？（**不要**为了实现关系而发明新心情） | 避免把 mood 撑成大杂烩 |
+| OQ-1 | ✅ **能，不需钩子**：`Colony.holdings().bodiesIn(level)` → `Body`；`Body.mob().blockPosition()`；`Body.doing()`，空闲判据 `Doings.IDLE`。**R1-2 可留 L1** |
+| OQ-2 | ✅ **安全**：`HoursContent.tick` 同款用法（`server.getTickCount() % 200`），已随包发布 |
+| OQ-3 | ✅ **会孤儿，但不需要事件**：按 `colony.residents()` 定期 `prune(present)`，已实现并有测试 |
+| OQ-4 | ✅ **不加新档位**：只加布尔 `amongFriends`，仅用于压制"没活干 → WORRIED" |
 
 ---
 
