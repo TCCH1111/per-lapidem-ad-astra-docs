@@ -195,6 +195,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-038 | [WP-8 第三段：数据在关卡拥有的殖民地上（703/703）](reports/VERIFY-038-wp8-level-backed.md) | 通过：mint→keep→按 id 取回；**进程重启改为人工验收**（无玩家建不了殖民地） |
 | VERIFY-039 | [队列 ⑤：M1 演示脚本就绪（19 个观察点，未跑通）](reports/VERIFY-039-demo-script.md) | 脚本：[M1-demo-script.md](demo/M1-demo-script.md)；**客户端未实测**，跑通后才算完成 |
 | SYNC-001 | [上游同步演练 #1（本地模拟）](reports/SYNC-001-upstream-drill.md) | 通过：0 冲突、PLA 标记保留、合并后构建成功；暴露 `.blockwright/mods.json` 坑 |
+| SYNC-002 | [上游同步预检 #2：历史已被重写，不能 merge](reports/SYNC-002-upstream-precheck.md) | 预检（未改动 main）：无共同祖先；85 文件移植预演 = 24 干净 / 12 冲突 / 1 重定位 / 48 新增；`Standing` 撞词 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |
 | VERIFY-042 | [M2/N3：心情读得出来（710/710）](reports/VERIFY-042-m2-n3-mood-readout.md) | 通过：`PresenceViews.mood` + 1 个 L2 快照出口；未知项宁低不高；空路径安全 |

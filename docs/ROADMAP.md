@@ -47,7 +47,7 @@
 
 | 项 | 现状 |
 | --- | --- |
-| fork 基线 | 上游 `master` @ `3ce4d88`（**上游已前进到 `b70b948`**，待同步）；fork `main` = **`0cb72e8`**（M1 骨架 + 264 + M2 N1–N6 + CI P0/P1） |
+| fork 基线 | 上游 `master` @ **`aaac8b8`**（**历史已被上游重写：与我们无共同祖先**，见 SYNC-002）；fork `main` = **`0cb72e8`**（M1 骨架 + 264 + M2 N1–N6 + CI P0/P1，714/714） |
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` ✅（含 `lintScaffold`）；`runGameTestServer` **714/714** |
 | 门禁四件套 | **全绿**（VERIFY-045）：build ✅ · unit **134/134** · i18n **7/7** · gametest **714/714** |
 | CI | **P0 + P1 已落地**（VERIFY-045）：`build.yml` 跑 `check`/`typecheck`/`unit`/`i18n`/`build`；`gametest.yml` 在 Linux 跑游戏测试并对唯一已知偶发「按名单重试一次」。P2/P3 见 D13/D14 |
@@ -69,7 +69,7 @@
 3. ~~NeoForge 版本统一~~ ✅ **完成**：构建 = 包声明 = **21.1.264**；原"264 回归"结论经同机同日 5+5 次测试推翻（VERIFY-040）。
 4. **M1 玩法骨架**——WP-1/4/5/6/8 ✅、**自动部分收口**；剩演示人工验收（D11）。下一站：队列 ⑤ 演示脚本。
 5. **M1 演示脚本可跑**——[脚本就绪（19 个观察点）](demo/M1-demo-script.md)，但**需要你的屏幕**：按 §2–§5 逐条勾选 + 3 张截图 + `latest.log`，回填 [VERIFY-039](reports/VERIFY-039-demo-script.md) 后此项才算完成。
-6. ~~上游同步演练 #1~~ ✅（SYNC-001，本地模拟）；**但上游已真实前进**——`3ce4d88 → b70b948`（905 文件/63 提交，`master` 被 **force-push**）。下一项：**真实同步演练 #2**（SYNC-002），处理规模与冲突都远超 #1。
+6. ~~上游同步演练 #1~~ ✅（SYNC-001）；~~预检 #2~~ ✅（[SYNC-002](reports/SYNC-002-upstream-precheck.md)）：**上游重写历史、与我们无共同祖先 → 不能 merge，只能移植**（85 文件中 24 干净 / 12 冲突 / 1 重定位 / 48 直接新增）。下一项：**执行移植**（D15），先改名 `Standing → Veto` 再逐文件搬。
 7. ~~CI 门禁~~ ✅（VERIFY-045）：P0+P1 落地，四件套在本机 Linux 复现全绿，并修掉"我们的键缺翻译"这一真缺陷；债务 D6/D7 关闭。下一项：P2/P3 与真实 Actions 首跑（D13/D14）。
 
 ---
@@ -114,3 +114,5 @@
 | D12 | `rules-first`（需求让位于规则）需阻断/覆盖通道 → **L3** | 需要时单独报批（VERIFY-043/044） |
 | D13 | **CI P2 未做**：缺可选依赖（无能源/无 CCB/无 FTB）的构建矩阵 | Blockwright profile 覆盖语义确认后（w06 §4.2 P2） |
 | D14 | **CI P3 未接**：文档登记/断链/AC 编号门禁；docs 仓库尚无 CI | docs 仓库可跑 Actions 时（w06 §4.2 P3；DoD #6） |
+| D15 | **上游已重写历史**（根提交 `7cd6105` vs `731d528`，无共同祖先）；只能按文件移植，且上游每周数十提交，**移植完成即落后** | SYNC-002 预检已完成；下一步执行移植并改为**小步定期移植** |
+| D16 | 上游把 **"Standing"** 用作 "stand（站位）规划" 语义（`StandingPlanGameTests`），与我们"否决权"的 `Standing` 撞词 | 移植前改名为 `Veto`/`Vetoes` |
