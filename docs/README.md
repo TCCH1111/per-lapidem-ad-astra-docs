@@ -201,6 +201,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-043 | [M2/N4 前置调查：rules-first 只能靠 L3](reports/VERIFY-043-m2-n4-investigation.md) | 调查（无代码）：选留谓词内联、无插件钩子 → N4 收窄为 needs-first + 解释 |
 | VERIFY-044 | [M2/N5：说清"为什么休息时段还动着"（712/712）](reports/VERIFY-044-m2-n5-needs-explanation.md) | 通过：有需求才解释、没需求保持沉默；解决"需求优先 vs 作息坏了"的误判 |
 | VERIFY-045 | [队列 ⑦：CI 门禁 P0+P1 落地（修掉一条真缺陷）](reports/VERIFY-045-ci-gates.md) | 通过：本机 Linux 四件套全绿（build/134/7/712）；补禁区页面四语文案、登记 bench 判据表；P1 只对 D7 按名单重试一次；D6/D7 关闭 |
+| VERIFY-046 | [M2/N6：居民卡上看得见心情（714/714）](reports/VERIFY-046-m2-n6-mood-card.md) | 通过：复用 lookLines 聚合，零改动上游居民页；CONTENT 与无人时保持沉默；四档键运行时均可解析 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |

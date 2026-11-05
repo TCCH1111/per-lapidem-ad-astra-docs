@@ -1,7 +1,7 @@
 # PLAN-006 · M2-WP7：需求与情绪（张力的第一层）
 
 ```
-状态：N1–N5 完成（VERIFY-041/042/044；N4 经 VERIFY-043 收窄）；N6/N7 待做
+状态：N1–N6 完成（VERIFY-041/042/044/046；N4 经 VERIFY-043 收窄）；N7 待做
 负责人：规划者（agent）
 最后更新：2026-10-26
 上游依据：docs/workflow/05-m1-task-breakdown.md §4 WP-7；docs/prd/PRD-001-needs-mood-memory.md
@@ -69,7 +69,7 @@
 | **N3** | ✅ `PresenceViews.mood` + `LivingPresence.needsOf`（VERIFY-042） | L1 + L2(1 方法) | 2 个测试全过 |
 | **N4** | **已定范围**（VERIFY-043）：只做 `needs-first` + 解释（现状即此）；**`rules-first` 需 L3**（改 `ColonyLabor:318` 内联谓词），记为独立候选不入选 | L1 | 解释两种情形（照常收工 / 饿了去动） |
 | **N5** | ✅ `Explanation.upDuringRest(Mood)`（VERIFY-044）：有需求才解释 | L1 | 2 个测试全过 |
-| **N6** | 书里显示情绪（先查 `SettlerNeed` 卡片已有什么） | L1/L2 | 编译 + 语言键；**客户端留人工验收** |
+| **N6** | ✅ 居民卡显示心情（VERIFY-046）：复用 `lookLines` 聚合，零改动上游页 | L1 + L2(1 处注册) | 2 个测试；行位置留人工验收 |
 | **N7** | 登记 + VERIFY 报告 + ROADMAP/AC | 文档 | 断链 0 |
 
 ---
@@ -102,6 +102,6 @@
 
 | 编号 | 问题 | 何时定 |
 | --- | --- | --- |
-| OQ-1 | `SettlerNeed` 卡片现在画了什么？缺"心情"还是缺"原因"？ | N6 前读 |
+| OQ-1 | ~~卡片已有什么~~ → 卡由 `ColonyLooks.of` 聚合所有 `Facing.lookLines`；我们只需注册自己的 `Facing`（已闭合） | ✅ |
 | OQ-2 | ~~`Urges` 有无压制通道~~ → **没有**；`rules-first` 必须 L3（VERIFY-043）。已关闭 | ✅ |
 | OQ-3 | 情绪是否需要**长期**演化（记忆），还是只看当下快照？ | N1 前定；PRD-001 提到记忆，可能属 M2 后半 |
