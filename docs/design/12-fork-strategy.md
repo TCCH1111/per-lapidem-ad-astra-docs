@@ -142,8 +142,13 @@
 | `mods/core/src/main/java/.../engine/plan/Tours.java` | **L3** | 用 `Standing.check` + `Standings.reasonOf`；`progress()` 补序 | PLAN-004（已批准）/ VERIFY-024 | 2026-10-25 |
 | `mods/vanilla/.../plugins/BuiltinPlugins.java` | L2（2 行） | 注册 `HoursPlugin` | PLAN-004 / VERIFY-022 | 2026-10-25 |
 | `mods/core/src/main/resources/assets/folkways/lang/{en,zh_cn,zh_hk,zh_tw}.json` | L2（各 +11 行） | 作息的理由、页面与设置文案 | PLAN-004 / VERIFY-023、025 | 2026-10-25 |
+| `.github/workflows/build.yml` | L2 | P0 门禁：加 `./gradlew check` 与 `npm run test:i18n`，nightly 改走 `main` 与 `plaa-*` 名 | w06 §4.2 / VERIFY-045 | 2026-10-26 |
+| `tests/bench/report/judgements.ts` | L2（测试） | 把禁区/作息的拒绝与未指派原因登记进判据表（本地覆盖率检查由红转绿） | VERIFY-045 | 2026-10-26 |
+| `mods/core/src/main/resources/assets/folkways/lang/{en,zh_cn,zh_hk,zh_tw}.json` | L2（各 +7 行） | 禁区页面与区域种类文案（原先缺失，页签与行显示生键） | VERIFY-045 | 2026-10-26 |
 
 > 新增文件 `NOTICE.md` 与 `tests/i18n/mods-toml.test.ts` 是 PLAN-001 的配套交付物，不属于上游改动登记表；它们分别承担 MIT 署名/变更说明与 modid 回归门禁。
+
+> 新增文件 `.github/workflows/gametest.yml` 与 `tools/ci/run-gametest.sh`（P1 门禁）是本轮新写、不改上游，不入登记表。
 
 > PLAN-002（WP-1 引擎可读面）另新增 3 个门面文件，均属 L1、不改上游：`core/api/resident/body/BodyViews.java`、`plugins/person/living/PresenceViews.java`、`core/engine/labor/LaborViews.java`；配套 gametest 同名文件。
 

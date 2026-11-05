@@ -49,10 +49,10 @@
 
 | 路径 | 内容 |
 | --- | --- |
-| `reference/folkways-67f28b0/` | 基底 mod 的只读参考副本（当前基线，升级时整体替换；来源与 commit 见 `reference/README.md`）。`reference/folkways-master/`（旧快照 f42e3c1）仅供既有引用过渡 |
+| `reference/folkways-3ce4d88/` | 基底 mod 的只读参考副本（**当前基线**，升级时整体替换；来源与 commit 见 `reference/README.md`）。`reference/folkways-67f28b0/`（前基线）仅供既有引用过渡 |
 | `reference/tyk-construction-prd-zh.txt` | 参考 PRD 原文（格式样例） |
 | `pack/` | 整合包工程（**packwiz**，[ADR-021](00-charter.md)）：`pack.toml`、`index.toml`、`mods/*.pw.toml`；`config/`、`kubejs/`、`datapacks/` 按 PRD 需要再建 |
-| WSL `~/pla/mod`（Windows 侧无副本） | Folkways 的 fork，**独立 git 仓库**（分支 `main`、remote `upstream` → GitHub、标签 `upstream-base-67f28b0-20261019`），位于 WSL2 Ubuntu-24.04 的 ext4（[ADR-022](00-charter.md)）；Windows 侧经 `\\wsl.localhost\Ubuntu-24.04\home\tcch1111\pla\mod` 或 [`tools/wsl-run.sh`](../tools/wsl-run.sh) 访问；临时克隆 `mod/` 已于 2026-10-19 删除 |
+| WSL `~/pla/mod`（Windows 侧无副本） | Folkways 的 fork，**独立 git 仓库**（分支 `main`、remote `origin` → `TCCH1111/per-lapidem-ad-astra` 与 `upstream` → `IzakyL/folkways`、标签 `upstream-base-67f28b0-20261019` 与 `upstream-base-3ce4d88-20261019`），位于 WSL2 Ubuntu-24.04 的 ext4（[ADR-022](00-charter.md)）；Windows 侧经 `\\wsl.localhost\Ubuntu-24.04\home\tcch1111\pla\mod` 或 [`tools/wsl-run.sh`](../tools/wsl-run.sh) 访问；临时克隆 `mod/` 已于 2026-10-19 删除 |
 | `tools/` | 开发环境脚本（`wsl-provision.sh`、`wsl-run.sh`，见 [w06 §1.5](workflow/06-build-and-ci.md)） |
 | `.cache/`、`.tools/` | 本机缓存与工具（已核验 jar、日志、packwiz 可执行文件），不入库 |
 
@@ -115,7 +115,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | d09 | [交互层与信息呈现](design/09-interaction-and-ui.md) | 草稿 |
 | d10 | [多人、权限与性能](design/10-multiplayer-and-server.md) | 草稿 |
 | d11 | [自由度设计纲领](design/11-freedom-design.md) | 草稿（A-max 已定） |
-| d12 | [Folkways fork 策略](design/12-fork-strategy.md) | 草稿（ADR-007 已定） |
+| d12 | [Folkways fork 策略](design/12-fork-strategy.md) | 草稿（ADR-007 已定；§5.1 登记表随每轮更新——最近 2026-10-26 CI P0/P1） |
 | d13 | [气体、污染与资源循环](design/13-gases-pollution-and-cycles.md) | 草稿（ADR-016；M3 预埋/M4 实现） |
 | d14 | [存档、备份与迁移](design/14-saves-backups-and-migration.md) | 草稿（ADR-018；增量+全量、永不覆盖、决策日志独立归档） |
 | d15 | [能源、动力适配层与机械族](design/15-power-and-mechanical-residents.md) | 草稿（ADR-019；FE/EU/旋转/蒸汽适配、四种驱动、人造子宫） |
@@ -200,6 +200,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-042 | [M2/N3：心情读得出来（710/710）](reports/VERIFY-042-m2-n3-mood-readout.md) | 通过：`PresenceViews.mood` + 1 个 L2 快照出口；未知项宁低不高；空路径安全 |
 | VERIFY-043 | [M2/N4 前置调查：rules-first 只能靠 L3](reports/VERIFY-043-m2-n4-investigation.md) | 调查（无代码）：选留谓词内联、无插件钩子 → N4 收窄为 needs-first + 解释 |
 | VERIFY-044 | [M2/N5：说清"为什么休息时段还动着"（712/712）](reports/VERIFY-044-m2-n5-needs-explanation.md) | 通过：有需求才解释、没需求保持沉默；解决"需求优先 vs 作息坏了"的误判 |
+| VERIFY-045 | [队列 ⑦：CI 门禁 P0+P1 落地（修掉一条真缺陷）](reports/VERIFY-045-ci-gates.md) | 通过：本机 Linux 四件套全绿（build/134/7/712）；补禁区页面四语文案、登记 bench 判据表；P1 只对 D7 按名单重试一次；D6/D7 关闭 |
 | k00 | [整合包规格](pack/00-pack-spec.md) | 草稿 |
 | k01 | [Mod 清单（已核实 1.21.1+NeoForge 可用性）](pack/01-modlist.md) | 调研产出 |
 | k02 | [配置、数据包与脚本内容](pack/02-config-and-datapack.md) | 草稿 |
