@@ -375,3 +375,28 @@
 2. **设计裁决**（设计负责人）：~~季节性/温度/口渴是否自研或采用 `cold-sweat` + `serene-seasons`~~ → **已裁决（ADR-010，[r08](../research/08-temperature-thirst-integration.md) 证据）**：居民侧自研；外部 mod 仅作可整体删除的可选传感器。剩余待办：Cold Sweat 许可冲突条款、是否默认进包（见 PRD-003 OQ）。
 3. **技术验证**（实现）：Create 6 + Aeronautics 1.3.2 + Sable 2.0.6 的最小可运行包，测 TPS 与移动结构区块开销。
 4. **替代验证**：`nutritional-balance` 是否满足饮食需求（§3 #7）。
+
+---
+
+## 7. 移植带来的新增依赖（ADR-026，2026-11-05）
+
+十模块口径下，以下 mod 由可选变为必需（模块的 `mods.toml` 里是 required），
+必须进整合包，否则对应模块加载失败：
+
+| mod | 被谁需要 | 版本（与 `.blockwright/mods.json` 夹具一致） | 备注 |
+| --- | --- | --- | --- |
+| Kaleidoscope Cookery | `plaa_cookery` | 1.6.0 | 厨房/料理主体 |
+| Kaleidoscope Tavern | `plaa_cookery` | 1.2.0 | 可选，酒馆内容 |
+| TACZ | `plaa_tacz` | 1.1.8-hotfix-r7 | 枪械本体 |
+| Superb Warfare | `plaa_warfare` | 0.8.9.2 | 武器系统 |
+| Kotlin for Forge | `plaa_warfare` | 5.12.0 | Superb Warfare 的依赖 |
+| Create: FireFighting Additions | `plaa_firefighting` | 0.2.5-beta-fix2 | 消防设备 |
+| Chisels & Bits | `plaa_chiselsandbits` | 21.1.33 | jar 自带 api/core/scena（jarjar） |
+
+已有依赖不变：Create、Modular Golems、LDLib2（含 Ponder）、GeckoLib、Sable 等。
+LDLib2 不在夹具集里，属运行期依赖（构建下载到 build/deps/），详见 VERIFY-048 §5。
+
+### 7.1 已核实的加载事实
+
+真实专用服务端（31 个 jar：10 个自研 + 21 个依赖）启动结果：
+Done (4.511s)、0 FATAL、10 个 plaa_* modid 全部注册（VERIFY-048）。

@@ -203,3 +203,48 @@ pack/
 | OQ-PK-3 | 自研插件的许可选择 | 影响社区与再分发 | M1 前 |
 | OQ-PK-4 | 是否随包分发资源包/光影（许可与体积） | 影响体验与合规 | M2 前 |
 | OQ-PK-5 | 是否提供「无 Create」档（Create 系性能与复杂度都高） | 影响最小档定位 | 收 [mod 清单](01-modlist.md) 调研后定 |
+
+---
+
+## 12. 十模块口径（ADR-026，2026-11-05）
+
+§7 的"四个 jar"口径已过期。现行口径：
+
+### 12.1 随包分发的自研 jar：10 个
+
+| modid | 必需的外部依赖（required，整合包必须提供） |
+| --- | --- |
+| `plaa_core` | LDLib2（含 Ponder） |
+| `plaa_vanilla` | — |
+| `plaa_create` | Create |
+| `plaa_modulargolems` | Modular Golems |
+| `plaa_cookery` | Kaleidoscope Cookery（Tavern 可选） |
+| `plaa_rts` | — |
+| `plaa_warfare` | Superb Warfare + Kotlin for Forge |
+| `plaa_tacz` | TACZ |
+| `plaa_firefighting` | Create + Create Firefighting Additions |
+| `plaa_chiselsandbits` | Chisels & Bits（jarjar 内含 scena / api / core） |
+
+资源命名空间仍是 `folkways`（配方/标签/存档依赖它）。
+
+### 12.2 `pack/mods/` 需要同步的条目
+
+| 动作 | 条目 |
+| --- | --- |
+| 换 jar | 旧的 4 个 `plaa-*.jar` → 10 个新 jar（新增 cookery / rts / warfare / tacz / firefighting / chiselsandbits） |
+| 加 `.pw.toml` | `kaleidoscope-cookery`、`kaleidoscope-tavern`（可选）、`tacz`、`superb-warfare`、`kotlin-forge`、`create-firefighting-additions`、`chisels-and-bits` |
+| 依赖版本 | 与 `.blockwright/mods.json` 的夹具版本对齐（那套已被 1467 条测试验证） |
+
+### 12.3 已验证的事实
+
+| 项 | 证据 |
+| --- | --- |
+| 十个 jar 打包后可一起加载 | [VERIFY-048](../reports/VERIFY-048-dedicated-server.md)：真实专用服务端 Done (4.511s)、0 FATAL、10 modid 全注册 |
+| 十模块代码自洽 | [SYNC-007](../reports/SYNC-007-port-green.md)：1467 / 1467 游戏测试全绿 |
+| 十模块与 modid 决策 | [ADR-026](../00-charter.md)、[d12 §13](../design/12-fork-strategy.md) |
+
+### 12.4 尚未做（等客户端实测后）
+
+1. 把 `pack/mods/` 的 4 个 jar 换成 10 个（改发布内容，需在移植落到 `main` 后做）；
+2. 为 7 个新依赖补 `.pw.toml`（URL + hash 可由 `blockwright.toml` 的 pin 生成）；
+3. 重打 `.mrpack` 并做一次安装器冒烟（沿用 §10 流水线）。
