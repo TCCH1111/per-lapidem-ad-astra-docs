@@ -47,9 +47,9 @@
 
 | 项 | 现状 |
 | --- | --- |
-| fork 基线 | 上游 `master` @ **`aaac8b8`**（**历史已被上游重写：与我们无共同祖先**，见 SYNC-002）；fork `main` = **`0cb72e8`**（M1 骨架 + 264 + M2 N1–N6 + CI P0/P1，714/714） |
+| fork 基线 | 上游 `master` @ **`aaac8b8`**（**历史已被上游重写：与我们无共同祖先**，见 SYNC-002）；fork `main` = **`c456385`**（M1 骨架 + 264 + M2 N1–N6 + CI P0/P1 + `Veto` 改名，714/714） |
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` ✅（含 `lintScaffold`）；`runGameTestServer` **714/714** |
-| 门禁四件套 | **全绿**（VERIFY-045）：build ✅ · unit **134/134** · i18n **7/7** · gametest **714/714** |
+| 门禁四件套 | **全绿**（VERIFY-045/047）：build ✅ · unit **134/134** · i18n **7/7** · gametest **714/714**；N6 后的键回归由 i18n 门禁抓到并修复 |
 | CI | **P0 + P1 已落地**（VERIFY-045）：`build.yml` 跑 `check`/`typecheck`/`unit`/`i18n`/`build`；`gametest.yml` 在 Linux 跑游戏测试并对唯一已知偶发「按名单重试一次」。P2/P3 见 D13/D14 |
 | 整合包 | `pack/`（packwiz）**54 个受管文件** = 45 `.pw.toml` + 4 jar + 3 配置 + 1 KubeJS + 1 任务章节 |
 | 客户端 | Prism 实例实测一次：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006；D5：发版前重跑） |
@@ -115,4 +115,4 @@
 | D13 | **CI P2 未做**：缺可选依赖（无能源/无 CCB/无 FTB）的构建矩阵 | Blockwright profile 覆盖语义确认后（w06 §4.2 P2） |
 | D14 | **CI P3 未接**：文档登记/断链/AC 编号门禁；docs 仓库尚无 CI | docs 仓库可跑 Actions 时（w06 §4.2 P3；DoD #6） |
 | D15 | **上游已重写历史**（根提交 `7cd6105` vs `731d528`，无共同祖先）；只能按文件移植，且上游每周数十提交，**移植完成即落后** | SYNC-002 预检已完成；下一步执行移植并改为**小步定期移植** |
-| D16 | 上游把 **"Standing"** 用作 "stand（站位）规划" 语义（`StandingPlanGameTests`），与我们"否决权"的 `Standing` 撞词 | 移植前改名为 `Veto`/`Vetoes` |
+| D16 | ~~`Standing` 与上游 "stand（站位）"撞词~~ → **已偿还**：改名 `Veto`/`Vetoes`，只改标识符（VERIFY-047） | ✅ |
