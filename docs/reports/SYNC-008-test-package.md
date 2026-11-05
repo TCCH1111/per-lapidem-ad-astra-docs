@@ -74,3 +74,22 @@
 崩了就把 `logs/latest.log` + `crash-reports/` 最新报告给我，并说明崩在哪一步。
 
 **这一步过了，才谈 A/B/C（怎么把移植落到 `main`）。**
+
+---
+
+## 6. 追加：mrpack 版本（Prism 直接导入，不用手抄）
+
+原来的 216 MB zip 需要手工复制 48 个文件；现另出一个 Modrinth 格式包，Prism 可一步导入：
+
+| 项 | 值 |
+| --- | --- |
+| 文件 | `.cache/dist/PLAA-port-1ea1dac.mrpack`（216 MB） |
+| 结构 | `modrinth.index.json` + `overrides/mods/`（48 个文件全部随包） |
+| `files[]` | 空数组——所有 jar 都在 `overrides/`，安装时不需要联网下载 |
+| 依赖声明 | `minecraft 1.21.1` / `neoforge 21.1.264` |
+| 校验 | 解压后 `overrides/mods` 48 个文件，其中 `plaa-*.jar` 10 个 |
+
+为什么用"全随包"而不是"按需下载"：这份是测试包，目标是"能装上就能跑"，不该把
+网络（Modrinth/CurseForge 可用性）变成额外变量。正式发布版才需要按需下载（分发与许可考量）。
+
+导入步骤：Prism → Add Instance → Import → 选该 .mrpack → 启动。
