@@ -155,6 +155,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | PLAN-004 | [M1-WP5：作息表（什么时候干活）](plans/PLAN-004-wp5-hours.md) | 计划中（L1 为主；A 预设路线；T0 待核 `ColonyContext.urges` 能否压制） |
 | PLAN-005 | [M1-WP6：解释层（说得出为什么）](plans/PLAN-005-wp6-explanation.md) | 计划中（L1 为主；10 类阻塞；T0 夹具已核：派活可测、需求不可测） |
 | PLAN-006 | [M2-WP7：需求与情绪（张力的第一层）](plans/PLAN-006-m2-needs-mood.md) | 计划中（L1 为主；T0 已核：基底已有需求机制，M2 做"张力+可见性+解释"） |
+| PLAN-007 | [M2-R1：同行伙伴（关系系统第一刀）](plans/PLAN-007-m2-r1-companions.md) | 计划中：共同劳作→bond→士气→卡片；L1 为主；4 个未知项待读穿 |
 | VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
 | VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |
