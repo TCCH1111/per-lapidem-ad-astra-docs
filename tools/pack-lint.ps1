@@ -98,7 +98,7 @@ foreach ($m in [regex]::Matches($indexText, '(?ms)\[\[files\]\]\s*file\s*=\s*"([
 $onDisk = Get-ChildItem $PackDir -Recurse -File |
     Where-Object { $_.Name -ne 'index.toml' -and $_.Name -ne 'pack.toml' }
 foreach ($f in $onDisk) {
-    $rel = $f.FullName.Replace($PackDir + '\', '').Replace('\', '/')
+    $rel = [System.IO.Path]::GetRelativePath($PackDir, $f.FullName).Replace('\', '/')
     if (-not $recorded.ContainsKey($rel)) { $problems.Add("未登记: $rel"); continue }
     $checked++
     if ((Sha256 $f.FullName) -ne $recorded[$rel]) { $problems.Add("哈希不符: $rel") }
@@ -115,7 +115,7 @@ elseif ($m.Groups[1].Value -ne (Sha256 $indexPath)) { $problems.Add('pack.toml �
 
 foreach ($f in $onDisk) {
     if ((IsText $f) -and (HasCrlf $f)) {
-        $problems.Add('CRLF: ' + $f.FullName.Replace($PackDir + '\', '').Replace('\', '/'))
+        $problems.Add('CRLF: ' + [System.IO.Path]::GetRelativePath($PackDir, $f.FullName).Replace('\', '/'))
     }
 }
 
