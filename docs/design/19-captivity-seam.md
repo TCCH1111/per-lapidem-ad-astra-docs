@@ -80,8 +80,8 @@ CONFINE
 
 | 组件 | 形态 | 层 |
 | --- | --- | --- |
-| 牢区 | `ZoneRule.Kind.CONFINE`（我们自己的枚举扩展） | **L1** |
-| 拒绝理由 | 复用 `Vetoes`（`CONFINE` 区外 → 拒绝） | L1 |
+| 牢区 | `ZoneRule.Kind.CONFINE`（**已实现**，VERIFY-056） | L1 ✅ |
+| 拒绝理由 | 复用 `Vetoes`（`CONFINE` 区外 → 拒绝） | ⚠️ **未接上**：引擎否决权认不出主体，见 [VERIFY-057](../reports/VERIFY-057-subject-veto-gap.md) |
 | 身份 | `Resident.kind` + 一个只读判定 | L1 |
 | 强制劳动 | **不做**（需 L3：指定执行者通道） | ⛔ 待报批 |
 | 玩家可见 | 解释层（"他被关在里面"）+ 卡片 | L1 |

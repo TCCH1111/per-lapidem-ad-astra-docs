@@ -31,8 +31,8 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 253 |
-| [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 121 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 254 |
+| [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 122 |
 
 ### prd/
 
@@ -186,6 +186,7 @@
 | [VERIFY-054-d18-i18n-gate.md](reports/VERIFY-054-d18-i18n-gate.md) | VERIFY-054 · D18 关闭：i18n 枚举键门禁恢复（unit 140/140） | 84 |
 | [VERIFY-055-m2-medical-data.md](reports/VERIFY-055-m2-medical-data.md) | VERIFY-055 · M2 医疗 R0-1/R0-2：伤口与流血（1485/1485） | 91 |
 | [VERIFY-056-confine-kind.md](reports/VERIFY-056-confine-kind.md) | VERIFY-056 · M3 关押接缝落地：`Kind.CONFINE`（1488/1488） | 84 |
+| [VERIFY-057-subject-veto-gap.md](reports/VERIFY-057-subject-veto-gap.md) | VERIFY-057 · 否定结果：`CONFINE` 拦不住派活（引擎的否决权认不出"谁"） | 116 |
 
 ### research/
 
@@ -253,7 +254,7 @@
 | ADR-025 | **基线前移与远端（用户）** |
 | ADR-026 | **十模块与 modid 全量改名（用户裁决，2026-11-05）** |
 
-## 4. 债务清单（自动摘取 [ROADMAP.md](ROADMAP.md)，共 19 条）
+## 4. 债务清单（自动摘取 [ROADMAP.md](ROADMAP.md)，共 20 条）
 
 | 状态 | 债务 | 结清条件 / 说明 |
 | --- | --- | --- |
@@ -276,6 +277,7 @@
 | ⚠️ D17 | 模块 = 上游全部 10 个，modid 统一 `plaa_*`；改名要覆盖五个表面（gradle / mods.toml / Java 字符串字面量 / profile / `d | 每次同步后复查 Java 与 `data/` 里是否残留旧 modid（含 `f |
 | ✅ D18 | i18n 枚举键门禁未随移植过来 → 已偿还 | ✅ 关闭 |
 | ⚠️ D19 | 包里现在有三条面粉链（Create→FD 桥接、Cookery 自带、FD 自带）；不冲突但配方重复 | 等你定是否把 Cookery 也桥进来（涉及该 mod 平衡） |
+| ⚠️ D20 | 主体类区域在调度层是惰性的 | 选 A（教否决权认人，需性能测量）或 B（只做诊断） |
 
 ## 5. 当前进度
 
@@ -317,9 +319,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **153** |
-| 总行数 | **35450** |
-| 证据报告 | **75** |
+| 文档总数 | **154** |
+| 总行数 | **35570** |
+| 证据报告 | **76** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
