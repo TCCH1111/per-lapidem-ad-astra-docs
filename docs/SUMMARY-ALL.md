@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 262 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 263 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -195,6 +195,7 @@
 | [VERIFY-060-m2-r03-severe.md](reports/VERIFY-060-m2-r03-severe.md) | VERIFY-060 · M2 R0-3：重伤者不被派活（口径 C，1495/1495） | 94 |
 | [VERIFY-061-m2-r04-card.md](reports/VERIFY-061-m2-r04-card.md) | VERIFY-061 · M2 R0-4：卡片说「他伤得太重，暂时不接活」（1496/1496） | 97 |
 | [VERIFY-062-m2-r0-closed.md](reports/VERIFY-062-m2-r0-closed.md) | VERIFY-062 · M2 R0 收口：重伤 → 一条 reservation（1498/1498） | 109 |
+| [VERIFY-063-d20-subject-veto.md](reports/VERIFY-063-d20-subject-veto.md) | VERIFY-063 · D20 关闭：否决权现在认人（1500/1500） | 80 |
 
 ### research/
 
@@ -285,7 +286,7 @@
 | ⚠️ D17 | 模块 = 上游全部 10 个，modid 统一 `plaa_*`；改名要覆盖五个表面（gradle / mods.toml / Java 字符串字面量 / profile / `d | `data/` 与 Java 源码**都已由 unit 门禁复查**（SYNC- |
 | ✅ D18 | i18n 枚举键门禁未随移植过来 → 已偿还 | ✅ 关闭 |
 | ⚠️ D19 | 包里现在有三条面粉链（Create→FD 桥接、Cookery 自带、FD 自带）；不冲突但配方重复 | 等你定是否把 Cookery 也桥进来（涉及该 mod 平衡） |
-| ⚠️ D20 | 主体类区域在调度层是惰性的 | 选 A（教否决权认人，需性能测量）或 B（只做诊断） |
+| ✅ D20 | 主体类区域在调度层是惰性的 → ✅ 关闭（口径 A） | ✅ 完成（限量化另议） |
 | ⚠️ D21 | 不兼容声明只覆盖上游最初 4 个 modid | 需要把 4 条扩到 10 条，并同步改既有测试断言 |
 
 ## 5. 当前进度
@@ -328,9 +329,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **162** |
-| 总行数 | **36334** |
-| 证据报告 | **84** |
+| 文档总数 | **163** |
+| 总行数 | **36416** |
+| 证据报告 | **85** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
