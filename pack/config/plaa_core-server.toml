@@ -17,15 +17,11 @@
 	solveThreads = 0
 
 [perks]
-	#The hauler's quick hands, as a multiplier on the wind-up of reaching into a chest,
-	#stooping for a dropped stack or handing goods to somebody. Hauling underpins every other
-	#trade, so this ladder is felt everywhere. One entry per rank, below 1 for faster.
-	haulingHaste = [0.85, 0.7, 0.55, 0.4]
 	#What one rank of ascetic does to how fast a resident tires, as a multiplier on the
 	#vanilla exhaustion rate. Below 1 means a smaller appetite and fewer meals; above 1 means
 	#a hungrier resident. One entry per rank, and a rank past the end of the list counts as no
 	#change at all.
-	asceticAppetite = [0.85, 0.7, 0.55, 0.4]
+	asceticAppetite = [0.9, 0.8, 0.7]
 
 [labor]
 	#Wind-up, in ticks, for a hauler reaching into a container, handing a stack over or
@@ -53,21 +49,12 @@
 
 [navigation]
 	#Microseconds per tick the whole server may spend working out where residents can
-	#walk, shared out between colonies and dimensions. The mod spends up to this and backs
-	#off whenever its own work pushes a tick past its deadline, climbing again while ticks
-	#fit — so this is the most it will ask for on a quiet server, not what it always takes.
+	#walk and observe, shared between colonies and dimensions. At most half of the time
+	#remaining before the next tick is granted, up to this ceiling.
 	#SINGLE_THREAD mode ignores it: there every question is worked out when it is asked.
 	# Default: 8000
 	# Range: 500 ~ 40000
 	travelCeilingMicros = 8000
-	#Microseconds per tick a single colony's reachability is never cut below. This is
-	#not a quality setting. Reachability is the only thing that turns "no way known yet"
-	#into an answer; a colony that never finishes working one out has jobs nobody can be
-	#given, and the unanswered questions pile up faster than the saved time pays for. The
-	#floor is what stops backing off from feeding itself.
-	# Default: 250
-	# Range: 50 ~ 2000
-	travelFloorMicros = 250
 
 [diagnostics]
 	#Write the per-colony planning and pathfinding heartbeat to the server log. One line

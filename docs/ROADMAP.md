@@ -51,7 +51,7 @@
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` ✅（含 `lintScaffold`）；`runGameTestServer` **714/714** |
 | 门禁 | **全绿**：build ✅ · unit **140/140**（含 i18n 枚举键检查）· typecheck ✅ · gametest **1479/1479**；N6 后的键回归由 i18n 门禁抓到并修复 |
 | CI | **P0 + P1 已落地**（VERIFY-045）：`build.yml` 跑 `check`/`typecheck`/`unit`/`i18n`/`build`；`gametest.yml` 在 Linux 跑游戏测试并对唯一已知偶发「按名单重试一次」。P2/P3 见 D13/D14 |
-| 整合包 | `pack/`（packwiz）**62 个 `.pw.toml`**（10 个我们的 jar 走 release URL + 7 个新依赖）；`index.toml` 68 文件 |
+| 整合包 | `pack/`（packwiz）**62 个 `.pw.toml`**；`index.toml` **69 文件**；服务端配置已换成十模块生成版（SYNC-012） |
 | 客户端 | Prism 实例实测一次：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006；D5：发版前重跑） |
 | 服务端 | 安装器端到端：46 mod、`Done` 14.2s（VERIFY-004/005/008） |
 | 内容 | KubeJS 1 条桥接配方（0 错误）；**任务书第一章已上线**（1 章 8 任务，0 解析错误）；事件模板仅文档（k06 40 条） |
@@ -118,3 +118,4 @@
 | D16 | ~~`Standing` 与上游 "stand（站位）"撞词~~ → **已偿还**：改名 `Veto`/`Vetoes`，只改标识符（VERIFY-047） | ✅ |
 | D17 | **模块 = 上游全部 10 个**，modid 统一 `plaa_*`；改名要覆盖四类引用（gradle / mods.toml / Java 字符串字面量 / profile），漏一类只会静默失效——实测 60 个事件订阅器曾因此不触发（SYNC-007） | 每次同步后复查 Java 里是否残留旧 modid |
 | D18 | ~~i18n 枚举键门禁未随移植过来~~ → **已偿还**：新增 `tests/i18n/notice-keys.test.ts`，**查四语**（比旧版更严），29 枚举 / 116 键零缺失（VERIFY-054） | ✅ 关闭 |
+| D19 | **包里现在有三条面粉链**（Create→FD 桥接、Cookery 自带、FD 自带）；不冲突但配方重复 | 等你定是否把 Cookery 也桥进来（涉及该 mod 平衡） |

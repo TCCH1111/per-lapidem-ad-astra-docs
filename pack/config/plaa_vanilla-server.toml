@@ -18,6 +18,20 @@
 	# Range: 1 ~ 64
 	maxWaitingSettlers = 5
 
+[damageControl]
+	#Largest damage control zone, in cells.
+	# Default: 32768
+	# Range: 1 ~ 262144
+	maxZoneCells = 32768
+	#Cells inspected per colony per tick, shared by its zones.
+	# Default: 512
+	# Range: 1 ~ 16384
+	scanBudget = 512
+	#Most residents suppressing fires at once in one colony.
+	# Default: 4
+	# Range: 1 ~ 64
+	concurrency = 4
+
 [zones]
 	#Largest fishing zone a player may mark out, in cells. The box marks where a fisher
 	#stands, so this bounds the scan for a standable cell with water in reach of it.
@@ -58,26 +72,92 @@
 	# Range: 20 ~ 72000
 	patrolWardTicks = 2400
 
+[sentries]
+	#Largest sentry zone in cells.
+	# Default: 25
+	# Range: 1 ~ 256
+	maxSentryCells = 25
+	#Baseline sight before vigilance, relative eye height, target brightness and observation gear.
+	# Default: 32
+	# Range: 1 ~ 128
+	defenderSightRadius = 32
+	#Extra sight per block the observer's eyes are above the target's eyes.
+	# Default: 1.5
+	# Range: 0.0 ~ 8.0
+	sightHeightPerBlock = 1.5
+	#Maximum positive eye-height difference counted for sight, in blocks.
+	# Default: 16
+	# Range: 0 ~ 64
+	sightHeightLimit = 16
+	#Sight multiplier at zero effective target light; interpolated to one in bright light.
+	# Default: 0.25
+	# Range: 0.0 ~ 1.0
+	darkSightMultiplier = 0.25
+	#Effective target light at or below which the darkest sight factor applies;
+	#capped below full light.
+	# Default: 4
+	# Range: 0 ~ 14
+	darkSightLightLevel = 4
+	#Effective target light at which darkness no longer reduces sight.
+	# Default: 12
+	# Range: 1 ~ 15
+	fullSightLightLevel = 12
+	#Sight multiplier for a profile-required observation item actually in the pack; one disables it.
+	# Default: 2.0
+	# Range: 1.0 ~ 4.0
+	observationSightMultiplier = 2.0
+	#Minimum detection distance despite darkness, still requiring line of sight; capped by maximum.
+	# Default: 3
+	# Range: 1 ~ 16
+	minimumSightRadius = 3
+	#Hard cap on all detection distances and entity scan bounds, in blocks.
+	# Default: 128
+	# Range: 1 ~ 128
+	maximumSightRadius = 128
+	#Maximum observation age in ticks. Reports and calls are transient.
+	# Default: 100
+	# Range: 1 ~ 1200
+	spottedTargetTtl = 100
+	#Maximum observations kept by one colony.
+	# Default: 128
+	# Range: 1 ~ 4096
+	maxSpottedTargets = 128
+	#Maximum distance from a sentry to a responding route patroller.
+	# Default: 48
+	# Range: 1 ~ 256
+	sentryCallRadius = 48
+	#Maximum responding route patrollers per hostile.
+	# Default: 2
+	# Range: 1 ~ 16
+	sentryCallResponders = 2
+	#Maximum duration of one patrol diversion, in ticks.
+	# Default: 200
+	# Range: 20 ~ 1200
+	sentryCallTicks = 200
+
 [blueprints]
+	#Builders stop upon entering their work area and build in place without access scaffolds.
+	#Materials, tools and work time are unchanged. Read while the work runs; not stored in orders.
+	simpleConstruction = false
 	#Most cells one blueprint or drawn pattern may set, counting the cells it digs out
 	#as well as the blocks it lays, but not the empty air around them. A long wall or road
 	#with its cut and fill comes to some tens of thousands. Raising it lets bigger work
 	#through, at the cost of a longer standing order and more ghost blocks drawn in the world.
-	# Default: 65536
-	# Range: 1 ~ 1048576
-	maxBuildCells = 65536
+	# Default: 262144
+	# Range: 1 ~ 4194304
+	maxBuildCells = 262144
 	#Widest span a blueprint may claim once read, in cells. This is the outer guard on a
 	#malformed or hostile structure file, not a building size: it stops one from claiming a
 	#volume too large to walk before its blocks are counted.
-	# Default: 1048576
-	# Range: 1 ~ 16777216
-	maxBlueprintVolume = 1048576
+	# Default: 33554432
+	# Range: 1 ~ 1073741824
+	maxBlueprintVolume = 33554432
 	#Longest one pattern may take to draw, in seconds, before it is stopped and refused.
 	#Drawings run beside the game rather than in its tick, and patterns are trusted to read
 	#and draw what they like within what they capture: this is the one limit held over them.
-	# Default: 10
+	# Default: 30
 	# Range: 1 ~ 3600
-	drawSeconds = 10
+	drawSeconds = 30
 
 [crafting]
 	#Recipes, by id, residents never craft, smelt or cut by, as though they did not exist:
@@ -93,19 +173,19 @@
 	#as a multiplier on the base wind-up: the first entry is rank 1, the second rank 2, and so
 	#on. Below 1 is faster, above 1 slower, and a rank past the end of the list counts as no
 	#change at all. Shorten the list to cap how far the perk carries.
-	buildingHaste = [0.85, 0.7, 0.55, 0.4]
+	buildingHaste = [0.9090909090909091, 0.8333333333333334, 0.7407407407407407]
 	#The crafter's quick hands, as a multiplier on the wind-up of a craft, a furnace load
 	#or a fetch from an output slot. One entry per rank, below 1 for faster.
-	craftingHaste = [0.85, 0.7, 0.55, 0.4]
+	craftingHaste = [0.8695652173913044, 0.7692307692307692, 0.6666666666666666]
 	#The herder's quick hands, as a multiplier on the wind-up of shearing, milking,
 	#feeding and culling. One entry per rank, below 1 for faster.
-	herdingHaste = [0.85, 0.7, 0.55, 0.4]
+	herdingHaste = [0.9090909090909091, 0.8333333333333334, 0.7407407407407407]
 	#The farmer's quick hands, as a multiplier on the wind-up of tilling, sowing, reaping
 	#and felling. One entry per rank, below 1 for faster.
-	farmingHaste = [0.85, 0.7, 0.55, 0.4]
+	farmingHaste = [0.9090909090909091, 0.8333333333333334, 0.7407407407407407]
 	#The fisher's quick hands, as a multiplier on how long a cast waits for a bite. One
 	#entry per rank, below 1 for faster.
-	fishingHaste = [0.85, 0.7, 0.55, 0.4]
+	fishingHaste = [0.9, 0.8, 0.7]
 
 [navigation]
 	#Multiplier on vanilla's node-expansion budget for a resident's pathfinding search.
@@ -114,3 +194,10 @@
 	# Default: 8.0
 	# Range: 1.0 ~ 32.0
 	pathSearchBudget = 8.0
+
+[living]
+	#Ticks a resident spends eating a serving at a dining table. Food is consumed only
+	#when the meal finishes; leaving early releases the seat and preserves the serving.
+	# Default: 100
+	# Range: 20 ~ 1200
+	diningMealTicks = 100

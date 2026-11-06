@@ -5,16 +5,20 @@ file = "config/ftbquests/quests/chapters/plaa_chapter_1.snbt"
 hash = "6e27837d60e11a905cb40b32265160c05aa527fe598ac3f48be739b2ee996208"
 
 [[files]]
+file = "config/plaa_chiselsandbits-server.toml"
+hash = "a1fb3d23f1a9ea1200ab8f4c01e58bf712252edda4c10976866ad2e80cc0f855"
+
+[[files]]
 file = "config/plaa_core-server.toml"
-hash = "33a032877081dbd86655fc210558290aa03dfdc0d912f787b3f91296e838ece4"
+hash = "fd767f0c1cd68c182b3da6d85e8b45553e946d8935bd66dec66a6cfc247f92a7"
 
 [[files]]
 file = "config/plaa_create-server.toml"
-hash = "50089ceca5a8933cad76c3036bbcb819616498db831b8e8993767c4e9672dfdc"
+hash = "735e3a6b5e7689da305a108343bfa5c8258b3fa9610389ee90790d0da07fdd47"
 
 [[files]]
 file = "config/plaa_vanilla-server.toml"
-hash = "aa15160704687260cab8b7a0d02ea01d4b022950cd8f45e82f54517ea31ac1e7"
+hash = "2731a3dd84be448720b2fbdb2801fe270410cf2cd25f85c1afaa2c3c83753dea"
 
 [[files]]
 file = "kubejs/server_scripts/plaa_bridges.js"
@@ -270,5 +274,5 @@ hash = "3a8e91aecdb602039ba1f7445bbf6b64cc5a46344339a3ffaf3b2e3eb2f5bcbc"
 
 [[files]]
 file = "pack.toml"
-hash = "242590888da671fc88adc84eb3ad69974e24f5c0d074c439e35a6e815ecf02f5"
+hash = "287168cd394b5822af6e9b0a04ca3cfe6153ea6efe4018fd80d1f7e6d84b2a95"
 
