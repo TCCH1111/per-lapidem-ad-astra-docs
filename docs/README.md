@@ -120,6 +120,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | d14 | [存档、备份与迁移](design/14-saves-backups-and-migration.md) | 草稿（ADR-018；增量+全量、永不覆盖、决策日志独立归档） |
 | d15 | [能源、动力适配层与机械族](design/15-power-and-mechanical-residents.md) | 草稿（ADR-019；FE/EU/旋转/蒸汽适配、四种驱动、人造子宫） |
 | d16 | [诊断界面文字线框原型](design/16-diagnosis-ui-prototype.md) | 草稿（6 页 × 三态线框；D-1~D-31 全覆盖） |
+| d17 | [气体接口预埋：M3 的接缝，不是气体系统](design/17-gas-seam.md) | 设计：只读 `GasViews.airAt` + `Air.CLEAN` 默认；**工作资格复用 `Vetoes`**，不需要新引擎钩子 |
 | p00 | [PRD 模板](prd/00-prd-template.md) | 已定稿 |
 | PRD-001 | [需求、情绪与记忆](prd/PRD-001-needs-mood-memory.md) | 草稿PRD |
 | PRD-002 | [事件与叙述者](prd/PRD-002-incidents-and-narrator.md) | 草稿PRD |
