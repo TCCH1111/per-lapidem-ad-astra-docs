@@ -18,6 +18,7 @@ $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 if (-not $DocsDir) { $DocsDir = Join-Path $repo 'docs' }
 if (-not (Test-Path $DocsDir)) { throw "找不到文档目录: $DocsDir" }
+$DocsDir = (Resolve-Path -LiteralPath $DocsDir).Path.TrimEnd('/', '\')
 
 $broken = New-Object System.Collections.Generic.List[string]
 $checked = 0

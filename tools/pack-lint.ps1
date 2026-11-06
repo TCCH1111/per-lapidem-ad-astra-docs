@@ -31,6 +31,8 @@ $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 if (-not $PackDir) { $PackDir = Join-Path $repo 'pack' }
 if (-not (Test-Path $PackDir)) { throw "找不到整合包目录: $PackDir" }
+# 必须是绝对路径，否则 GetRelativePath 在 Linux 上会返回绝对路径（CI 首次运行即栽在此）
+$PackDir = (Resolve-Path -LiteralPath $PackDir).Path.TrimEnd('/', '\')
 
 $enc = New-Object System.Text.UTF8Encoding($false)
 $textExt = @('.toml', '.js', '.snbt', '.json', '.md', '.txt', '.cfg')
