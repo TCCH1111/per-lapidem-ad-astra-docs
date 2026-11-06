@@ -303,7 +303,7 @@
 
 **资源命名空间仍是 `folkways`**（`assets/folkways`、`data/folkways`）。改了它，配方、标签、存档全部作废。
 
-### 13.2 改名要覆盖四个表面（事故教训）
+### 13.2 改名要覆盖五个表面（事故教训）
 
 | # | 表面 | 具体位置 | 漏掉的后果 |
 | --- | --- | --- | --- |
@@ -311,9 +311,18 @@
 | 2 | 元数据 | `mods/*/src/main/resources/META-INF/neoforge.mods.toml` 的依赖 `modId`；**`type = "incompatible"` 的块要指向上游 `folkways_*`** | 依赖解析失败；或自己与自己不兼容（实测导致服务器起不来） |
 | 3 | **代码字符串字面量** | `@EventBusSubscriber(modid = "...")`、`ID` 常量、`DeferredRegister.create(..., "...")` | **静默不触发**（见下） |
 | 4 | 配置文件 | `blockwright.toml` 的 `[mods.*]`、jar 路径、**profile 的 mods 列表** | `npm run setup` 报 must set exactly one of path/url/from |
+| **5** | **数据包命名空间目录** | `mods/*/src/main/resources/data/<modid>/folkways/<shelf>/`（图案/模板/货架文件） | **资源静默不加载**：`Patterns.find` 返回空 → 测试报 `No value present` |
 
 **第 3 类是真正危险的一类**：实测共 **69 处**（其中 **60 处** `@EventBusSubscriber`）。
 它们不会编译失败，也不会启动失败——只是**事件不再送达**。
+
+**第 5 类是 2026-11-06 由 CI 抓到的**（[SYNC-015](../reports/SYNC-015-fork-ci-fix.md)）：
+`chiselsandbits` 的 7 个图案 `.star` 位于 `data/folkways_chiselsandbits/folkways/pattern/`，
+而测试要 `plaa_chiselsandbits:torii`——目录名就是 modid，改名时没跟着走，图案全部找不到。
+更隐蔽的是：这批测试由 `-PchiselsTests=true` 开关控制，**默认套件不跑**，所以本地"全绿"了四轮而远端 CI 红了四轮。
+
+另外：改名脚本除了整词 `folkways_x`，还必须替换 **`folkways_x:` 前缀形式**——本次统一 id 时，
+带冒号的字面量被漏掉，导致同一批测试里新旧名混用。
 
 本次事故：`SeedObservationGameTests` 在 `@EventBusSubscriber(modid = "folkways_vanilla")` 的注册方法里安装
 "钟可以当仓库读取"的容器适配器；modid 改名后该订阅器不再触发，适配器从未注册，两条测试以
