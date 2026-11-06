@@ -1,0 +1,8 @@
+name = "chisels-and-bits"
+filename = "chisels-and-bits-neoforge-21.1.33.jar"
+side = "both"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/7441/123/chisels-and-bits-neoforge-21.1.33.jar"
+hash-format = "sha512"
+hash = "ee16a40ad028668ce85418b4351a3d05a976fd1e109b104be2b7c2aac0b03e6042c5fe3545f5b62b2d53f19e83d18a74ecc27ec317865d049e2dff3529a4c4f5"

@@ -51,11 +51,11 @@
 | 构建 | WSL Ubuntu-24.04 + JDK 21 + Node 22；`gradlew build` ✅（含 `lintScaffold`）；`runGameTestServer` **714/714** |
 | 门禁 | **全绿**：build ✅ · unit **140/140**（含 i18n 枚举键检查）· typecheck ✅ · gametest **1479/1479**；N6 后的键回归由 i18n 门禁抓到并修复 |
 | CI | **P0 + P1 已落地**（VERIFY-045）：`build.yml` 跑 `check`/`typecheck`/`unit`/`i18n`/`build`；`gametest.yml` 在 Linux 跑游戏测试并对唯一已知偶发「按名单重试一次」。P2/P3 见 D13/D14 |
-| 整合包 | `pack/`（packwiz）**54 个受管文件** = 45 `.pw.toml` + 4 jar + 3 配置 + 1 KubeJS + 1 任务章节 |
+| 整合包 | `pack/`（packwiz）**62 个 `.pw.toml`**（10 个我们的 jar 走 release URL + 7 个新依赖）；`index.toml` 68 文件 |
 | 客户端 | Prism 实例实测一次：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006；D5：发版前重跑） |
 | 服务端 | 安装器端到端：46 mod、`Done` 14.2s（VERIFY-004/005/008） |
 | 内容 | KubeJS 1 条桥接配方（0 错误）；**任务书第一章已上线**（1 章 8 任务，0 解析错误）；事件模板仅文档（k06 40 条） |
-| 分发 | **已发布** [v0.1.0](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.1.0)（4 资产）；`.mrpack` 54 条目 = 49 下载 + 5 随包；**jar 不再随包**（5.2 MB → 0） |
+| 分发 | **已发布 [v0.2.0](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.0)**：11 个资产（10 jar + `.mrpack`）；`.mrpack` 67 条目 = 62 下载 + 5 随包（14 KB） |
 | 版本 | 构建 = 包声明 = **21.1.264**（已统一，VERIFY-040）；兼容范围 `[21.1.233,)` 保持不变 |
 
 ---
@@ -65,7 +65,7 @@
 按"离 v1.0 的距离"排序，做完一项就在 `docs/reports/` 留证据：
 
 1. ~~任务书第一章~~ ✅（VERIFY-009）；**第二章草案已写**（11 个任务，SNBT 结构已校验，见 [任务书规格 §13](pack/04-quest-book-and-guidance.md)）；待 `pack/` 更新后移入并进游戏验证（D1）。
-2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；下一项：**v0.2.0 的 release 说明与安装步骤**（代码侧由本轮 CI 变更触发）。
+2. ~~GitHub Release v0.1.0~~ ✅（VERIFY-011）；~~v0.2.0~~ ✅ **已发布**（SYNC-010：10 jar + mrpack）；下一项：**装上它并补 D11**。
 3. ~~NeoForge 版本统一~~ ✅ **完成**：构建 = 包声明 = **21.1.264**；原"264 回归"结论经同机同日 5+5 次测试推翻（VERIFY-040）。
 4. **M1 玩法骨架**——WP-1/4/5/6/8 ✅、**自动部分收口**；剩演示人工验收（D11）。下一站：队列 ⑤ 演示脚本。
 5. **M1 演示脚本可跑**——[脚本就绪（19 个观察点）](demo/M1-demo-script.md)，但**需要你的屏幕**：按 §2–§5 逐条勾选 + 3 张截图 + `latest.log`，回填 [VERIFY-039](reports/VERIFY-039-demo-script.md) 后此项才算完成。
