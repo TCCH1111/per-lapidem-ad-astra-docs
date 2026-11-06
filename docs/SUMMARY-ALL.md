@@ -20,7 +20,7 @@
 | 维度 | 现状 |
 | --- | --- |
 | 上游 | `IzakyL/folkways` @ `aaac8b8`（**已重写历史，与我们无共同祖先**） |
-| 我们的分支 | `main` = `c456385`（旧版，714/714）· `port/aaac8b8` = `64e35ad`（**10 模块，1479/1479；unit 140/140**） |
+| 我们的分支 | **`main` = `64e35ad`（10 模块 / 1479 / unit 140）**；旧历史标签 `pre-port-main-20261106`；客户端未实测（D11） |
 | 版本 | MC 1.21.1 · NeoForge **21.1.264** · Java 21 |
 | 模块 | **10 个**：core / vanilla / create / modulargolems / cookery / rts / warfare / tacz / firefighting / chiselsandbits（modid 全 `plaa_*`） |
 | 已交付玩法 | 禁限区（画区→绕行）、作息表（到点停工）、解释层（说得出为什么）、心情（四档可见） |
@@ -287,7 +287,7 @@
 | 十模块 + 全套 `plaa_*` | 10 个 jar 构建成功 | [SYNC-006](reports/SYNC-006-ten-modules.md) |
 | 游戏测试 | **1472 / 1472** | [SYNC-007](reports/SYNC-007-port-green.md) |
 | 打包 jar 在真实服务端 | `Done (4.511s)`、0 FATAL、10 modid 全注册 | [VERIFY-048](reports/VERIFY-048-dedicated-server.md) |
-| 客户端 | ⬜ **未实测**（测试包已备好） | [SYNC-008](reports/SYNC-008-test-package.md) |
+| 客户端 | ⬜ **仍未实测**（用户决定跳过即切换，见 SYNC-009） | [SYNC-008](reports/SYNC-008-test-package.md) · [SYNC-009](reports/SYNC-009-main-switch.md) |
 
 ---
 

@@ -204,6 +204,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | SYNC-006 | [移植第四阶段：十模块 + 全套 plaa_* 跑起来（1465/1467）](reports/SYNC-006-ten-modules.md) | 10 jar 构建成功；改名误伤「不兼容声明」导致启动崩溃（已修）；仍剩 2 条失败 |
 | SYNC-007 | [移植收尾：1467/1467 全绿，根因是 69 处硬编码 modid](reports/SYNC-007-port-green.md) | 十模块构建 + 全套测试通过；60 个事件订阅器曾静默失效；CI 对齐上游矩阵 |
 | SYNC-008 | [移植版测试包（10 个 plaa_* + 38 依赖）](reports/SYNC-008-test-package.md) | 产物：216 MB zip；新模块依赖是 required（须整套放）；待游戏内实测 |
+| SYNC-009 | [移植落到 main（跳过客户端实测）](reports/SYNC-009-main-switch.md) | `main` = 64e35ad（10 模块 / 1479）；旧历史标签 `pre-port-main-20261106`；**未做客户端实测，风险已写明** |
 | VERIFY-048 | [十模块打包 jar 在真实专用服务端启动](reports/VERIFY-048-dedicated-server.md) | `Done (4.511s)`、0 FATAL、10 个 modid 全注册；16 条 ERROR 均为可选集成噪音 |
 | VERIFY-049 | [M2-R1 第一段：关系簿（1472/1472）](reports/VERIFY-049-m2-r1-book.md) | 数据层落地：上限 30 / 冷却 500 刻 / 淘汰 / prune / 存读；T0 四个未知项读穿，采样器可留 L1 |
 | VERIFY-050 | [M2-R1 第二段：采样器（1476/1476）](reports/VERIFY-050-m2-r1-sampler.md) | 每 5 秒采样"谁在干活、站哪"，≤8 格成对入簿；纯函数可测；L2 仅一处注册 |
