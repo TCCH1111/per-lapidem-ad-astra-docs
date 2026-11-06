@@ -156,6 +156,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | PLAN-005 | [M1-WP6：解释层（说得出为什么）](plans/PLAN-005-wp6-explanation.md) | 计划中（L1 为主；10 类阻塞；T0 夹具已核：派活可测、需求不可测） |
 | PLAN-006 | [M2-WP7：需求与情绪（张力的第一层）](plans/PLAN-006-m2-needs-mood.md) | 计划中（L1 为主；T0 已核：基底已有需求机制，M2 做"张力+可见性+解释"） |
 | PLAN-007 | [M2-R1：同行伙伴（关系系统第一刀）](plans/PLAN-007-m2-r1-companions.md) | 计划中：共同劳作→bond→士气→卡片；L1 为主；4 个未知项待读穿 |
+| PLAN-008 | [M2-R2：摩擦（关系第二刀）](plans/PLAN-008-m2-r2-friction.md) | 计划中：`grudge` 与 `bond` 独立；状态差的人起摩擦；仇人在旁至少 WORRIED；**不碰否决权（那要 L3）** |
 | VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
 | VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |
