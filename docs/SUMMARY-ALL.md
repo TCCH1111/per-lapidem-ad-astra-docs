@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 260 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 261 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -193,6 +193,7 @@
 | [VERIFY-058-m2-r2-friction-sampler.md](reports/VERIFY-058-m2-r2-friction-sampler.md) | VERIFY-058 · M2 R2-2：怨气按「A · 旁人在受罪」积累（1491/1491） | 83 |
 | [VERIFY-059-m2-r2-closed.md](reports/VERIFY-059-m2-r2-closed.md) | VERIFY-059 · M2 R2 收口：仇人让他不痛快（1492/1492） | 110 |
 | [VERIFY-060-m2-r03-severe.md](reports/VERIFY-060-m2-r03-severe.md) | VERIFY-060 · M2 R0-3：重伤者不被派活（口径 C，1495/1495） | 94 |
+| [VERIFY-061-m2-r04-card.md](reports/VERIFY-061-m2-r04-card.md) | VERIFY-061 · M2 R0-4：卡片说「他伤得太重，暂时不接活」（1496/1496） | 97 |
 
 ### research/
 
@@ -326,9 +327,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **160** |
-| 总行数 | **36124** |
-| 证据报告 | **82** |
+| 文档总数 | **161** |
+| 总行数 | **36223** |
+| 证据报告 | **83** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
