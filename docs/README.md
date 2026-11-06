@@ -240,6 +240,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-062 | [M2 R0 收口：重伤 → 一条 reservation（1498/1498）](reports/VERIFY-062-m2-r0-closed.md) | 贡献抽成纯函数并测；**调度是否承认 reservation 仍记为未证**；解释层结论：卡片即解释 |
 | VERIFY-063 | [D20 关闭：否决权认人（1500/1500）](reports/VERIFY-063-d20-subject-veto.md) | ALLOW_ONLY 与 CONFINE 在调度层生效；**LIMIT 仍只走诊断**（会扫全殖民地） |
 | VERIFY-064 | [M2 R1-1：感染会自己变深（1504/1504）](reports/VERIFY-064-m2-r1-1-infection.md) | 感染按部位记录、骰子作为参数（可复现）；到门槛即"重伤"；**玩家仍看不到** |
+| VERIFY-065 | [那句话划掉了：真实殖民地会为重伤者保留（1505/1505）](reports/VERIFY-065-work-stop-end-to-end.md) | 端到端：真殖民地 + 真健康簿 + 真 `urges()`；**"夹具太贵"被证明是误判** |
 | VERIFY-047 | [D16 关闭：`Standing → Veto` 改名，门禁抓到一条真回归](reports/VERIFY-047-veto-rename.md) | 改名（只改标识符，注释/字符串/语言文件不动）；i18n 门禁抓到 N6 的键约定回归并修复；四件套全绿 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |

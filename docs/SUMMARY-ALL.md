@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 265 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 266 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -198,6 +198,7 @@
 | [VERIFY-062-m2-r0-closed.md](reports/VERIFY-062-m2-r0-closed.md) | VERIFY-062 · M2 R0 收口：重伤 → 一条 reservation（1498/1498） | 109 |
 | [VERIFY-063-d20-subject-veto.md](reports/VERIFY-063-d20-subject-veto.md) | VERIFY-063 · D20 关闭：否决权现在认人（1500/1500） | 80 |
 | [VERIFY-064-m2-r1-1-infection.md](reports/VERIFY-064-m2-r1-1-infection.md) | VERIFY-064 · M2 R1-1：感染会自己变深（1504/1504） | 86 |
+| [VERIFY-065-work-stop-end-to-end.md](reports/VERIFY-065-work-stop-end-to-end.md) | VERIFY-065 · 那句"未证"划掉了：真实殖民地会为重伤者保留（1505/1505） | 78 |
 
 ### research/
 
@@ -331,9 +332,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **165** |
-| 总行数 | **36581** |
-| 证据报告 | **86** |
+| 文档总数 | **166** |
+| 总行数 | **36662** |
+| 证据报告 | **87** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。

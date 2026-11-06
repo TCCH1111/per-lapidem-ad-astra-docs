@@ -46,7 +46,7 @@ static List<Urge> restriction(boolean resting) {
 
 > **一个活着的殖民地，调度器会不会真的因为这条 reservation 而不派活？**
 
-**没有端到端测试证明它。** 我能说的是：
+**没有端到端测试证明它**（→ 已于 [VERIFY-065](VERIFY-065-work-stop-end-to-end.md) 补上：真实殖民地会返回该 reservation）。 我能说的是：
 
 - `Urge.reserve` 的**上游契约**写明 "excludes planned labour, while personal urges still use the runner"；
 - 我们的贡献**恰好**是这种形状（`reservation() == true`）；
