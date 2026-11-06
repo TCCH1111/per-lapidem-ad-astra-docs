@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 249 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 250 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 121 |
 
 ### prd/
@@ -105,6 +105,7 @@
 | [PLAN-006-m2-needs-mood.md](plans/PLAN-006-m2-needs-mood.md) | PLAN-006 · M2-WP7：需求与情绪（张力的第一层） | 107 |
 | [PLAN-007-m2-r1-companions.md](plans/PLAN-007-m2-r1-companions.md) | PLAN-007 · M2-R1：同行伙伴（关系系统的第一刀） | 119 |
 | [PLAN-008-m2-r2-friction.md](plans/PLAN-008-m2-r2-friction.md) | PLAN-008 · M2-R2：摩擦（关系第二刀） | 96 |
+| [PLAN-009-m2-medical-r0.md](plans/PLAN-009-m2-medical-r0.md) | PLAN-009 · M2 医疗第一刀（R0：伤口、流血、看得见） | 106 |
 
 ### reports/
 
@@ -313,8 +314,8 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **149** |
-| 总行数 | **35094** |
+| 文档总数 | **150** |
+| 总行数 | **35202** |
 | 证据报告 | **72** |
 | 本次生成 | `tools/summarize.py` |
 
