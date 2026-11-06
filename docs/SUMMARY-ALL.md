@@ -20,12 +20,12 @@
 | 维度 | 现状 |
 | --- | --- |
 | 上游 | `IzakyL/folkways` @ `aaac8b8`（**已重写历史，与我们无共同祖先**） |
-| 我们的分支 | `main` = `c456385`（旧版，714/714）· `port/aaac8b8` = `f15eb52`（**10 模块，1479/1479**） |
+| 我们的分支 | `main` = `c456385`（旧版，714/714）· `port/aaac8b8` = `64e35ad`（**10 模块，1479/1479；unit 140/140**） |
 | 版本 | MC 1.21.1 · NeoForge **21.1.264** · Java 21 |
 | 模块 | **10 个**：core / vanilla / create / modulargolems / cookery / rts / warfare / tacz / firefighting / chiselsandbits（modid 全 `plaa_*`） |
 | 已交付玩法 | 禁限区（画区→绕行）、作息表（到点停工）、解释层（说得出为什么）、心情（四档可见） |
 | 关系系统 | **关系切片 R1 已收口**（R1-1..R1-5，**1479/1479**）；怨恨/哀悼/关系页属后续切片 |
-| 门禁 | build ✅ · unit 138/138 ✅ · typecheck ✅ · gametest 1472/1472 ✅ |
+| 门禁 | build ✅ · unit **140/140** ✅ · typecheck ✅ · gametest **1479/1479** ✅ |
 | 发布物 | v0.1.0 已发（4 jar 时代）；移植版测试包已备（`.mrpack` 216 MB） |
 
 ---
