@@ -52,7 +52,7 @@ function WriteIndex() {
         Where-Object { $_.Name -ne 'index.toml' -and $_.Name -ne 'pack.toml' } |
         Sort-Object FullName
     foreach ($f in $files) {
-        $rel = $f.FullName.Replace($PackDir + '\', '').Replace('\', '/')
+        $rel = [System.IO.Path]::GetRelativePath($PackDir, $f.FullName).Replace('\', '/')
         [void]$sb.Append('[[files]]' + "`n")
         [void]$sb.Append('file = "' + $rel + '"' + "`n")
         [void]$sb.Append('hash = "' + (Sha256 $f.FullName) + '"' + "`n`n")
@@ -102,7 +102,7 @@ foreach ($f in $onDisk) {
     if ((Sha256 $f.FullName) -ne $recorded[$rel]) { $problems.Add("哈希不符: $rel") }
 }
 foreach ($key in $recorded.Keys) {
-    if (-not (Test-Path (Join-Path $PackDir ($key -replace '/', '\')))) { $problems.Add("索引有、磁盘无: $key") }
+    if (-not (Test-Path (Join-Path $PackDir $key))) { $problems.Add("索引有、磁盘无: $key") }
 }
 
 $packToml = Join-Path $PackDir 'pack.toml'

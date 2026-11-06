@@ -34,7 +34,7 @@ foreach ($file in $files) {
         $candidate = [System.IO.Path]::GetFullPath((Join-Path $file.DirectoryName $path))
         $checked++
         if (-not (Test-Path -LiteralPath $candidate)) {
-            $rel = $file.FullName.Replace($DocsDir + '\', 'docs/')
+            $rel = [System.IO.Path]::GetRelativePath($DocsDir, $file.FullName).Replace('\', '/')
             $broken.Add("$rel -> $target")
         }
     }

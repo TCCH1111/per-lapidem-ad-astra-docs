@@ -47,7 +47,7 @@
 
 | # | 门禁 | 判定命令/动作 | 依据 |
 | --- | --- | --- | --- |
-| G1 | **构建可重复**：干净机器出 jar | `npm install` → `npm run setup` → `./gradlew build`，`build/libs/` 有 jar | [CONTRIBUTING.md:14-22](../../reference/folkways-67f28b0/CONTRIBUTING.md)（`gradle/mod.gradle:39-47`（上游已拆为 ext.lib） 缺 `.blockwright/mods.json` 会抛异常） |
+| G1 | **构建可重复**：干净机器出 jar | `npm install` → `npm run setup` → `./gradlew build`，`build/libs/` 有 jar | `reference/folkways-67f28b0/CONTRIBUTING.md:14-22`（本地快照，未入库）（`gradle/mod.gradle:39-47`（上游已拆为 ext.lib） 缺 `.blockwright/mods.json` 会抛异常） |
 | G2 | **门禁四件套全绿** | `./gradlew build` + `npm run test:unit` + `npm run test:i18n` + `src/gametest`（现为 mods/*/src/gametest） 的 GameTest | §2.2；[workflow/03 §3](03-test-and-acceptance.md) |
 | G3 | **运行期零可选依赖** | 只放我们的 jar（+ 必要前驱），游戏能启动，禁限区/作息/诊断可用 | [d12 R-FK-12:146](../design/12-fork-strategy.md)（**运行期**语义，见 §2.4） |
 | G4 | **上游同步演练走完一次** | 按 [d12 §6](../design/12-fork-strategy.md) 全流程走一遍并留记录 | [d12 R-FK-11:214](../design/12-fork-strategy.md) |
