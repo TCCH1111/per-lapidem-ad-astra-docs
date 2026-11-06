@@ -116,7 +116,7 @@
 | D14 | ~~CI 未接~~ → **✅ 关闭**：docs CI **四道**（断链 / pack-lint / 报告登记 / AC 一致性，SYNC-014 §8–9，run 42177147135 绿）+ fork CI 十一作业全绿（SYNC-015） | ✅ 完成 |
 | D15 | ~~上游重写历史、只能逐文件移植~~ → **已完成并落到 main**（10 模块；本地 1482 全绿；**CI Build #49 十一作业全绿**，SYNC-007/009/015）；旧历史存于标签 `pre-port-main-20261106`；**未做客户端实测即切换**（用户决定，风险见 SYNC-009 §5） | ✅ 完成（客户端待补） |
 | D16 | ~~`Standing` 与上游 "stand（站位）"撞词~~ → **已偿还**：改名 `Veto`/`Vetoes`，只改标识符（VERIFY-047） | ✅ |
-| D17 | **模块 = 上游全部 10 个**，modid 统一 `plaa_*`；改名要覆盖**五个**表面（gradle / mods.toml / Java 字符串字面量 / profile / **`data/<modid>/` 数据包命名空间**），漏一类只会静默失效——实测 60 个事件订阅器曾因此不触发（SYNC-007），C&B 图案数据曾因此整批不加载（SYNC-015） | 每次同步后复查 Java 与 `data/` 里是否残留旧 modid（含 `folkways_x:` 前缀形式） |
+| D17 | **模块 = 上游全部 10 个**，modid 统一 `plaa_*`；改名要覆盖**五个**表面（gradle / mods.toml / Java 字符串字面量 / profile / **`data/<modid>/` 数据包命名空间**），漏一类只会静默失效——实测 60 个事件订阅器曾因此不触发（SYNC-007），C&B 图案数据曾因此整批不加载（SYNC-015） | `data/` 已由 unit 门禁自动复查（SYNC-021）；Java 源码的旧前缀仍靠人工 |
 | D18 | ~~i18n 枚举键门禁未随移植过来~~ → **已偿还**：新增 `tests/i18n/notice-keys.test.ts`，**查四语**（比旧版更严），29 枚举 / 116 键零缺失（VERIFY-054） | ✅ 关闭 |
 | D19 | **包里现在有三条面粉链**（Create→FD 桥接、Cookery 自带、FD 自带）；不冲突但配方重复 | 等你定是否把 Cookery 也桥进来（涉及该 mod 平衡） |
 | D20 | **主体类区域在调度层是惰性的**：`Veto.check` 只拿到 UUID，`forbids` 只认 FORBID+空主体；`ALLOW_ONLY`/`LIMIT`/指定主体 `FORBID`/`CONFINE` 都只用于诊断（VERIFY-057） | 选 A（教否决权认人，需性能测量）或 B（只做诊断） |

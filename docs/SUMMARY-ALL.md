@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 255 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 256 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 122 |
 
 ### prd/
@@ -131,6 +131,7 @@
 | [SYNC-018-pack-deps-021.md](reports/SYNC-018-pack-deps-021.md) | SYNC-018 · v0.2.1 分发校验 + 依赖完整性 | 85 |
 | [SYNC-019-chapter-2-shipped.md](reports/SYNC-019-chapter-2-shipped.md) | SYNC-019 · 任务书第二章进包，v0.2.2 只更新整合包 | 67 |
 | [SYNC-020-pack-spec-audit.md](reports/SYNC-020-pack-spec-audit.md) | SYNC-020 · pack 规格 vs 实际：三处过期、一处措辞错 | 69 |
+| [SYNC-021-namespace-gate.md](reports/SYNC-021-namespace-gate.md) | SYNC-021 · 把"数据命名空间"事故变成回归门禁（unit 142/142） | 90 |
 | [VERIFY-001-b2.md](reports/VERIFY-001-b2.md) | VERIFY-001 · B-2（modid 改为 `plaa_*` + 与上游互斥声明） | 60 |
 | [VERIFY-002-pack-ours.md](reports/VERIFY-002-pack-ours.md) | VERIFY-002 · 整合包改用我们的 jar（`plaa_*` 替换上游 `folkways_*`） | 71 |
 | [VERIFY-003-mrpack.md](reports/VERIFY-003-mrpack.md) | VERIFY-003 · 可分发产物 `.mrpack` 生成与结构校验 | 84 |
@@ -275,7 +276,7 @@
 | ✅ D14 | CI 未接 → ✅ 关闭 | ✅ 完成 |
 | ✅ D15 | 上游重写历史、只能逐文件移植 → 已完成并落到 main（10 模块；本地 1482 全绿；CI Build #49 十一作业全绿，SYNC-007/009/015）；旧历史存于标 | ✅ 完成（客户端待补） |
 | ✅ D16 | `Standing` 与上游 "stand（站位）"撞词 → 已偿还 | ✅ |
-| ⚠️ D17 | 模块 = 上游全部 10 个，modid 统一 `plaa_*`；改名要覆盖五个表面（gradle / mods.toml / Java 字符串字面量 / profile / `d | 每次同步后复查 Java 与 `data/` 里是否残留旧 modid（含 `f |
+| ⚠️ D17 | 模块 = 上游全部 10 个，modid 统一 `plaa_*`；改名要覆盖五个表面（gradle / mods.toml / Java 字符串字面量 / profile / `d | `data/` 已由 unit 门禁自动复查（SYNC-021）；Java 源码 |
 | ✅ D18 | i18n 枚举键门禁未随移植过来 → 已偿还 | ✅ 关闭 |
 | ⚠️ D19 | 包里现在有三条面粉链（Create→FD 桥接、Cookery 自带、FD 自带）；不冲突但配方重复 | 等你定是否把 Cookery 也桥进来（涉及该 mod 平衡） |
 | ⚠️ D20 | 主体类区域在调度层是惰性的 | 选 A（教否决权认人，需性能测量）或 B（只做诊断） |
@@ -320,9 +321,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **155** |
-| 总行数 | **35643** |
-| 证据报告 | **77** |
+| 文档总数 | **156** |
+| 总行数 | **35735** |
+| 证据报告 | **78** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
