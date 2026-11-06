@@ -20,3 +20,7 @@ jobs:
       - name: Pack lint
         shell: pwsh
         run: ./tools/pack-lint.ps1
+
+      - name: Reports registered
+        shell: pwsh
+        run: ./tools/reports-check.ps1
