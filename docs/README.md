@@ -232,6 +232,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-055 | [M2 医疗 R0-1/R0-2：伤口与流血（1485/1485）](reports/VERIFY-055-m2-medical-data.md) | 数据层落地；**玩家仍看不到、行为无变化**；速度惩罚等 Q1 |
 | VERIFY-056 | [M3 关押接缝：`Kind.CONFINE`（1488/1488）](reports/VERIFY-056-confine-kind.md) | 白名单语义落地；空主体列表不生效；**尚无内容使用它，零影响** |
 | VERIFY-057 | [否定结果：`CONFINE` 拦不住派活](reports/VERIFY-057-subject-veto-gap.md) | 引擎否决权认不出"谁"；主体类区域（含 ALLOW_ONLY/LIMIT）在调度层惰性；**A/B 待拍板** |
+| VERIFY-058 | [M2 R2-2：怨气按「A·旁人在受罪」积累（1491/1491）](reports/VERIFY-058-m2-r2-friction-sampler.md) | 采样层接上；**测试抓到共享冷却与 now=0 两个真 bug**；mood/卡片未接 |
 | VERIFY-047 | [D16 关闭：`Standing → Veto` 改名，门禁抓到一条真回归](reports/VERIFY-047-veto-rename.md) | 改名（只改标识符，注释/字符串/语言文件不动）；i18n 门禁抓到 N6 的键约定回归并修复；四件套全绿 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |
