@@ -24,3 +24,7 @@ jobs:
       - name: Reports registered
         shell: pwsh
         run: ./tools/reports-check.ps1
+
+      - name: Acceptance criteria consistent
+        shell: pwsh
+        run: ./tools/ac-check.ps1
