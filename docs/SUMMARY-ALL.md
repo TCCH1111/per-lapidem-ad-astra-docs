@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 263 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 265 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -106,6 +106,7 @@
 | [PLAN-007-m2-r1-companions.md](plans/PLAN-007-m2-r1-companions.md) | PLAN-007 · M2-R1：同行伙伴（关系系统的第一刀） | 119 |
 | [PLAN-008-m2-r2-friction.md](plans/PLAN-008-m2-r2-friction.md) | PLAN-008 · M2-R2：摩擦（关系第二刀） | 96 |
 | [PLAN-009-m2-medical-r0.md](plans/PLAN-009-m2-medical-r0.md) | PLAN-009 · M2 医疗第一刀（R0：伤口、流血、看得见） | 106 |
+| [PLAN-010-m2-medical-r1-infection.md](plans/PLAN-010-m2-medical-r1-infection.md) | PLAN-010 · M2 医疗 R1：感染 → 发烧 → 死亡（口径已定） | 76 |
 
 ### reports/
 
@@ -196,6 +197,7 @@
 | [VERIFY-061-m2-r04-card.md](reports/VERIFY-061-m2-r04-card.md) | VERIFY-061 · M2 R0-4：卡片说「他伤得太重，暂时不接活」（1496/1496） | 97 |
 | [VERIFY-062-m2-r0-closed.md](reports/VERIFY-062-m2-r0-closed.md) | VERIFY-062 · M2 R0 收口：重伤 → 一条 reservation（1498/1498） | 109 |
 | [VERIFY-063-d20-subject-veto.md](reports/VERIFY-063-d20-subject-veto.md) | VERIFY-063 · D20 关闭：否决权现在认人（1500/1500） | 80 |
+| [VERIFY-064-m2-r1-1-infection.md](reports/VERIFY-064-m2-r1-1-infection.md) | VERIFY-064 · M2 R1-1：感染会自己变深（1504/1504） | 86 |
 
 ### research/
 
@@ -329,9 +331,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **163** |
-| 总行数 | **36416** |
-| 证据报告 | **85** |
+| 文档总数 | **165** |
+| 总行数 | **36581** |
+| 证据报告 | **86** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。

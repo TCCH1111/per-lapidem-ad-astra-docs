@@ -115,6 +115,6 @@ CONFINE
 
 | 编号 | 问题 | 何时定 |
 | --- | --- | --- |
-| OQ-C1 | 囚犯是"一种 resident kind"还是"一个标记位"？ | 做关押前 |
+| OQ-C1 | 囚犯是"一种 resident kind"还是"一个标记位"？ → **已定：一种 resident kind（用户口径 A）** | ✅ |
 | OQ-C2 | 强制劳动的 L3 通道值得做吗（还是永不做）？ | 需要你拍板 |
 | OQ-C3 | 牢区容量用 `LIMIT.quota` 还是 `CONFINE` 自带计数？ | 实现时 |
