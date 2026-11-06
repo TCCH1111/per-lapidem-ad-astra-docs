@@ -1,0 +1,22 @@
+name: docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  gates:
+    name: Link and pack gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link check
+        shell: pwsh
+        run: ./tools/link-check.ps1
+
+      - name: Pack lint
+        shell: pwsh
+        run: ./tools/pack-lint.ps1
