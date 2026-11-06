@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 254 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 255 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 122 |
 
 ### prd/
@@ -83,7 +83,7 @@
 
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
-| [00-pack-spec.md](pack/00-pack-spec.md) | 整合包规格 | 250 |
+| [00-pack-spec.md](pack/00-pack-spec.md) | 整合包规格 | 252 |
 | [01-modlist.md](pack/01-modlist.md) | 01 · Mod 清单：1.21.1 + NeoForge 可用性核实 | 402 |
 | [02-config-and-datapack.md](pack/02-config-and-datapack.md) | 配置、数据包与脚本内容规划 | 242 |
 | [03-performance-budget.md](pack/03-performance-budget.md) | 性能预算 | 150 |
@@ -130,6 +130,7 @@
 | [SYNC-017-summary-generator.md](reports/SYNC-017-summary-generator.md) | SYNC-017 · SUMMARY-ALL 改成可重新生成 | 76 |
 | [SYNC-018-pack-deps-021.md](reports/SYNC-018-pack-deps-021.md) | SYNC-018 · v0.2.1 分发校验 + 依赖完整性 | 85 |
 | [SYNC-019-chapter-2-shipped.md](reports/SYNC-019-chapter-2-shipped.md) | SYNC-019 · 任务书第二章进包，v0.2.2 只更新整合包 | 67 |
+| [SYNC-020-pack-spec-audit.md](reports/SYNC-020-pack-spec-audit.md) | SYNC-020 · pack 规格 vs 实际：三处过期、一处措辞错 | 69 |
 | [VERIFY-001-b2.md](reports/VERIFY-001-b2.md) | VERIFY-001 · B-2（modid 改为 `plaa_*` + 与上游互斥声明） | 60 |
 | [VERIFY-002-pack-ours.md](reports/VERIFY-002-pack-ours.md) | VERIFY-002 · 整合包改用我们的 jar（`plaa_*` 替换上游 `folkways_*`） | 71 |
 | [VERIFY-003-mrpack.md](reports/VERIFY-003-mrpack.md) | VERIFY-003 · 可分发产物 `.mrpack` 生成与结构校验 | 84 |
@@ -319,9 +320,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **154** |
-| 总行数 | **35570** |
-| 证据报告 | **76** |
+| 文档总数 | **155** |
+| 总行数 | **35643** |
+| 证据报告 | **77** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。

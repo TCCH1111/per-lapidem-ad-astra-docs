@@ -210,11 +210,11 @@ pack/
 
 §7 的"四个 jar"口径已过期。现行口径：
 
-### 12.1 随包分发的自研 jar：10 个
+### 12.1 自研 jar：10 个（**走 release URL，不随包**）
 
 | modid | 必需的外部依赖（required，整合包必须提供） |
 | --- | --- |
-| `plaa_core` | LDLib2（含 Ponder） |
+| `plaa_core` | LDLib2（**双端必需**）+ Ponder（**客户端必需**，由我们的 jar 内置满足） |
 | `plaa_vanilla` | — |
 | `plaa_create` | Create |
 | `plaa_modulargolems` | Modular Golems |
@@ -240,11 +240,13 @@ pack/
 | 项 | 证据 |
 | --- | --- |
 | 十个 jar 打包后可一起加载 | [VERIFY-048](../reports/VERIFY-048-dedicated-server.md)：真实专用服务端 Done (4.511s)、0 FATAL、10 modid 全注册 |
-| 十模块代码自洽 | [SYNC-007](../reports/SYNC-007-port-green.md)：1467 / 1467 游戏测试全绿 |
+| 十模块代码自洽 | [SYNC-007](../reports/SYNC-007-port-green.md)：移植首日 1467 / 1467；**当前 1488 / 1488**，且 CI `Build #49` 十一作业全绿（[SYNC-015](../reports/SYNC-015-fork-ci-fix.md)） |
 | 十模块与 modid 决策 | [ADR-026](../00-charter.md)、[d12 §13](../design/12-fork-strategy.md) |
 
-### 12.4 尚未做（等客户端实测后）
+### 12.4 已完成（原先写作"尚未做"，2026-11-06 更正）
 
-1. 把 `pack/mods/` 的 4 个 jar 换成 10 个（改发布内容，需在移植落到 `main` 后做）；
-2. 为 7 个新依赖补 `.pw.toml`（URL + hash 可由 `blockwright.toml` 的 pin 生成）；
-3. 重打 `.mrpack` 并做一次安装器冒烟（沿用 §10 流水线）。
+1. ✅ `pack/mods/` 的 4 个条目 → 10 个（走 release URL，[SYNC-010](../reports/SYNC-010-release-020.md)）；
+2. ✅ 7 个新依赖的 `.pw.toml` 已补（URL + sha512 取自 `blockwright.toml` 的 pin，[SYNC-010](../reports/SYNC-010-release-020.md) / [SYNC-012](../reports/SYNC-012-pack-audit.md)）；
+3. ✅ `.mrpack` 已重打并校验：62 下载条目逐个下载核对哈希（[SYNC-011](../reports/SYNC-011-mrpack-verified.md) / [SYNC-018](../reports/SYNC-018-pack-deps-021.md)），任务书第二章已进包（[SYNC-019](../reports/SYNC-019-chapter-2-shipped.md)）。
+
+**仍未做的只剩**：客户端真实安装与进世界（D11）。
