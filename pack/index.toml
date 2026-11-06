@@ -5,6 +5,10 @@ file = "config/ftbquests/quests/chapters/plaa_chapter_1.snbt"
 hash = "6e27837d60e11a905cb40b32265160c05aa527fe598ac3f48be739b2ee996208"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/plaa_chapter_2.snbt"
+hash = "b38644ba90cf0f0882c1aab12a073667fae2e44512d94f38a6e255ad3c0befeb"
+
+[[files]]
 file = "config/plaa_chiselsandbits-server.toml"
 hash = "a1fb3d23f1a9ea1200ab8f4c01e58bf712252edda4c10976866ad2e80cc0f855"
 

@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 251 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 252 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 121 |
 
 ### prd/
@@ -129,6 +129,7 @@
 | [SYNC-016-release-021.md](reports/SYNC-016-release-021.md) | SYNC-016 · v0.2.1：把带缺陷的 v0.2.0 替换掉 | 74 |
 | [SYNC-017-summary-generator.md](reports/SYNC-017-summary-generator.md) | SYNC-017 · SUMMARY-ALL 改成可重新生成 | 76 |
 | [SYNC-018-pack-deps-021.md](reports/SYNC-018-pack-deps-021.md) | SYNC-018 · v0.2.1 分发校验 + 依赖完整性 | 85 |
+| [SYNC-019-chapter-2-shipped.md](reports/SYNC-019-chapter-2-shipped.md) | SYNC-019 · 任务书第二章进包，v0.2.2 只更新整合包 | 67 |
 | [VERIFY-001-b2.md](reports/VERIFY-001-b2.md) | VERIFY-001 · B-2（modid 改为 `plaa_*` + 与上游互斥声明） | 60 |
 | [VERIFY-002-pack-ours.md](reports/VERIFY-002-pack-ours.md) | VERIFY-002 · 整合包改用我们的 jar（`plaa_*` 替换上游 `folkways_*`） | 71 |
 | [VERIFY-003-mrpack.md](reports/VERIFY-003-mrpack.md) | VERIFY-003 · 可分发产物 `.mrpack` 生成与结构校验 | 84 |
@@ -255,7 +256,7 @@
 
 | 状态 | 债务 | 结清条件 / 说明 |
 | --- | --- | --- |
-| ⚠️ D1 | 任务书为空 → 第一章已上线；第二章草案已写（11 任务，SNBT 已校验），待进包并进游戏验证 | `pack/` 更新后 |
+| ⚠️ D1 | 任务书为空 → 第一、二章均已进包（第二章 12 任务，跨章 id/依赖校验通过，SYNC-019，v0.2.2）；只剩"进游戏验证"（并入 D11） | 游戏内加载并完成一次 |
 | ✅ D2 | jar 随包分发 → 已改为 release URL（VERIFY-011） | ✅ |
 | ✅ D3 | 264 升级被测试挡住 → 已推翻 | ✅ |
 | ⚠️ D4 | `pack/resourcepacks/` 为空；之前证明"资源包改不了 mod 资源" | 有需要时再评估 KubeJS 虚拟包 |
@@ -315,9 +316,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **151** |
-| 总行数 | **35295** |
-| 证据报告 | **73** |
+| 文档总数 | **152** |
+| 总行数 | **35364** |
+| 证据报告 | **74** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。

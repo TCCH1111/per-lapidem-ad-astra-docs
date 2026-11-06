@@ -1,0 +1,124 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "plaa_chapter_2"
+	group: ""
+	icon: "folkways:colony_book"
+	id: "3F1A000000000002"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [ ]
+			description: [ "一本就够。它认地方，不认人——丢了再合一本，殖民地还在。" ]
+			icon: "folkways:colony_book"
+			id: "3F1A000000000111"
+			min_width: 150
+			tasks: [ { id: "3F1A000000000211", item: "folkways:colony_book", type: "item", count: 1L } ]
+			rewards: [ { id: "3F1A000000000311", item: "minecraft:bread", type: "item", count: 8L } ]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [ "3F1A000000000111" ]
+			description: [ "拿书圈一块地：两个对角点，就这么多。圈完这里就是你的殖民地了。" ]
+			icon: "minecraft:oak_fence"
+			id: "3F1A000000000112"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000212", title: "用殖民书圈出第一块殖民地", type: "checkmark" } ]
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [ "3F1A000000000112" ]
+			description: [ "把箱子登记给它。居民只吃登记过的箱子里的东西——这是他们的规矩，不是我们的。" ]
+			icon: "minecraft:chest"
+			id: "3F1A000000000113"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000213", title: "用书登记一个装食物的箱子", type: "checkmark" } ]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ "3F1A000000000113" ]
+			description: [ "有饭、有床、有空地，人就会来。他们不会问你为什么，只会自己找活干。" ]
+			icon: "minecraft:player_head"
+			id: "3F1A000000000114"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000214", title: "迎来第一位居民", type: "checkmark" } ]
+			rewards: [ { id: "3F1A000000000314", item: "minecraft:torch", type: "item", count: 16L } ]
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [ "3F1A000000000114" ]
+			description: [ "看着他去吃饭。不是你去喂，是他自己走过去——这一口饭是他自己安排的。" ]
+			icon: "minecraft:bread"
+			id: "3F1A000000000115"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000215", title: "让一位居民自己吃上一顿饭", type: "checkmark" } ]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [ "3F1A000000000115" ]
+			description: [ "翻到殖民书的作息页。这里决定殖民地几点干活、几点歇。" ]
+			icon: "minecraft:clock"
+			id: "3F1A000000000116"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000216", title: "打开作息页", type: "checkmark" } ]
+			x: -1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: [ "3F1A000000000116" ]
+			description: [ "选白班，把开关打开。天黑收工，天亮上工——居民会照做。" ]
+			icon: "minecraft:daylight_detector"
+			id: "3F1A000000000117"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000217", title: "启用白班作息", type: "checkmark" } ]
+			x: -1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [ "3F1A000000000117" ]
+			description: [ "等到天黑，看他们停工。若没停，先看看是不是有人正饿着——需求会压过作息，这是设计，不是 bug。" ]
+			icon: "minecraft:redstone_lamp"
+			id: "3F1A000000000118"
+			min_width: 180
+			tasks: [ { id: "3F1A000000000218", title: "观察一次入夜停工", type: "checkmark" } ]
+			x: -1.5d
+			y: 10.5d
+		}
+		{
+			dependencies: [ "3F1A000000000115" ]
+			description: [ "在居民常走的路口画一个禁入区。不为美观——是为了让他们绕开。" ]
+			icon: "folkways:tag_filter"
+			id: "3F1A000000000119"
+			min_width: 170
+			tasks: [ { id: "3F1A000000000219", title: "画一个禁入区", type: "checkmark" } ]
+			x: 1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: [ "3F1A000000000119" ]
+			description: [ "盯着那个区看一会儿。有人绕开了，就说明它不只是个颜色。" ]
+			icon: "minecraft:barrier"
+			id: "3F1A00000000011A"
+			min_width: 170
+			tasks: [ { id: "3F1A00000000021A", title: "确认有居民绕开禁入区", type: "checkmark" } ]
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [ "3F1A000000000114" ]
+			description: [ "把准星对准一位居民，看他的卡片。心情不好的人，卡片上会多一行字。" ]
+			icon: "minecraft:paper"
+			id: "3F1A00000000011B"
+			min_width: 180
+			tasks: [ { id: "3F1A00000000021B", title: "看一次居民的心情", type: "checkmark" } ]
+			x: -3.0d
+			y: 6.0d
+		}
+	]
+}

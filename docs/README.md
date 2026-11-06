@@ -218,6 +218,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | SYNC-016 | [v0.2.1：把带缺陷的 v0.2.0 替换掉](reports/SYNC-016-release-021.md) | 11 个资产；C&B 图案修复进入发布物；整合包 URL/哈希同步；URL 抽检 200 |
 | SYNC-017 | [SUMMARY-ALL 改成可重新生成](reports/SYNC-017-summary-generator.md) | `tools/summarize.py` 生成 §2/§3/§4/§8；抓到三个"差点算错"（ADR 20→26、划掉≠结清、行数只数非空） |
 | SYNC-018 | [v0.2.1 分发校验 + 依赖完整性](reports/SYNC-018-pack-deps-021.md) | 62/62 哈希匹配 · 10 jar 元数据正确 · 服务端必需依赖齐全；检查自身被证伪三次 |
+| SYNC-019 | [任务书第二章进包，v0.2.2 只更新整合包](reports/SYNC-019-chapter-2-shipped.md) | 跨章 id/依赖校验通过；mrpack 69 条（含 2 章节）；**游戏内加载仍未验**（并入 D11） |
 | VERIFY-048 | [十模块打包 jar 在真实专用服务端启动](reports/VERIFY-048-dedicated-server.md) | `Done (4.511s)`、0 FATAL、10 个 modid 全注册；16 条 ERROR 均为可选集成噪音 |
 | VERIFY-049 | [M2-R1 第一段：关系簿（1472/1472）](reports/VERIFY-049-m2-r1-book.md) | 数据层落地：上限 30 / 冷却 500 刻 / 淘汰 / prune / 存读；T0 四个未知项读穿，采样器可留 L1 |
 | VERIFY-050 | [M2-R1 第二段：采样器（1476/1476）](reports/VERIFY-050-m2-r1-sampler.md) | 每 5 秒采样"谁在干活、站哪"，≤8 格成对入簿；纯函数可测；L2 仅一处注册 |

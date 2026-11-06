@@ -1,12 +1,12 @@
 name = "Per Lapidem ad Astra"
 author = "TCCH1111"
-version = "0.2.1+mc1.21.1+neoforge21.1.264"
+version = "0.2.2+mc1.21.1+neoforge21.1.264"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "369b68bef26e7b6fd4dd914ba8a589d8518bde517aaa067b7b3288437ce9e565"
+hash = "6cf2981d053dd8d46fc12fddef85db38f8e337755405c440c40279b778841af2"
 
 [versions]
 minecraft = "1.21.1"
