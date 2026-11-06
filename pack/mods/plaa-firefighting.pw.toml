@@ -1,8 +1,8 @@
 name = "plaa-firefighting"
-filename = "plaa-firefighting-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-firefighting-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-firefighting-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-firefighting-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "5fd7dd74eeda4ca4caa2d3193872eab5eedd037d249a11f7fe7cefab0e7308c6"
+hash = "c770fdcb9573417faa1f5d502b1027b2cb85777eca2e13270c662219b2f5e4bf"

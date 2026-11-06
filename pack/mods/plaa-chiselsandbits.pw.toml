@@ -1,8 +1,8 @@
 name = "plaa-chiselsandbits"
-filename = "plaa-chiselsandbits-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-chiselsandbits-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-chiselsandbits-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-chiselsandbits-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "ac07cd394c4ca7e43e704b32771a819816f9e5f28d3ce841055958eac6301f2b"
+hash = "9e8f1def02c1bcec4ae8863c985e6ebf48b0bb44fcc8ae559466faaeb99f221d"

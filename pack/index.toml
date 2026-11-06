@@ -178,43 +178,43 @@ hash = "02aa4dcb8fa24cffcd2182c66683c2a476a95abf53002373f953a49737a587e3"
 
 [[files]]
 file = "mods/plaa-chiselsandbits.pw.toml"
-hash = "6741a2c8b5bf6567c7debfea9c48e6cf24fb77aad4c0fbcf476fda3cd420491c"
+hash = "360c8f5eda2e343ec3ae5e97d9a851f8d673eebef0b7e06b2d75f99e81907892"
 
 [[files]]
 file = "mods/plaa-cookery.pw.toml"
-hash = "59499578bfce586375bca2a018497153fea6bffa5a047c09f150db38a35dd5f2"
+hash = "bc69349c6350c4aca710b3a7c52e1cbf1e7d0ce73fc13dc89947ed55a0de9dda"
 
 [[files]]
 file = "mods/plaa-core.pw.toml"
-hash = "c1a17734035bd40c6c79e072fe3307e5bb11c08f602fcc9143fe641d9fd5bd6a"
+hash = "73282fc0fc6303300b451e3d24eeb0f7648dfa4d89c0caa2d97652c5efc34ca6"
 
 [[files]]
 file = "mods/plaa-create.pw.toml"
-hash = "4322e091ccaf6f9421624ea34475cfdb95a1d7be030a75960a4464f7353576d1"
+hash = "6f0b5ed5b470b5231c2fbf8225c5c7e5f64ce478198f3acb67cbd65c5d26adc8"
 
 [[files]]
 file = "mods/plaa-firefighting.pw.toml"
-hash = "9b6e128333f75ae53b0181f3c1f7a2ae32a8eaf07b50a565723c74263fa033d6"
+hash = "d173403f63de472addb84f9e2819700cca36a62c42f973a47e79be4274d2568d"
 
 [[files]]
 file = "mods/plaa-modulargolems.pw.toml"
-hash = "458013e0eb1709aa43733316591e501fb95f32c2e1e51c082844c7636a3268d4"
+hash = "a72a4adeae1ddf8652bfcdee4fa4ca8a13e3455e19685aefb38158cfcc9be3ef"
 
 [[files]]
 file = "mods/plaa-rts.pw.toml"
-hash = "84b7e8817e61aac5b649b9529283b07dd48edb8b912804a0d6a065ad85764565"
+hash = "0f3a8a98cae777c9c764d4ab42a00c743390516fee1ea603ac983e4a8f1e92ea"
 
 [[files]]
 file = "mods/plaa-tacz.pw.toml"
-hash = "e6a848288190b4e47c9c1fc86bbcc43db456d30c9b42e4b3173f0bdca65bdf95"
+hash = "18e05ed31dda6da28b68802cc264bab8b31640bab8b9628d5d1e8c7587fb7bc0"
 
 [[files]]
 file = "mods/plaa-vanilla.pw.toml"
-hash = "f19f167122eb8cf3b120cf7664fb6ebf1935d180e51940540ee35ff0a11a6bea"
+hash = "e67ee15733f6a37f79d1209136b3225a71650b5bc3a29d297412d6a8be311001"
 
 [[files]]
 file = "mods/plaa-warfare.pw.toml"
-hash = "c9f66e66798618dc6c989f5805f0595bf4212d61bb73812485f37df00dd8f4b1"
+hash = "ef48ff3be022c8c4380af84de2115b9450e05a691bf0d549cdae09311cf5d246"
 
 [[files]]
 file = "mods/rhino.pw.toml"

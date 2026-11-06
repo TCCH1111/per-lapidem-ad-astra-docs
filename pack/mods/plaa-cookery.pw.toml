@@ -1,8 +1,8 @@
 name = "plaa-cookery"
-filename = "plaa-cookery-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-cookery-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-cookery-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-cookery-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "e8327e161be5cefe9917fe04e3518474d4185b79496dfbd68be669f5937e3d77"
+hash = "7cb4ac54d523913dbaefa488d051b64750dfe7fed018af97703563c7f0cf69b7"

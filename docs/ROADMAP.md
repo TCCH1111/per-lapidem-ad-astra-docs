@@ -55,7 +55,7 @@
 | 客户端 | Prism 实例实测一次：49 mod 加载、0 缺模型、0 FATAL、成功进服（VERIFY-006；D5：发版前重跑） |
 | 服务端 | 安装器端到端：46 mod、`Done` 14.2s（VERIFY-004/005/008） |
 | 内容 | KubeJS 1 条桥接配方（0 错误）；**任务书第一章已上线**（1 章 8 任务，0 解析错误）；事件模板仅文档（k06 40 条） |
-| 分发 | **已发布 [v0.2.0](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.0)**：11 个资产（10 jar + `.mrpack`）；`.mrpack` 67 条目 = 62 下载 + 5 随包（14 KB） |
+| 分发 | **已发布 [v0.2.1](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.1)**（修复 C&B 图案，SYNC-016）：11 个资产；`.mrpack` 68 条目 = 62 下载 + 6 随包。v0.2.0 仍有 C&B 缺陷，勿用 |
 | 版本 | 构建 = 包声明 = **21.1.264**（已统一，VERIFY-040）；兼容范围 `[21.1.233,)` 保持不变 |
 
 ---

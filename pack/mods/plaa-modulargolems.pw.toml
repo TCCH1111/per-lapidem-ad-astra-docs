@@ -1,8 +1,8 @@
 name = "plaa-modulargolems"
-filename = "plaa-modulargolems-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-modulargolems-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-modulargolems-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-modulargolems-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "3eaccf6266cebee5a448091f1ab32346cbdb0c35af5130df34aa2e2a22604e0f"
+hash = "10eb6c05c7394fd4f2f76b7e6713b8e0aa069d8d325010e8eacc98f7d8518bd2"

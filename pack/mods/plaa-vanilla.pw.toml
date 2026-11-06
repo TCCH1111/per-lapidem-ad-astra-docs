@@ -1,8 +1,8 @@
 name = "plaa-vanilla"
-filename = "plaa-vanilla-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-vanilla-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-vanilla-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-vanilla-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "9e4f490689bec0108845544999a8ad39e1ce3eb2ae2e56a1a82ee956b2265ba0"
+hash = "0f161a1faa6ae73757deb2cf321f3a5f13f9f80595fed41b179bbe46ea0caf29"

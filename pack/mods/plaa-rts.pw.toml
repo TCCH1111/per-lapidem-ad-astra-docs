@@ -1,8 +1,8 @@
 name = "plaa-rts"
-filename = "plaa-rts-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-rts-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-rts-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-rts-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "f3c8e0edf4762cdf23036d0ab448981a6d18cf7f65a40f3a5c4cc56025efaa89"
+hash = "a999bc78e6b6e18a2ad7b0db57c0d86877bafbe2d5636c1a28a7a44576558582"

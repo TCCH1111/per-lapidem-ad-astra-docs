@@ -1,8 +1,8 @@
 name = "plaa-core"
-filename = "plaa-core-neoforge-1.21.1-0.2.0.jar"
+filename = "plaa-core-neoforge-1.21.1-0.2.1.jar"
 side = "both"
 
 [download]
-url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.0/plaa-core-neoforge-1.21.1-0.2.0.jar"
+url = "https://github.com/TCCh1111/per-lapidem-ad-astra/releases/download/v0.2.1/plaa-core-neoforge-1.21.1-0.2.1.jar"
 hash-format = "sha256"
-hash = "b6350319a142f2fa029a3256dacb702ca4d8ea4b85ef267a5df1f1c14fd35e32"
+hash = "fd646ccebd04331319e113018a19bea848f1594ecc7ffece21dd2a53f153b656"
