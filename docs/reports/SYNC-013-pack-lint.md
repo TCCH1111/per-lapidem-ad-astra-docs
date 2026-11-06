@@ -78,3 +78,27 @@ pwsh -File tools/pack-lint.ps1      # 退出码 0 = 自洽
 
 - 发布资产（`v0.2.0` 的 `.mrpack`）**未受影响**：mrpack 不包含 `index.toml` / `pack.toml`，本轮只改了这两个文件的内部一致性；
 - **D11（客户端实测）依旧开放**——lint 管的是"包自洽"，管不了"游戏能跑"。
+
+---
+
+## 7. 追加：`-Fix`（2026-11-06）
+
+发现还不够——本项目三次手工修 CRLF。所以脚本现在也能修：
+
+```powershell
+pwsh -File tools/pack-lint.ps1 -Fix
+```
+
+它依次做：归一化所有文本文件为 LF → 按"排除 index.toml 与 pack.toml"重建 index.toml → 同步 pack.toml 的 index 哈希 → 再跑一遍检查。
+
+### 验证方式：先破坏，再修
+
+| 步骤 | 结果 |
+| --- | --- |
+| 基线 | `全部通过`（exit 0） |
+| 给 `config/plaa_core-server.toml` 人为加 CRLF（68 行） | lint 报 **2 个问题**：`哈希不符` + `CRLF`（exit 1） |
+| `-Fix` | `归一化 1 个文件 · 重建 index.toml（68 条）· 同步哈希` → `全部通过` |
+| 再跑 `-Fix` | `归一化 0 个文件` —— **幂等** |
+
+**这一步的意义**：检查能证明"坏了"，修复能证明"能好"，而幂等证明"不会越修越坏"。
+三者缺一，脚本就只是半个工具。
