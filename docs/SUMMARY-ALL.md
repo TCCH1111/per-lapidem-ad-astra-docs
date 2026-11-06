@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 248 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 249 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 121 |
 
 ### prd/
@@ -127,6 +127,7 @@
 | [SYNC-015-fork-ci-fix.md](reports/SYNC-015-fork-ci-fix.md) | SYNC-015 · fork 的 CI 一直是红的，原因是被漏掉的第五个改名面 | 114 |
 | [SYNC-016-release-021.md](reports/SYNC-016-release-021.md) | SYNC-016 · v0.2.1：把带缺陷的 v0.2.0 替换掉 | 74 |
 | [SYNC-017-summary-generator.md](reports/SYNC-017-summary-generator.md) | SYNC-017 · SUMMARY-ALL 改成可重新生成 | 76 |
+| [SYNC-018-pack-deps-021.md](reports/SYNC-018-pack-deps-021.md) | SYNC-018 · v0.2.1 分发校验 + 依赖完整性 | 85 |
 | [VERIFY-001-b2.md](reports/VERIFY-001-b2.md) | VERIFY-001 · B-2（modid 改为 `plaa_*` + 与上游互斥声明） | 60 |
 | [VERIFY-002-pack-ours.md](reports/VERIFY-002-pack-ours.md) | VERIFY-002 · 整合包改用我们的 jar（`plaa_*` 替换上游 `folkways_*`） | 71 |
 | [VERIFY-003-mrpack.md](reports/VERIFY-003-mrpack.md) | VERIFY-003 · 可分发产物 `.mrpack` 生成与结构校验 | 84 |
@@ -312,9 +313,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **148** |
-| 总行数 | **35007** |
-| 证据报告 | **71** |
+| 文档总数 | **149** |
+| 总行数 | **35094** |
+| 证据报告 | **72** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
