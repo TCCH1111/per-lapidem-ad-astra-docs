@@ -212,7 +212,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | SYNC-011 | [发布包整体校验：62 个下载全部可达且哈希匹配](reports/SYNC-011-mrpack-verified.md) | 62/62 通过（279 MB）· 5 个随包文件与 pack/ 一致；**安装与客户端仍未测（D11）** |
 | SYNC-012 | [整合包审计：桥接有效、配置过时（已刷新）](reports/SYNC-012-pack-audit.md) | 桥接 id 在真实 jar 中确认；配置从旧构建换成十模块生成版；发现三条面粉链（待定） |
 | SYNC-013 | [`pack-lint`：检查 + 修复](reports/SYNC-013-pack-lint.md) | 5 项检查；首次运行抓到 index↔pack 循环依赖；**`-Fix` 已验证（破坏→报错→修复→幂等）** |
-| SYNC-014 | [docs 仓库接上 CI，四次运行才变绿](reports/SYNC-014-docs-ci.md) | 两道门禁上线；三次失败各抓到一个真缺陷（断链/路径分隔符/相对路径）；最终 run 42171675065 成功 |
+| SYNC-014 | [docs 仓库 CI：四道门禁，四次运行才变绿](reports/SYNC-014-docs-ci.md) | 断链 / pack-lint / 报告登记 / AC 一致性；三次失败各抓到一个真缺陷；**D14 关闭** |
 | SYNC-015 | [fork CI 一直是红的：漏掉的第五个改名面](reports/SYNC-015-fork-ci-fix.md) | `data/<modid>/` 未随改名走；修后 **Build #49 十一个作业全绿**（移植后首次） |
 | SYNC-016 | [v0.2.1：把带缺陷的 v0.2.0 替换掉](reports/SYNC-016-release-021.md) | 11 个资产；C&B 图案修复进入发布物；整合包 URL/哈希同步；URL 抽检 200 |
 | VERIFY-048 | [十模块打包 jar 在真实专用服务端启动](reports/VERIFY-048-dedicated-server.md) | `Done (4.511s)`、0 FATAL、10 个 modid 全注册；16 条 ERROR 均为可选集成噪音 |
