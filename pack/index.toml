@@ -272,7 +272,3 @@ hash = "e97cb865d7a8c8310905d9140899fa55ea23c3fff2e23a17255ce2c162322ad7"
 file = "mods/xaeros-world-map.pw.toml"
 hash = "3a8e91aecdb602039ba1f7445bbf6b64cc5a46344339a3ffaf3b2e3eb2f5bcbc"
 
-[[files]]
-file = "pack.toml"
-hash = "287168cd394b5822af6e9b0a04ca3cfe6153ea6efe4018fd80d1f7e6d84b2a95"
-
