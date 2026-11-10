@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 274 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 275 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -207,6 +207,7 @@
 | [VERIFY-070-m2-r1-announce.md](reports/VERIFY-070-m2-r1-announce.md) | VERIFY-070 · M2 R1 呈现：死亡会被说出来（1517/1517） | 99 |
 | [VERIFY-071-m2-r1-unburied-notice.md](reports/VERIFY-071-m2-r1-unburied-notice.md) | VERIFY-071 · M2 R1 呈现收尾：死亡通知带上未安葬数（1518/1518） | 75 |
 | [VERIFY-072-bandage-item.md](reports/VERIFY-072-bandage-item.md) | VERIFY-072 · M2 医疗：绷带就位，处置规则待选（1519/1519） | 69 |
+| [VERIFY-073-dressing-action.md](reports/VERIFY-073-dressing-action.md) | VERIFY-073 · M2 治疗：包扎动作本身（1521/1521） | 71 |
 
 ### research/
 
@@ -340,9 +341,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **174** |
-| 总行数 | **37321** |
-| 证据报告 | **94** |
+| 文档总数 | **175** |
+| 总行数 | **37395** |
+| 证据报告 | **95** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
