@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 272 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 274 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -107,6 +107,7 @@
 | [PLAN-008-m2-r2-friction.md](plans/PLAN-008-m2-r2-friction.md) | PLAN-008 · M2-R2：摩擦（关系第二刀） | 96 |
 | [PLAN-009-m2-medical-r0.md](plans/PLAN-009-m2-medical-r0.md) | PLAN-009 · M2 医疗第一刀（R0：伤口、流血、看得见） | 106 |
 | [PLAN-010-m2-medical-r1-infection.md](plans/PLAN-010-m2-medical-r1-infection.md) | PLAN-010 · M2 医疗 R1：感染 → 发烧 → 死亡（口径已定） | 76 |
+| [PLAN-011-m2-medical-treatment.md](plans/PLAN-011-m2-medical-treatment.md) | PLAN-011 · M2 医疗收尾：包扎（两种做法，等一句口径） | 77 |
 
 ### reports/
 
@@ -205,6 +206,7 @@
 | [VERIFY-069-m2-r1-3-corpse.md](reports/VERIFY-069-m2-r1-3-corpse.md) | VERIFY-069 · M2 R1-3：死者留下尸体，埋葬后立碑（1516/1516） | 81 |
 | [VERIFY-070-m2-r1-announce.md](reports/VERIFY-070-m2-r1-announce.md) | VERIFY-070 · M2 R1 呈现：死亡会被说出来（1517/1517） | 99 |
 | [VERIFY-071-m2-r1-unburied-notice.md](reports/VERIFY-071-m2-r1-unburied-notice.md) | VERIFY-071 · M2 R1 呈现收尾：死亡通知带上未安葬数（1518/1518） | 75 |
+| [VERIFY-072-bandage-item.md](reports/VERIFY-072-bandage-item.md) | VERIFY-072 · M2 医疗：绷带就位，处置规则待选（1519/1519） | 69 |
 
 ### research/
 
@@ -338,9 +340,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **172** |
-| 总行数 | **37172** |
-| 证据报告 | **93** |
+| 文档总数 | **174** |
+| 总行数 | **37321** |
+| 证据报告 | **94** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。

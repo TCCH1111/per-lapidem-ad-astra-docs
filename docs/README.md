@@ -162,6 +162,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | PLAN-008 | [M2-R2：摩擦（关系第二刀）](plans/PLAN-008-m2-r2-friction.md) | 计划中：`grudge` 与 `bond` 独立；状态差的人起摩擦；仇人在旁至少 WORRIED；**不碰否决权（那要 L3）** |
 | PLAN-009 | [M2 医疗第一刀：伤口/流血/速度/卡片](plans/PLAN-009-m2-medical-r0.md) | 全 L1；R0 只做可见的伤与后果；**三个问题待拍板**（排班影响/包扎发起/死亡处理） |
 | PLAN-010 | [M2 医疗 R1：感染→发烧→死亡（口径 Q3=A）](plans/PLAN-010-m2-medical-r1-infection.md) | 分期计划；R1-1 已开工；死亡含尸体/讣告（PRD-009 G2） |
+| PLAN-011 | [M2 医疗收尾：包扎的两条路](plans/PLAN-011-m2-medical-treatment.md) | 路 A 居民自助（推荐）/ 路 B 医生工种；绷带物品已就位 |
 | VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
 | VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |
@@ -247,6 +248,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-069 | [M2 R1-3：尸体 + 墓碑（1516/1516）](reports/VERIFY-069-m2-r1-3-corpse.md) | 方块形态（用户拍板）；死留尸体、埋立碑；**并更正 VERIFY-068 一条空转断言** |
 | VERIFY-070 | [M2 R1 呈现：死亡会被说出来（1517/1517）](reports/VERIFY-070-m2-r1-announce.md) | 广播名字+死因；死因走映射表；四语齐全；**未安葬计数仍无界面** |
 | VERIFY-071 | [M2 R1 呈现收尾：通知带未安葬数（1518/1518）](reports/VERIFY-071-m2-r1-unburied-notice.md) | 只在有尸体时补一句；不做常驻计数器 |
+| VERIFY-072 | [M2 医疗：绷带就位（1519/1519）](reports/VERIFY-072-bandage-item.md) | 物品/四语/堆叠；**处置规则待选 A/B**；无配方 |
 | VERIFY-047 | [D16 关闭：`Standing → Veto` 改名，门禁抓到一条真回归](reports/VERIFY-047-veto-rename.md) | 改名（只改标识符，注释/字符串/语言文件不动）；i18n 门禁抓到 N6 的键约定回归并修复；四件套全绿 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |
