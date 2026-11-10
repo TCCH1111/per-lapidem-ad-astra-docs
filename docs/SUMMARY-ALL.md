@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 275 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 276 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -108,6 +108,7 @@
 | [PLAN-009-m2-medical-r0.md](plans/PLAN-009-m2-medical-r0.md) | PLAN-009 · M2 医疗第一刀（R0：伤口、流血、看得见） | 106 |
 | [PLAN-010-m2-medical-r1-infection.md](plans/PLAN-010-m2-medical-r1-infection.md) | PLAN-010 · M2 医疗 R1：感染 → 发烧 → 死亡（口径已定） | 76 |
 | [PLAN-011-m2-medical-treatment.md](plans/PLAN-011-m2-medical-treatment.md) | PLAN-011 · M2 医疗收尾：包扎（两种做法，等一句口径） | 77 |
+| [PLAN-012-m2-threats-abstract.md](plans/PLAN-012-m2-threats-abstract.md) | PLAN-012 · M2 威胁第一刀：会来的危险（抽象结算，不做战斗 AI） | 93 |
 
 ### reports/
 
@@ -341,8 +342,8 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **175** |
-| 总行数 | **37395** |
+| 文档总数 | **176** |
+| 总行数 | **37490** |
 | 证据报告 | **95** |
 | 本次生成 | `tools/summarize.py` |
 

@@ -163,6 +163,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | PLAN-009 | [M2 医疗第一刀：伤口/流血/速度/卡片](plans/PLAN-009-m2-medical-r0.md) | 全 L1；R0 只做可见的伤与后果；**三个问题待拍板**（排班影响/包扎发起/死亡处理） |
 | PLAN-010 | [M2 医疗 R1：感染→发烧→死亡（口径 Q3=A）](plans/PLAN-010-m2-medical-r1-infection.md) | 分期计划；R1-1 已开工；死亡含尸体/讣告（PRD-009 G2） |
 | PLAN-011 | [M2 医疗收尾：包扎的两条路](plans/PLAN-011-m2-medical-treatment.md) | 路 A 居民自助（推荐）/ 路 B 医生工种；绷带物品已就位 |
+| PLAN-012 | [M2 威胁第一刀：抽象结算](plans/PLAN-012-m2-threats-abstract.md) | 预告→准备度→结算→后果（复用医疗）；**公式待拍板**（确定/比例/上限） |
 | VERIFY-001 | [B-2 验证报告（modid 改名 + 与上游互斥）](reports/VERIFY-001-b2.md) | 通过：T1–T6 有证据（unit/i18n 134/0、gametest 651/651、服务端 Done 4.453s、混装上游被拒绝）；3 条遗留 |
 | VERIFY-002 | [整合包改用我们的 jar（plaa_* 替换上游 folkways_*）](reports/VERIFY-002-pack-ours.md) | 通过：4 个 jar 入包、索引自校验 47 文件、完整包 44 mod 服务端 Done 9.142s |
 | VERIFY-003 | [可分发产物 .mrpack 生成与结构校验](reports/VERIFY-003-mrpack.md) | 通过：47 条目（43 下载 + 4 随包）、哈希合规 0 例外、抽样 URL 可达；未做真实客户端安装 |
