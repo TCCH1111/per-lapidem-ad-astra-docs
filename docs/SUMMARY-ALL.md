@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 271 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 272 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -204,6 +204,7 @@
 | [VERIFY-068-m2-r1-2-death.md](reports/VERIFY-068-m2-r1-2-death.md) | VERIFY-068 · M2 R1-2：居民会死了（1513/1513） | 90 |
 | [VERIFY-069-m2-r1-3-corpse.md](reports/VERIFY-069-m2-r1-3-corpse.md) | VERIFY-069 · M2 R1-3：死者留下尸体，埋葬后立碑（1516/1516） | 81 |
 | [VERIFY-070-m2-r1-announce.md](reports/VERIFY-070-m2-r1-announce.md) | VERIFY-070 · M2 R1 呈现：死亡会被说出来（1517/1517） | 99 |
+| [VERIFY-071-m2-r1-unburied-notice.md](reports/VERIFY-071-m2-r1-unburied-notice.md) | VERIFY-071 · M2 R1 呈现收尾：死亡通知带上未安葬数（1518/1518） | 75 |
 
 ### research/
 
@@ -337,9 +338,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **171** |
-| 总行数 | **37095** |
-| 证据报告 | **92** |
+| 文档总数 | **172** |
+| 总行数 | **37172** |
+| 证据报告 | **93** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
