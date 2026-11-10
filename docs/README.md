@@ -242,6 +242,7 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-064 | [M2 R1-1：感染会自己变深（1504/1504）](reports/VERIFY-064-m2-r1-1-infection.md) | 感染按部位记录、骰子作为参数（可复现）；到门槛即"重伤"；**玩家仍看不到** |
 | VERIFY-065 | [那句话划掉了：真实殖民地会为重伤者保留（1505/1505）](reports/VERIFY-065-work-stop-end-to-end.md) | 端到端：真殖民地 + 真健康簿 + 真 `urges()`；**"夹具太贵"被证明是误判** |
 | VERIFY-066 | [M2 R1-3 地基：每次死亡都留痕（1508/1508）](reports/VERIFY-066-m2-r1-3-deaths.md) | 死亡记录（谁/何名/何因/何时）已就位；**尚无人会死**，书架还空着 |
+| VERIFY-067 | [R1-2/R1-3 地基：派生发烧 + 未安葬状态（1511/1511）](reports/VERIFY-067-fever-and-burial.md) | 发烧由感染派生（单一真相源）；`unburiedCount` 对应 PRD-009 G2；**仍无人会死** |
 | VERIFY-047 | [D16 关闭：`Standing → Veto` 改名，门禁抓到一条真回归](reports/VERIFY-047-veto-rename.md) | 改名（只改标识符，注释/字符串/语言文件不动）；i18n 门禁抓到 N6 的键约定回归并修复；四件套全绿 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |
