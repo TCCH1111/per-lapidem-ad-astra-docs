@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 269 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 270 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -202,6 +202,7 @@
 | [VERIFY-066-m2-r1-3-deaths.md](reports/VERIFY-066-m2-r1-3-deaths.md) | VERIFY-066 · M2 R1-3 地基：每次死亡都留痕（1508/1508） | 73 |
 | [VERIFY-067-fever-and-burial.md](reports/VERIFY-067-fever-and-burial.md) | VERIFY-067 · M2 R1-2/R1-3 地基：发烧是派生的，死亡能说"还没安葬"（1511/1511） | 80 |
 | [VERIFY-068-m2-r1-2-death.md](reports/VERIFY-068-m2-r1-2-death.md) | VERIFY-068 · M2 R1-2：居民会死了（1513/1513） | 90 |
+| [VERIFY-069-m2-r1-3-corpse.md](reports/VERIFY-069-m2-r1-3-corpse.md) | VERIFY-069 · M2 R1-3：死者留下尸体，埋葬后立碑（1516/1516） | 81 |
 
 ### research/
 
@@ -335,9 +336,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **169** |
-| 总行数 | **36911** |
-| 证据报告 | **90** |
+| 文档总数 | **170** |
+| 总行数 | **36994** |
+| 证据报告 | **91** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
