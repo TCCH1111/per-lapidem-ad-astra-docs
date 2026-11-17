@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 277 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 278 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -210,6 +210,7 @@
 | [VERIFY-072-bandage-item.md](reports/VERIFY-072-bandage-item.md) | VERIFY-072 · M2 医疗：绷带就位，处置规则待选（1519/1519） | 69 |
 | [VERIFY-073-dressing-action.md](reports/VERIFY-073-dressing-action.md) | VERIFY-073 · M2 治疗：包扎动作本身（1521/1521） | 71 |
 | [VERIFY-074-threat-t0.md](reports/VERIFY-074-threat-t0.md) | VERIFY-074 · M2 威胁 T0：危险会在到来进行预告（1525/1525） | 81 |
+| [VERIFY-075-d11-client.md](reports/VERIFY-075-d11-client.md) | VERIFY-075 · D11 客户端实测：49 mod 装进世界，真人可见层第一次被机器确认（Prism CLI） | 94 |
 
 ### research/
 
@@ -285,13 +286,13 @@
 | ✅ D2 | jar 随包分发 → 已改为 release URL（VERIFY-011） | ✅ |
 | ✅ D3 | 264 升级被测试挡住 → 已推翻 | ✅ |
 | ⚠️ D4 | `pack/resourcepacks/` 为空；之前证明"资源包改不了 mod 资源" | 有需要时再评估 KubeJS 虚拟包 |
-| ⚠️ D5 | 客户端只有一次实测记录（2026-10-20） | 每次发版前重跑 |
+| ⚠️ D5 | 客户端只有一次实测记录（2026-10-20） → 已重跑 | 更新到最新 fork 构建后再跑一次 |
 | ✅ D6 | 无 CI → 已偿还 | ✅ |
 | ✅ D7 | `onefoodcannotfeedhalfofapair` 偶发挡住"全绿" → 已偿还 | ✅ |
 | ✅ D8 | Boolean `Standing` 把"非工作时段"误报成"禁限区" → 已修 | ✅ |
 | ⚠️ D9 | 缺殖民地测试夹具 | 下一个测试基建轮（WP-6/W7 遗留；M2 内） |
 | ⚠️ D10 | 只对 5 类原因说话，其余 9 类故意沉默 | 已知限制，保持开启（VERIFY-033/035）；补证后逐条放行 |
-| ⚠️ D11 | 人工验收（已变大） | 因跳过实测切换（SYNC-009）而放大；**分发层已另验**（SYNC-011 |
+| ⚠️ D11 | 人工验收（部分关闭） | 因跳过实测切换（SYNC-009）而放大；分发层已另验（SYNC-011：62/ |
 | ✅ D12 | `rules-first`（需求让位于规则） → 决定不做（2026-11-05 由项目发起人拍板） | ✅ 关闭 |
 | ⚠️ D13 | CI P2 未做 | Blockwright profile 覆盖语义确认后（w06 §4.2 P2） |
 | ✅ D14 | CI 未接 → ✅ 关闭 | ✅ 完成 |
@@ -343,9 +344,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **177** |
-| 总行数 | **37573** |
-| 证据报告 | **96** |
+| 文档总数 | **178** |
+| 总行数 | **37669** |
+| 证据报告 | **97** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。
