@@ -2,7 +2,7 @@
 
 > 这是**唯一**把项目现状汇总到一个文件里的文档。
 > 前半是判断，后半（§2/§3/§4/§8）由 `tools/summarize.py` 从源文件生成，不会与源文件脱节。
-> 最后更新：2026-11-06
+> 最后更新：2026-11-17
 
 ---
 
@@ -16,12 +16,12 @@
 
 | 维度 | 现状 |
 | --- | --- |
-| 代码分支 | `main` = `3234812`（十模块，全部 `plaa_*`） |
-| 测试 | 本地 **1482** 游戏测试 全绿；unit **140/140** |
-| CI | fork **Build #49**：11 个作业全绿；docs 仓库**四道门禁**全绿 |
-| 发布物 | **[v0.2.1](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.1)**：10 jar + `.mrpack`（62 下载条目） |
-| 里程碑 | M0 ✅ · M1 ✅（WP-0/1/4/5/6/8 + CI）· M2 🟡（情绪 N1–N6 ✅、关系切片 R1 ✅） |
-| 最大缺口 | **D11：没有任何人真正装过这个整合包并进世界** |
+| 代码分支 | fork `main` = `dfb65160`（十模块，全部 `plaa_*`）；上游基线 `aaac8b8`（重写历史，只能移植） |
+| 测试 | CI gametest 矩阵全绿（含 M2 自救 + 威胁结算新增测试）；unit 全绿 |
+| CI | fork **11/11 作业全绿**（含 `GameTests (vanilla)`、Client smoke）；docs 仓库**四道门禁**全绿 |
+| 发布物 | **[v0.2.2](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.2)**：仅 mrpack（含任务书第二章）；jar 最新构建在 fork `build/libs`（实例里的 `plaa_*` 仍是 0.1.0） |
+| 里程碑 | M0 ✅ · M1 ✅（WP-0/1/4/5/6/8 + CI）· M2 🟡（情绪 ✅ · 关系 R1/R2 ✅ · 医疗 R0/R1 ✅ + 治疗 A ✅ · 威胁 T0–T3 ✅） |
+| 最大缺口 | **D11 剩余**：演示脚本 19 点 + 3 截图 + 跨进程重启 + 用最新 jar 重跑（"装包→进世界→0 缺模型"已由 VERIFY-075 关闭） |
 
 
 ## 2. 文档地图（自动生成；改动后重跑 `tools/summarize.py`）
@@ -31,7 +31,7 @@
 | 文件 | 标题 | 行数 |
 | --- | --- | --- |
 | [00-charter.md](00-charter.md) | 项目章程 · Per Lapidem ad Astra | 155 |
-| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 278 |
+| [README.md](README.md) | 文档地图 · Per Lapidem ad Astra | 280 |
 | [ROADMAP.md](ROADMAP.md) | 长期目标与路线（ROADMAP） | 123 |
 
 ### prd/
@@ -211,6 +211,8 @@
 | [VERIFY-073-dressing-action.md](reports/VERIFY-073-dressing-action.md) | VERIFY-073 · M2 治疗：包扎动作本身（1521/1521） | 71 |
 | [VERIFY-074-threat-t0.md](reports/VERIFY-074-threat-t0.md) | VERIFY-074 · M2 威胁 T0：危险会在到来进行预告（1525/1525） | 81 |
 | [VERIFY-075-d11-client.md](reports/VERIFY-075-d11-client.md) | VERIFY-075 · D11 客户端实测：49 mod 装进世界，真人可见层第一次被机器确认（Prism CLI） | 94 |
+| [VERIFY-076-treatment-a.md](reports/VERIFY-076-treatment-a.md) | VERIFY-076 · M2 治疗 A：受伤的居民会自己包扎（CI 全绿） | 68 |
+| [VERIFY-077-threat-resolution.md](reports/VERIFY-077-threat-resolution.md) | VERIFY-077 · M2 威胁结算 A/B/A：可复现、按比例、致命有上限（CI 全绿） | 84 |
 
 ### research/
 
@@ -344,9 +346,9 @@
 
 | 项 | 值 |
 | --- | --- |
-| 文档总数 | **178** |
-| 总行数 | **37669** |
-| 证据报告 | **97** |
+| 文档总数 | **180** |
+| 总行数 | **37824** |
+| 证据报告 | **99** |
 | 本次生成 | `tools/summarize.py` |
 
 > 本文件由脚本生成；请勿手改，改脚本或改源文件后重跑。

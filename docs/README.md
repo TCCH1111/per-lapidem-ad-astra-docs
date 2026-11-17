@@ -253,6 +253,8 @@ M0（文档阶段）于 2026-10-19 结束，M1 从环境门禁（w06 B-1..B-6 / 
 | VERIFY-073 | [M2 治疗：包扎动作本身（1521/1521）](reports/VERIFY-073-dressing-action.md) | 两路共用核心已测；**触发方式待选 A/B**；无绷带不消耗 |
 | VERIFY-074 | [M2 威胁 T0：危险会提前预告（1525/1525）](reports/VERIFY-074-threat-t0.md) | 预告→倒计时→兵临城下 + 存档往返；T1/T2 待开工（公式拍板 A/B/A） |
 | VERIFY-075 | [D11 客户端实测：49 mod 进世界，0 缺模型（Prism CLI）](reports/VERIFY-075-d11-client.md) | 四 `plaa_*` 就位、进存档、无崩溃；**演示 19 点/3 截图/跨进程重启未做**；jar 仍是 0.1.0 |
+| VERIFY-076 | [M2 治疗 A：受伤居民自己包扎（CI 11/11 绿）](reports/VERIFY-076-treatment-a.md) | 流血+有绷带→DIRE 自救 urge；纯决策可测；**绷带仍无配方**；顺带修掉卡死 CI 的 i18n 假红 |
+| VERIFY-077 | [M2 威胁结算 A/B/A：可复现·按比例·不致死（CI 11/11 绿）](reports/VERIFY-077-threat-resolution.md) | 准备度→损失=强度−准备→伤口封顶<重伤；四语播报；**威胁来源/武器围墙输入待接** |
 | VERIFY-047 | [D16 关闭：`Standing → Veto` 改名，门禁抓到一条真回归](reports/VERIFY-047-veto-rename.md) | 改名（只改标识符，注释/字符串/语言文件不动）；i18n 门禁抓到 N6 的键约定回归并修复；四件套全绿 |
 | VERIFY-040 | [队列 ③ 收尾：构建统一到 264（原 A/B 结论被推翻）](reports/VERIFY-040-build-aligned-264.md) | 同机同日 5+5 次零失败；两版本 ERROR 剖面一致 → **264 回归结论作废**，构建已对齐 |
 | VERIFY-041 | [M2/N1–N2：心情由需求推出（708/708）](reports/VERIFY-041-m2-n1-n2-mood.md) | 通过：4 档纯函数 + 基底紧急阈值 + 四语 8 键；每档必须能给建议 |

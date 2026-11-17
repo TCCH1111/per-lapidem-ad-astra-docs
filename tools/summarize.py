@@ -151,7 +151,7 @@ HEAD = '''# 汇总：Per Lapidem ad Astra（一页看完）
 
 > 这是**唯一**把项目现状汇总到一个文件里的文档。
 > 前半是判断，后半（§2/§3/§4/§8）由 `tools/summarize.py` 从源文件生成，不会与源文件脱节。
-> 最后更新：2026-11-06
+> 最后更新：2026-11-17
 
 ---
 
@@ -165,12 +165,12 @@ HEAD = '''# 汇总：Per Lapidem ad Astra（一页看完）
 
 | 维度 | 现状 |
 | --- | --- |
-| 代码分支 | `main` = `3234812`（十模块，全部 `plaa_*`） |
-| 测试 | 本地 **1482** 游戏测试 全绿；unit **140/140** |
-| CI | fork **Build #49**：11 个作业全绿；docs 仓库**四道门禁**全绿 |
-| 发布物 | **[v0.2.1](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.1)**：10 jar + `.mrpack`（62 下载条目） |
-| 里程碑 | M0 ✅ · M1 ✅（WP-0/1/4/5/6/8 + CI）· M2 🟡（情绪 N1–N6 ✅、关系切片 R1 ✅） |
-| 最大缺口 | **D11：没有任何人真正装过这个整合包并进世界** |
+| 代码分支 | fork `main` = `dfb65160`（十模块，全部 `plaa_*`）；上游基线 `aaac8b8`（重写历史，只能移植） |
+| 测试 | CI gametest 矩阵全绿（含 M2 自救 + 威胁结算新增测试）；unit 全绿 |
+| CI | fork **11/11 作业全绿**（含 `GameTests (vanilla)`、Client smoke）；docs 仓库**四道门禁**全绿 |
+| 发布物 | **[v0.2.2](https://github.com/TCCH1111/per-lapidem-ad-astra/releases/tag/v0.2.2)**：仅 mrpack（含任务书第二章）；jar 最新构建在 fork `build/libs`（实例里的 `plaa_*` 仍是 0.1.0） |
+| 里程碑 | M0 ✅ · M1 ✅（WP-0/1/4/5/6/8 + CI）· M2 🟡（情绪 ✅ · 关系 R1/R2 ✅ · 医疗 R0/R1 ✅ + 治疗 A ✅ · 威胁 T0–T3 ✅） |
+| 最大缺口 | **D11 剩余**：演示脚本 19 点 + 3 截图 + 跨进程重启 + 用最新 jar 重跑（"装包→进世界→0 缺模型"已由 VERIFY-075 关闭） |
 
 '''
 
